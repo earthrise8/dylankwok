@@ -34,24 +34,120 @@
             <a href="index.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
             <a href="blog.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Blog</a>
             <a href="photos.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
+            <a href="projects.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
         </div>
     </div>
 
     <!-- Page Header -->
-    <header class="pt-32 pb-16 text-center">
-        <div class="container mx-auto px-4">
+    <header class="pt-32 pb-16">
+        <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold">Blog</h1>
-            <p class="text-xl mt-4">Coming Soon</p>
+            <p class="text-xl text-slate-400 mt-4">Thoughts on engineering, leadership, and STEM education</p>
         </div>
     </header>
 
+    <!-- Blog Posts Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto space-y-8">
+                
+                <!-- Blog Post 1 -->
+                <article class="bg-slate-800 p-8 rounded-lg blog-post">
+                    <div class="mb-4">
+                        <span class="text-cyan-400 text-sm font-semibold">January 15, 2026</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Getting Your First Rocketry Certification</h2>
+                        <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 blog-preview">High-power rocketry certifications are a crucial milestone for any student interested in aerospace. In this post, I'll walk through what to expect during the Level 1 certification process, common mistakes to avoid, and how to prepare your rocket for success.</p>
+                    <div class="blog-full hidden">
+                        <p class="text-lg leading-relaxed mb-6">Whether you're building your first rocket from a kit or designing from scratch, understanding the certification requirements can save you time and money. I'll share what I learned leading 20 students through their certifications and what made the difference between successful launches and failed attempts.</p>
+                        <p class="text-lg leading-relaxed mb-6">The Level 1 certification requires a single-stage rocket with a maximum impulse of 320 Ns. Your rocket must achieve a peak altitude within a target window and be recovered safely. The process involves building, passing a written exam on NAR safety codes, and successfully launching under observation.</p>
+                        <p class="text-lg leading-relaxed mb-6">One of the most important lessons I learned is that preparation is everything. Before your launch day, test your avionics, practice your setup procedures, and have backup components ready. The certification flights themselves are straightforward if you've done the work beforehand.</p>
+                    </div>
+                    <button class="toggle-blog text-cyan-400 hover:text-cyan-300 font-bold inline-block">Read More →</button>
+                </article>
+
+                <!-- Blog Post 2 -->
+                <article class="bg-slate-800 p-8 rounded-lg blog-post">
+                    <div class="mb-4">
+                        <span class="text-cyan-400 text-sm font-semibold">January 8, 2026</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">3D Printing for Rocket Components: Design Considerations</h2>
+                        <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 blog-preview">3D printing has revolutionized how we design and build rockets. Custom fairings, adapters, and fin fixtures can be printed in hours instead of weeks. But not all designs work equally well in plastic—material strength, layer orientation, and print quality all matter.</p>
+                    <div class="blog-full hidden">
+                        <p class="text-lg leading-relaxed mb-6">In this post, I'll cover the CAD design principles I use for rocket components, material selection (ABS vs PETG vs resin), and how to test prints before flight. I'll also share some failures and what I learned from them.</p>
+                        <p class="text-lg leading-relaxed mb-6">When designing for 3D printing, think about print orientation. Components under stress should be oriented to maximize strength along the load direction. For fairings, layer lines running parallel to the flight direction reduce drag. Always include draft angles and avoid unsupported overhangs when possible.</p>
+                        <p class="text-lg leading-relaxed mb-6">Material choice is critical. PETG offers better temperature resistance than PLA, making it ideal for components near the motor. Carbon fiber-filled nylon provides excellent strength-to-weight ratio but is harder to print. I typically prototype in PLA, then print production parts in PETG.</p>
+                        <p class="text-lg leading-relaxed mb-6">Post-processing matters too. Sanding printed parts smooth reduces drag and improves aesthetics. For functional components, annealing in an oven can improve strength and heat resistance. Always test a printed prototype in similar conditions to what the rocket will experience.</p>
+                    </div>
+                    <button class="toggle-blog text-cyan-400 hover:text-cyan-300 font-bold inline-block">Read More →</button>
+                </article>
+
+                <!-- Blog Post 3 -->
+                <article class="bg-slate-800 p-8 rounded-lg blog-post">
+                    <div class="mb-4">
+                        <span class="text-cyan-400 text-sm font-semibold">December 28, 2025</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">Teaching STEM: Building Interest in Engineering Through Projects</h2>
+                        <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 blog-preview">This summer, I taught robotics to 16 middle school students. The most surprising lesson wasn't about code or electronics—it was about motivation. Students engage when they're building something they care about, not when following a script.</p>
+                    <div class="blog-full hidden">
+                        <p class="text-lg leading-relaxed mb-6">I learned that asking the right questions, giving students autonomy in their designs, and celebrating both successes and failures creates an environment where learning flourishes. This post explores what worked, what didn't, and how to structure STEM education for maximum impact.</p>
+                        <p class="text-lg leading-relaxed mb-6">The first week, I planned a traditional curriculum: basics of motors, sensors, then integration. The students were disengaged. By week two, I completely changed approach. I asked them: "What do you want to build?" They wanted a robot that could navigate a maze. Suddenly everyone was invested.</p>
+                        <p class="text-lg leading-relaxed mb-6">This shift taught me the power of project-based learning. Students don't just learn motor mechanics—they learn debugging when their robot doesn't behave as expected. They learn problem-solving when their sensor doesn't work. They learn teamwork when collaborating on a shared design.</p>
+                        <p class="text-lg leading-relaxed mb-6">My advice to other educators: start with curiosity, not curriculum. Let students define the challenge. Provide structure and safety guardrails, but maximum autonomy in execution. And celebrate failures as learning opportunities—some of the best discussions came from debugging why something didn't work.</p>
+                    </div>
+                    <button class="toggle-blog text-cyan-400 hover:text-cyan-300 font-bold inline-block">Read More →</button>
+                </article>
+
+                <!-- Blog Post 4 -->
+                <article class="bg-slate-800 p-8 rounded-lg blog-post">
+                    <div class="mb-4">
+                        <span class="text-cyan-400 text-sm font-semibold">December 15, 2025</span>
+                        <h2 class="text-3xl font-bold mt-2 mb-4">From Idea to Nonprofit: Launching Fremont Student Makers</h2>
+                        <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                    </div>
+                    <p class="text-lg leading-relaxed mb-6 blog-preview">Starting a nonprofit is no small task. Between 501(c)(3) paperwork, building a board, fundraising, and actually serving your mission, there's a lot to juggle. But if you believe in the mission—like I do with STEM education—it's worth it.</p>
+                    <div class="blog-full hidden">
+                        <p class="text-lg leading-relaxed mb-6">In this post, I'll share the first steps we took to launch Fremont Student Makers, how we recruited our first 50 students across 3 schools, and the lessons we learned in the process. Whether you're thinking about starting a nonprofit or just curious about the process, this should give you a realistic view of what's involved.</p>
+                        <p class="text-lg leading-relaxed mb-6">The first step was validating the need. We surveyed students and teachers across Fremont schools and found consistent frustration: interest in STEM was high, but resources were fragmented. Some schools had strong robotics programs but no aerospace. Others had maker spaces but no funding. This gap became our mission.</p>
+                        <p class="text-lg leading-relaxed mb-6">The 501(c)(3) process took about 3 months from filing to approval. We worked with lawyers (pro bono support was crucial) to get the paperwork right. Our bylaws defined governance, conflict of interest policies, and board structure. More importantly, they reflected our values: transparency, inclusivity, and student empowerment.</p>
+                        <p class="text-lg leading-relaxed mb-6">Fundraising was humbling. Our first grants were small—$1,000 to $5,000 from local businesses and community foundations. But each grant came with a conversation about our mission. Those conversations shaped our program more than any business plan could have. Now we're being approached by larger foundations that see the impact we're making.</p>
+                        <p class="text-lg leading-relaxed mb-6">My biggest learning: start small and prove impact before scaling. We could have tried to serve ten schools. Instead, we focused deeply on three, built relationships with teachers, and showed measurable outcomes. That's made all the difference in securing support for our next phase of growth.</p>
+                    </div>
+                    <button class="toggle-blog text-cyan-400 hover:text-cyan-300 font-bold inline-block">Read More →</button>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="py-8 bg-slate-900 mt-20">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Dylan Kwok</p>
+    <footer class="py-12 bg-slate-800 mt-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex justify-center items-center space-x-6 mb-6">
+                    <a href="mailto:dylankwok28@gmail.com" class="text-slate-300 hover:text-cyan-400 transition" title="Email">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"></path></svg>
+                    </a>
+                    <a href="tel:+13415002788" class="text-slate-300 hover:text-cyan-400 transition" title="Phone">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.92 7.02C17.45 6.18 16.51 5.55 15.46 5.55c-2.64 0-4.78 2.14-4.78 4.78 0 .93.29 1.81.78 2.53-2.34-1.48-5.91-3.75-5.91-9.08 0-4.05 3.29-7.34 7.34-7.34 3.29 0 6.1 2.17 7.18 5.33.88.23 1.82.8 2.4 1.51h.02c.5.71.78 1.57.78 2.45 0 2.64-2.14 4.78-4.78 4.78-.96 0-1.87-.28-2.65-.76z"></path></svg>
+                    </a>
+                </div>
+                <div class="text-center border-t border-slate-700 pt-6">
+                    <p class="text-slate-300">&copy; 2026 Dylan Kwok. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
-    
+
     <script>
         const menuBtn = document.getElementById('menu-btn');
         const menu = document.getElementById('menu');
@@ -65,6 +161,28 @@
             } else {
                 menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
             }
+        });
+
+        // Blog expand functionality
+        const toggleButtons = document.querySelectorAll('.toggle-blog');
+        toggleButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const article = button.closest('.blog-post');
+                const fullContent = article.querySelector('.blog-full');
+                const preview = article.querySelector('.blog-preview');
+                const isExpanded = !fullContent.classList.contains('hidden');
+                
+                if (isExpanded) {
+                    fullContent.classList.add('hidden');
+                    preview.classList.remove('hidden');
+                    button.textContent = 'Read More →';
+                } else {
+                    fullContent.classList.remove('hidden');
+                    preview.classList.add('hidden');
+                    button.textContent = 'Read Less ←';
+                }
+            });
         });
     </script>
 
