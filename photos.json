@@ -2,75 +2,246 @@
   "photos": [
     {
       "id": 1,
-      "title": "Mountain Sunset",
-      "description": "A beautiful mountain landscape at sunset.",
-      "imageUrl": "https://images.unsplash.com/photo-1516900448138-89341d9b12c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2026-01-15",
-      "location": "Rocky Mountains, Colorado",
-      "category": "nature"
+      "title": "Photo 1",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_0010.JPG",
+      "date": "2026-01-20",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 2,
-      "title": "Lake Reflection",
-      "description": "A serene lake reflecting the surrounding forest and sky.",
-      "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2026-01-10",
-      "location": "Glacier Lake, Montana",
-      "category": "nature"
+      "title": "Photo 2",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_0020.JPG",
+      "date": "2026-01-18",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 3,
-      "title": "Forest Road",
-      "description": "A winding road through a lush, green forest.",
-      "imageUrl": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2026-01-08",
-      "location": "Pacific Northwest",
-      "category": "nature"
+      "title": "Photo 3",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_0022.JPG",
+      "date": "2026-01-16",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 4,
-      "title": "Dramatic Sky",
-      "description": "A green field with a single tree under a dramatic sky.",
-      "imageUrl": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2026-01-05",
-      "location": "Texas Hill Country",
-      "category": "landscape"
+      "title": "Photo 4",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_2932.jpg",
+      "date": "2026-01-14",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 5,
-      "title": "Coastal Village",
-      "description": "A stunning view of an Italian coastline village.",
-      "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2025-12-28",
-      "location": "Amalfi Coast, Italy",
-      "category": "travel"
+      "title": "Photo 5",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_2978.jpg",
+      "date": "2026-01-12",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 6,
-      "title": "Misty Forest",
-      "description": "A misty forest floor with light filtering through the trees.",
-      "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2025-12-20",
-      "location": "Redwood National Park, California",
-      "category": "nature"
+      "title": "Photo 6",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_2988.jpg",
+      "date": "2026-01-10",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 7,
-      "title": "Mountain Peaks",
-      "description": "Snow-capped mountains under a clear blue sky.",
-      "imageUrl": "https://images.unsplash.com/photo-1580133318324-f2f76d9af932?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "date": "2025-12-15",
-      "location": "Swiss Alps",
-      "category": "landscape"
+      "title": "Photo 7",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_3477.jpg",
+      "date": "2026-01-08",
+      "location": "Fremont, CA",
+      "category": "personal"
     },
     {
       "id": 8,
-      "title": "Waterfall",
-      "description": "A powerful waterfall in a rocky, green landscape.",
-      "imageUrl": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "title": "Photo 8",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_3582.jpg",
+      "date": "2026-01-06",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 9,
+      "title": "Photo 9",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_4776.jpg",
+      "date": "2025-12-30",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 10,
+      "title": "Photo 10",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5334.jpg",
+      "date": "2025-12-28",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 11,
+      "title": "Photo 11",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5573.jpg",
+      "date": "2025-12-26",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 12,
+      "title": "Photo 12",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5596.jpg",
+      "date": "2025-12-24",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 13,
+      "title": "Photo 13",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5603.jpg",
+      "date": "2025-12-22",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 14,
+      "title": "Photo 14",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5612.jpg",
+      "date": "2025-12-20",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 15,
+      "title": "Photo 15",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5634.jpg",
+      "date": "2025-12-18",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 16,
+      "title": "Photo 16",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5644.jpg",
+      "date": "2025-12-16",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 17,
+      "title": "Photo 17",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5687.jpg",
+      "date": "2025-12-14",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 18,
+      "title": "Photo 18",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5711 Copy.JPG",
+      "date": "2025-12-12",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 19,
+      "title": "Photo 19",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5748.jpg",
       "date": "2025-12-10",
-      "location": "Yosemite Valley, California",
-      "category": "nature"
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 20,
+      "title": "Photo 20",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5915.jpg",
+      "date": "2025-12-08",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 21,
+      "title": "Photo 21",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5933.jpg",
+      "date": "2025-12-06",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 22,
+      "title": "Photo 22",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5934.jpg",
+      "date": "2025-12-04",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 23,
+      "title": "Photo 23",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_5968.jpg",
+      "date": "2025-12-02",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 24,
+      "title": "Photo 24",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_6549.jpg",
+      "date": "2025-11-30",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 25,
+      "title": "Photo 25",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_6550.jpg",
+      "date": "2025-11-28",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 26,
+      "title": "Photo 26",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/IMG_6583-EDIT.jpg",
+      "date": "2025-11-26",
+      "location": "Fremont, CA",
+      "category": "personal"
+    },
+    {
+      "id": 27,
+      "title": "Photo 27",
+      "description": "Gallery photo",
+      "imageUrl": "gallery/test.png",
+      "date": "2025-11-24",
+      "location": "Fremont, CA",
+      "category": "personal"
     }
   ]
 }
