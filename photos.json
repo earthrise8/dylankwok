@@ -6,6 +6,7 @@
       "description": "A beautiful mountain landscape at sunset.",
       "imageUrl": "https://images.unsplash.com/photo-1516900448138-89341d9b12c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2026-01-15",
+      "location": "Rocky Mountains, Colorado",
       "category": "nature"
     },
     {
@@ -14,6 +15,7 @@
       "description": "A serene lake reflecting the surrounding forest and sky.",
       "imageUrl": "https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2026-01-10",
+      "location": "Glacier Lake, Montana",
       "category": "nature"
     },
     {
@@ -22,6 +24,7 @@
       "description": "A winding road through a lush, green forest.",
       "imageUrl": "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2026-01-08",
+      "location": "Pacific Northwest",
       "category": "nature"
     },
     {
@@ -30,6 +33,7 @@
       "description": "A green field with a single tree under a dramatic sky.",
       "imageUrl": "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2026-01-05",
+      "location": "Texas Hill Country",
       "category": "landscape"
     },
     {
@@ -38,6 +42,7 @@
       "description": "A stunning view of an Italian coastline village.",
       "imageUrl": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2025-12-28",
+      "location": "Amalfi Coast, Italy",
       "category": "travel"
     },
     {
@@ -46,6 +51,7 @@
       "description": "A misty forest floor with light filtering through the trees.",
       "imageUrl": "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2025-12-20",
+      "location": "Redwood National Park, California",
       "category": "nature"
     },
     {
@@ -54,6 +60,7 @@
       "description": "Snow-capped mountains under a clear blue sky.",
       "imageUrl": "https://images.unsplash.com/photo-1580133318324-f2f76d9af932?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2025-12-15",
+      "location": "Swiss Alps",
       "category": "landscape"
     },
     {
@@ -62,6 +69,7 @@
       "description": "A powerful waterfall in a rocky, green landscape.",
       "imageUrl": "https://images.unsplash.com/photo-1433086966358-54859d0ed716?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       "date": "2025-12-10",
+      "location": "Yosemite Valley, California",
       "category": "nature"
     }
   ]

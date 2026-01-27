@@ -132,10 +132,29 @@
             .then(data => {
                 data.photos.forEach(photo => {
                     const photoElement = document.createElement('div');
-                    photoElement.className = 'gallery-item w-full h-64 bg-cover bg-center rounded-lg cursor-pointer hover:opacity-90 transition';
-                    photoElement.style.backgroundImage = `url('${photo.imageUrl}')`;
+                    photoElement.className = 'gallery-item w-full rounded-lg cursor-pointer hover:opacity-90 transition overflow-hidden flex flex-col';
+                    
+                    const imgWrapper = document.createElement('div');
+                    imgWrapper.className = 'flex-1 bg-contain bg-center bg-no-repeat';
+                    imgWrapper.style.backgroundImage = `url('${photo.imageUrl}')`;
+                    imgWrapper.style.minHeight = '250px';
+                    
+                    const infoDiv = document.createElement('div');
+                    infoDiv.className = 'bg-slate-700 p-3 text-sm';
+                    infoDiv.innerHTML = `
+                        <p class="font-semibold">${photo.title}</p>
+                        <p class="text-slate-300 text-xs mt-1">${photo.date}</p>
+                        ${photo.location ? `<p class="text-slate-300 text-xs">${photo.location}</p>` : ''}
+                    `;
+                    
+                    photoElement.appendChild(imgWrapper);
+                    photoElement.appendChild(infoDiv);
+                    
                     photoElement.dataset.description = photo.description;
                     photoElement.dataset.imageUrl = photo.imageUrl;
+                    photoElement.dataset.date = photo.date;
+                    photoElement.dataset.location = photo.location || '';
+                    photoElement.dataset.title = photo.title;
                     gallery.appendChild(photoElement);
                 });
                 attachGalleryListeners();
@@ -148,9 +167,16 @@
                 item.addEventListener('click', () => {
                     const imageUrl = item.dataset.imageUrl;
                     const description = item.dataset.description;
+                    const date = item.dataset.date;
+                    const location = item.dataset.location;
+                    const title = item.dataset.title;
 
                     modalImg.src = imageUrl;
-                    modalDescription.textContent = description;
+                    modalDescription.innerHTML = `
+                        <p class="text-lg font-semibold mb-2">${title}</p>
+                        <p class="mb-2">${description}</p>
+                        <p class="text-sm text-slate-400">📅 ${date}${location ? ` • 📍 ${location}` : ''}</p>
+                    `;
                     modal.classList.remove('opacity-0', 'pointer-events-none');
                 });
             });
