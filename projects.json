@@ -1,0 +1,174 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Untitled Rocketry",
+      "status": "ACTIVE",
+      "organization": "American Rocketry Challenge",
+      "timeframe": "2023-Present",
+      "description": "Founded and lead a 10-member competitive rocketry team that qualified for nationals in the American Rocketry Challenge. The team is responsible for designing, building, testing, and launching rockets that meet specific mission requirements while staying within strict constraints.",
+      "accomplishments": [
+        "Qualified for nationals competition",
+        "Built rockets from materials to flight",
+        "Coordinated team meetings and training",
+        "Documented design process and results"
+      ],
+      "technologies": [
+        "Rocket design & simulation",
+        "OpenRocket & XCAL software",
+        "Materials selection & construction",
+        "Test flight analysis"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Rocket design and assembly"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Launch preparation"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "In-flight rocket"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Modular Rocket System",
+      "status": "FEATURED",
+      "organization": "Personal Engineering Project",
+      "timeframe": "2025",
+      "description": "Designed and 3D-printed a fully modular rocket system that adapts to different flight conditions, payloads, and environmental factors. The system uses standardized components and quick-connect mechanisms for rapid assembly and testing.",
+      "accomplishments": [
+        "Swappable fin designs for stability",
+        "Variable payload bay",
+        "Quick-disconnect motor system",
+        "Wind/altitude adaptation"
+      ],
+      "technologies": [
+        "CAD: Fusion 360",
+        "3D printing: FDM (PETG & ABS)",
+        "Simulation: OpenRocket",
+        "Material testing & validation"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "CAD design render"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "3D printed components"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Assembled modular rocket"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "CubeSat Development",
+      "status": "IN PROGRESS",
+      "organization": "NASA CSLI Program",
+      "timeframe": "Irvington Maker Club",
+      "description": "Co-leading the design and assembly of a 3U CubeSat as part of the NASA CubeSat Launch Initiative. The team is responsible for meeting NASA's technical requirements while keeping the satellite under strict mass and power constraints.",
+      "accomplishments": [
+        "Structural design & testing",
+        "Component integration",
+        "Thermal analysis",
+        "Team coordination (40 members)"
+      ],
+      "technologies": [
+        "Satellite design principles",
+        "CAD & mechanical engineering",
+        "Systems integration",
+        "NASA compliance & documentation"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "CubeSat design prototype"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1614730321146-b6fa6a46bcb4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Component assembly"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1446776877081-d282a0f896e2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Final satellite structure"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Fremont Student Makers",
+      "status": "NONPROFIT",
+      "organization": "501(c)(3) Nonprofit Organization",
+      "timeframe": "2025-Present",
+      "description": "Founded a nonprofit organization dedicated to expanding STEM education and maker opportunities across Fremont. The organization supports 50+ students across 3 schools through collaborative programs, interschool competitions, and mentorship initiatives.",
+      "accomplishments": [
+        "Support 50+ students annually",
+        "3 schools in Fremont area",
+        "STEM club development & funding",
+        "Community interschool competitions"
+      ],
+      "technologies": [
+        "501(c)(3) application & filing",
+        "Board development",
+        "Fundraising & grant writing",
+        "Program planning & execution"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Student workshop"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Maker club meeting"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Community event"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Robotics Summer Camp",
+      "status": "COMPLETED",
+      "organization": "Robotics and Kids",
+      "timeframe": "Summer 2024",
+      "description": "Developed and taught comprehensive robotics curriculum to 16 middle school students, covering everything from basic block coding to Python programming and hardware integration with motors and sensors.",
+      "accomplishments": [
+        "Block-based coding fundamentals",
+        "Python programming basics",
+        "Motor & sensor integration",
+        "Robot design & troubleshooting"
+      ],
+      "technologies": [
+        "Interactive workshops",
+        "Hands-on project building",
+        "Individual mentoring",
+        "Student-led showcases"
+      ],
+      "images": [
+        {
+          "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Robot assembly"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Student programming"
+        },
+        {
+          "url": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3",
+          "caption": "Final project showcase"
+        }
+      ]
+    }
+  ]
+}

@@ -20,6 +20,41 @@
             background-size: cover;
             background-position: center;
         }
+        
+        /* Menu slide-in and fade animation */
+        #menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #menu.hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            pointer-events: none;
+        }
+        #menu:not(.hidden) {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Menu links fade-in with stagger */
+        #menu a {
+            opacity: 0;
+            animation: fadeInDown 0.5s ease forwards;
+        }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
