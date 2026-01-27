@@ -24,79 +24,167 @@
 </head>
 <body class="bg-slate-900 text-white">
 
+    <!-- Hamburger Menu Button -->
+    <div class="fixed top-0 right-0 p-4 z-30">
+        <button id="menu-btn" class="text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div id="menu" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-20 flex items-center justify-center">
+        <div class="text-center">
+            <a href="index.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
+            <a href="blog.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Blog</a>
+            <a href="photos.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="h-screen bg-california bg-fixed text-white">
         <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
             <h1 class="text-6xl font-bold">Dylan Kwok</h1>
-            <p class="text-xl mt-4">A passionate individual driven by curiosity and innovation.</p>
+            <p class="text-xl mt-4">Creator and Innovator based in the East Bay.</p>
+            <p class="text-lg mt-6">Fremont, California | (341)-500-2788 | dylankwok28@gmail.com</p>
         </div>
     </section>
 
-    <!-- About Me Section -->
+    <!-- Education Section -->
     <section class="py-20">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
-                <p class="text-lg leading-relaxed text-center">
-                    I am a highly motivated and intellectually curious individual with a unique background that blends the rich cultural heritages of India and China, all while being shaped by the innovative and forward-thinking environment of California. My personal and professional interests are diverse, ranging from the complexities of rocketry and the magic of literature to the enriching experiences of global travel. I am passionate about building and creating, and I am always looking for new challenges to tackle.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Accomplishments Section -->
-    <section class="py-20 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Accomplishments</h2>
-            <div class="max-w-4xl mx-auto">
-                <ul class="list-disc list-inside text-lg">
-                    <li>[Your Accomplishment Here]</li>
-                    <li>[Your Accomplishment Here]</li>
-                    <li>[Your Accomplishment Here]</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Personal Projects Section -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Personal Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div class="bg-slate-700 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">Project 1</h3>
-                    <p>A brief description of your project. What did you build? What technologies did you use?</p>
-                </div>
-                <div class="bg-slate-700 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">Project 2</h3>
-                    <p>A brief description of your project. What did you build? What technologies did you use?</p>
+                <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+                <div class="text-left">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Irvington High School</h3>
+                        <span class="text-lg font-light">Fremont, CA</span>
+                    </div>
+                    <p class="text-lg mt-2">GPA: Unweighted: 3.73</p>
+                    <p class="text-lg mt-1"><strong>Relevant Coursework:</strong> Honors Chemistry, Algebra 2, and Trigonometry</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Clubs Section -->
+    <!-- Work Experience Section -->
     <section class="py-20 bg-slate-800">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Clubs</h2>
-            <div class="max-w-4xl mx-auto">
-                 <ul class="list-disc list-inside text-lg">
-                    <li>[Your Club Here] - [Your Role]</li>
-                    <li>[Your Club Here] - [Your Role]</li>
-                    <li>[Your Club Here] - [Your Role]</li>
-                </ul>
+            <h2 class="text-4xl font-bold text-center mb-12">Work Experience</h2>
+            <div class="max-w-4xl mx-auto text-left">
+                <div class="mb-8">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Counselor, Robotics and Kids</h3>
+                        <span class="text-lg font-light">June 2024 - August 2024</span>
+                    </div>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Developed and taught 16 middle school students in robotics, block coding, and Python programming.</li>
+                        <li>Led interactive workshops on sensors and motor controls.</li>
+                        <li>Mentored students in troubleshooting technical issues while they complete their projects.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Travel Section -->
+    <!-- Activities & Volunteer Work Section -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Travel</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="h-64 bg-cover bg-center rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?q=80&w=2130&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
-                <div class="h-64 bg-cover bg-center rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1502602898657-3e91760c0341?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
-                <div class="h-64 bg-cover bg-center rounded-lg" style="background-image: url('https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"></div>
+            <h2 class="text-4xl font-bold text-center mb-12">Activities & Volunteer Work</h2>
+            <div class="max-w-4xl mx-auto text-left">
+                <div class="mb-8">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Founder, Untitled Rocketry</h3>
+                        <span class="text-lg font-light">December 2023 - Present</span>
+                    </div>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Lead 10-member competitive rocketry team to nationals for the American Rocketry Challenge, a national STEM competition.</li>
+                        <li>Coordinate with club moderator and school administration for meetings, workshops, and training sessions.</li>
+                        <li>Train team members on how to construct rockets, conduct model flight simulations, and understand competition regulations.</li>
+                        <li>Direct a group of 20 students though high-power rocketry certifications</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Founder, Fremont Student Makers</h3>
+                        <span class="text-lg font-light">August 2025-Present</span>
+                    </div>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Conduct administrative tasks to create a 501(c) nonprofit</li>
+                        <li>Supported 50 students across 3 schools in Fremont by fostering the growth of STEM clubs and programs through collaborative fundraising, interschool collaboration, and mentorship of aspiring engineers.</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Director of Aerospace, Irvington High School Maker Club</h3>
+                        <span class="text-lg font-light">August 2025-Present</span>
+                    </div>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Lead a 40-member student organization focused on aerospace engineering and space exploration.</li>
+                        <li>Built a CubeSat to be launched into space as a part of NASA CSLI</li>
+                        <li>Personal project: simulated, designed, and printed modular rocket allowing for adaptability for different speeds, winds, altitudes, and payload, as well as easier construction</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <div class="flex justify-between items-baseline">
+                        <h3 class="text-2xl font-bold">Captain, Varsity Cross Country & Track and Field</h3>
+                        <span class="text-lg font-light">August 2023-Present</span>
+                    </div>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Cross country: competed at Varsity level in the 2-mile and 3-mile race against runners from schools across the state—one of eight students who made state and competed at Mount Sac.</li>
+                        <li>Track & Field: competed at Varsity level long distance running and taught new teammates healthy eating habits, how to avoid injuries, how to pace their training, and helped organize team bonding activities.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="py-20 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Skills</h2>
+            <div class="max-w-4xl mx-auto text-left">
+                <div class="mb-4">
+                    <h3 class="text-2xl font-bold">Technical</h3>
+                    <p class="text-lg mt-1">3D Modeling, Python, Java, 3D printing, HTML, CSS, Javascript</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold">Languages</h3>
+                    <p class="text-lg mt-1">Spanish (proficient in speaking, reading, and writing)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Skills Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12">Key Skills</h2>
+            <div class="max-w-4xl mx-auto text-left">
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold">LEADERSHIP & TEAM MANAGEMENT</h3>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Founded Untitled Rocketry, a 10-member team that qualified for nationals in the American Rocketry Challenge</li>
+                        <li>Organized 40-member Irvington Maker Club aerospace projects, including high power certifications</li>
+                        <li>Captain of Varsity Cross Country & Track, mentoring teammates through training, nutrition, and health</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold">STEM & ENGINEERING</h3>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Designed, simulated, and printed 3D printed modular rockets adaptable for altitude, payload, and weather conditions</li>
+                        <li>Developed and air brake system for actively controlled rockets</li>
+                        <li>Proficient in 3D modeling, 3D printing, HTML, CSS, JavaScript, Python, and Java</li>
+                    </ul>
+                </div>
+                <div class="mb-8">
+                    <h3 class="text-2xl font-bold">TEACHING & MENTORSHIP</h3>
+                    <ul class="list-disc list-inside mt-2 text-lg ml-4">
+                        <li>Robotics camp counselor taught middle schoolers robotics, block coding, Python, and motor/sensor integration</li>
+                        <li>Supported 50 students across 3 schools by founding Fremont Student Makers, fostering STEM program development through mentorship.</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
@@ -107,6 +195,22 @@
             <p>&copy; 2024 Dylan Kwok</p>
         </div>
     </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        let isOpen = false;
+    
+        menuBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            menu.classList.toggle('hidden');
+            if (isOpen) {
+                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+            } else {
+                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+            }
+        });
+    </script>
 
 </body>
 </html>
