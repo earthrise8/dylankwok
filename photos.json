@@ -2,64 +2,64 @@
   "photos": [
     {
       "id": 1,
-      "title": "Photo 1",
-      "description": "Gallery photo",
+      "title": "Industrial Pyramid",
+      "description": "Shot on Canon Powershot SD1100 IS",
       "imageUrl": "gallery/IMG_0010.JPG",
-      "date": "2026-01-20",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2026-01-16",
+      "location": "San Francisco, CA",
+      "category": "San Francisco"
     },
     {
       "id": 2,
-      "title": "Photo 2",
-      "description": "Gallery photo",
+      "title": "White Bridge",
+      "description": "Shot on Canon Powershot SD1100 IS",
       "imageUrl": "gallery/IMG_0020.JPG",
-      "date": "2026-01-18",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2026-01-16",
+      "location": "San Francisco, CA",
+      "category": "San Francisco"
     },
     {
       "id": 3,
-      "title": "Photo 3",
-      "description": "Gallery photo",
+      "title": "Ferry Building",
+      "description": "Shot on Canon Powershot SD1100 IS",
       "imageUrl": "gallery/IMG_0022.JPG",
       "date": "2026-01-16",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "San Francisco, CA",
+      "category": "San Francisco"
     },
     {
       "id": 4,
-      "title": "Photo 4",
-      "description": "Gallery photo",
+      "title": "Hetch Hetchy Reservoir",
+      "description": "Shot on Iphone 12",
       "imageUrl": "gallery/IMG_2932.jpg",
-      "date": "2026-01-14",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2023-11-20",
+      "location": "Sierra Nevadas, CA",
+      "category": "Yosemite"
     },
     {
       "id": 5,
-      "title": "Photo 5",
-      "description": "Gallery photo",
+      "title": "Yosemite",
+      "description": "Shot on Iphone 12",
       "imageUrl": "gallery/IMG_2978.jpg",
-      "date": "2026-01-12",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2023-11-21",
+      "location": "Yosemite National Park, CA",
+      "category": "Yosemite"
     },
     {
       "id": 6,
-      "title": "Photo 6",
-      "description": "Gallery photo",
+      "title": "Yosemite Falls",
+      "description": "Shot on Iphone 12",
       "imageUrl": "gallery/IMG_2988.jpg",
-      "date": "2026-01-10",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2023-11-21",
+      "location": "Yosemite National Park, CA",
+      "category": "Yosemite"
     },
     {
       "id": 7,
-      "title": "Photo 7",
-      "description": "Gallery photo",
+      "title": "Manhattan Bridge",
+      "description": "Shot on Iphone 12",
       "imageUrl": "gallery/IMG_3477.jpg",
-      "date": "2026-01-08",
+      "date": "2024-03-30",
       "location": "Fremont, CA",
       "category": "personal"
     },
