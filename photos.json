@@ -65,165 +65,165 @@
     },
     {
       "id": 8,
-      "title": "Photo 8",
+      "title": "Lincoln Memorial",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_3582.jpg",
-      "date": "2026-01-06",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "date": "2024-04-24",
+      "location": "Washington, D.C.",
+      "category": "D.C."
     },
     {
       "id": 9,
-      "title": "Photo 9",
+      "title": "Snow Ranch",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_4776.jpg",
       "date": "2025-12-30",
-      "location": "Fremont, CA",
+      "location": "Farmington, CA",
       "category": "personal"
     },
     {
       "id": 10,
-      "title": "Photo 10",
+      "title": "Joshua Tree",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5334.jpg",
       "date": "2025-12-28",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Joshua Tree National Park, CA",
+      "category": "travel"
     },
     {
       "id": 11,
-      "title": "Photo 11",
+      "title": "Plaza de Espania",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5573.jpg",
       "date": "2025-12-26",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Seville, Spain",
+      "category": "travel"
     },
     {
       "id": 12,
-      "title": "Photo 12",
+      "title": "Cathedral de Sevilla",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5596.jpg",
       "date": "2025-12-24",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Seville, Spain",
+      "category": "travel"
     },
     {
       "id": 13,
-      "title": "Photo 13",
+      "title": "Zahara de la Sierra",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5603.jpg",
       "date": "2025-12-22",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Zahara de la Sierra, Spain",
+      "category": "travel"
     },
     {
       "id": 14,
-      "title": "Photo 14",
+      "title": "Grazalema",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5612.jpg",
       "date": "2025-12-20",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Grazalema, Spain",
+      "category": "travel"
     },
     {
       "id": 15,
-      "title": "Photo 15",
+      "title": "Ronda Bridge",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5634.jpg",
       "date": "2025-12-18",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Ronda, Spain",
+      "category": "travel"
     },
     {
       "id": 16,
-      "title": "Photo 16",
+      "title": "Parque Guell",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5644.jpg",
       "date": "2025-12-16",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Barcelona, Spain",
+      "category": "travel"
     },
     {
       "id": 17,
-      "title": "Photo 17",
+      "title": "In Barcelona",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5687.jpg",
       "date": "2025-12-14",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Barcelona, Spain",
+      "category": "travel"
     },
     {
       "id": 18,
-      "title": "Photo 18",
+      "title": "Palma de Mallorca",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5711 Copy.JPG",
       "date": "2025-12-12",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Palma de Mallorca, Spain",
+      "category": "travel"
     },
     {
       "id": 19,
-      "title": "Photo 19",
+      "title": "Cinque Terre",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5748.jpg",
       "date": "2025-12-10",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Cinque Terre, Italy",
+      "category": "travel"
     },
     {
       "id": 20,
-      "title": "Photo 20",
+      "title": "Johns Hopkins University",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5915.jpg",
       "date": "2025-12-08",
-      "location": "Fremont, CA",
+      "location": "Baltimore, MD",
       "category": "personal"
     },
     {
       "id": 21,
-      "title": "Photo 21",
+      "title": "Baltimore",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5933.jpg",
       "date": "2025-12-06",
-      "location": "Fremont, CA",
+      "location": "Baltimore, MD",
       "category": "personal"
     },
     {
       "id": 22,
-      "title": "Photo 22",
+      "title": "Fells Point",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5934.jpg",
       "date": "2025-12-04",
-      "location": "Fremont, CA",
+      "location": "Baltimore, MD",
       "category": "personal"
     },
     {
       "id": 23,
-      "title": "Photo 23",
+      "title": "In the Sky",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_5968.jpg",
       "date": "2025-12-02",
-      "location": "Fremont, CA",
+      "location": "Somewhere",
       "category": "personal"
     },
     {
       "id": 24,
-      "title": "Photo 24",
+      "title": "Beach Holiday",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_6549.jpg",
       "date": "2025-11-30",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Honolulu, HI",
+      "category": "travel"
     },
     {
       "id": 25,
-      "title": "Photo 25",
+      "title": "View from Diamond Head",
       "description": "Shot on iPhone 12",
       "imageUrl": "gallery/IMG_6583-EDIT.jpg",
       "date": "2025-11-28",
-      "location": "Fremont, CA",
-      "category": "personal"
+      "location": "Honolulu, HI",
+      "category": "travel"
     }
   ]
 }
