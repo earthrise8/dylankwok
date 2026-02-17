@@ -63,6 +63,42 @@
                 transform: translateY(0);
             }
         }
+
+        /* Back to top button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #06b6d4;
+            color: #0f172a;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 20;
+            transition: background 0.3s ease, opacity 0.3s ease;
+        }
+        #backToTop:hover {
+            background: #22d3ee;
+        }
+        #backToTop.show {
+            display: block;
+        }
+
+        /* Image caption */
+        .image-with-caption {
+            position: relative;
+        }
+        .image-caption {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 0.75rem;
+            font-size: 0.875rem;
+            text-align: center;
+            border-top: 2px solid #06b6d4;
+        }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -83,6 +119,7 @@
             <a href="blog.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Blog</a>
             <a href="photos.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
             <a href="projects.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
+            <a href="resume.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Resume</a>
             <a href="about.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">About</a>
         </div>
     </div>
@@ -91,23 +128,85 @@
     <section class="h-screen bg-california bg-fixed text-white">
         <div class="flex flex-col items-center justify-center h-full bg-black bg-opacity-50">
             <h1 class="text-6xl font-bold">Dylan Kwok</h1>
-            <p class="text-xl mt-4">Creator and Innovator based in the East Bay.</p>
+            <p class="text-xl mt-4">Creator, Engineer & STEM Educator based in the East Bay.</p>
             <p class="text-lg mt-6">Fremont, California | (341)-500-2788 | dylankwok28@gmail.com</p>
+            <div class="mt-12">
+                <a href="#about-section" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">Learn More</a>
+            </div>
         </div>
     </section>
 
-    <!-- Education Section -->
-    <section class="py-20">
+    <!-- Photo Gallery Section -->
+    <section class="py-20 bg-slate-800">
         <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Irvington High School</h3>
-                        <span class="text-slate-400">Fremont, CA</span>
+            <h2 class="text-4xl font-bold text-center mb-16">Through My Lens</h2>
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="image-with-caption rounded-lg overflow-hidden">
+                    <div class="overflow-hidden rounded-t-lg h-64">
+                        <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
                     </div>
-                    <p class="text-lg mb-2">Unweighted GPA: 3.73</p>
-                    <p class="text-lg text-slate-300"><strong>Relevant Coursework:</strong> Honors Chemistry, Algebra 2, and Trigonometry</p>
+                    <div class="image-caption">
+                        <p class="font-bold">Industrial Pyramid</p>
+                        <p class="text-xs text-slate-300">San Francisco, CA</p>
+                    </div>
+                </div>
+                <div class="image-with-caption rounded-lg overflow-hidden">
+                    <div class="overflow-hidden rounded-t-lg h-64">
+                        <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
+                    </div>
+                    <div class="image-caption">
+                        <p class="font-bold">Yosemite Valley</p>
+                        <p class="text-xs text-slate-300">Yosemite National Park, CA</p>
+                    </div>
+                </div>
+                <div class="image-with-caption rounded-lg overflow-hidden">
+                    <div class="overflow-hidden rounded-t-lg h-64">
+                        <img src="gallery/Travel/IMG_5334.jpg" alt="Joshua Tree" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
+                    </div>
+                    <div class="image-caption">
+                        <p class="font-bold">Joshua Tree Desert</p>
+                        <p class="text-xs text-slate-300">Joshua Tree National Park, CA</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="photos.html" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">View Full Gallery →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section class="py-20" id="about-section">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">About Me</h2>
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <p class="text-lg leading-relaxed mb-6">
+                        I'm Dylan Kwok, a high school student from Fremont, California with a passion for engineering, photography, and education. I believe in building things that matter, sharing knowledge with others, and pushing the boundaries of what's possible through innovation and persistence.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-4">What I Do</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Lead high-power rocketry teams</li>
+                                <li>• Capture moments through photography</li>
+                                <li>• Mentor students in STEM</li>
+                                <li>• Design and build innovative projects</li>
+                                <li>• Compete at varsity track level</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-cyan-400 mb-4">My Values</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Lifelong learning</li>
+                                <li>• Persistence through challenges</li>
+                                <li>• Building inclusive communities</li>
+                                <li>• Creating meaningful impact</li>
+                                <li>• Sharing knowledge freely</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <a href="about.html" class="inline-block px-6 py-2 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">Read My Full Story →</a>
                 </div>
             </div>
         </div>
@@ -120,129 +219,64 @@
             <div class="max-w-5xl mx-auto">
                 <div class="bg-slate-700 p-8 rounded-lg mb-8">
                     <h3 class="text-3xl font-bold mb-4">Untitled Rocketry</h3>
-                    <p class="text-lg mb-4 leading-relaxed">Led a 10-member team to qualify for the American Rocketry Challenge nationals. This involved designing, building, and testing rockets to meet specific flight requirements.</p>
+                    <p class="text-lg mb-4 leading-relaxed text-slate-300">Led a 10-member team to qualify for the American Rocketry Challenge nationals. This involved designing, building, and testing rockets to meet specific flight requirements.</p>
                     <a href="projects.html" class="text-lg font-bold text-cyan-400 hover:text-cyan-300 inline-block">View Details →</a>
                 </div>
                 <div class="bg-slate-700 p-8 rounded-lg">
                     <h3 class="text-3xl font-bold mb-4">Modular Rocket Design</h3>
-                    <p class="text-lg mb-4 leading-relaxed">Designed and 3D-printed a modular rocket system that can be adapted for various conditions, including different altitudes, payloads, and weather.</p>
+                    <p class="text-lg mb-4 leading-relaxed text-slate-300">Designed and 3D-printed a modular rocket system that can be adapted for various conditions, including different altitudes, payloads, and weather.</p>
                     <a href="projects.html" class="text-lg font-bold text-cyan-400 hover:text-cyan-300 inline-block">View Details →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Work Experience Section -->
-    <section class="py-20 bg-slate-800">
+    <!-- Blog Highlights Section -->
+    <section class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Work Experience</h2>
-            <div class="max-w-3xl mx-auto">
-                <div class="bg-slate-700 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Robotics Counselor</h3>
-                        <span class="text-slate-400">June – Aug 2024</span>
-                    </div>
-                    <p class="text-slate-300 mb-4">Robotics and Kids</p>
-                    <ul class="space-y-2 text-lg">
-                        <li>• Taught 16 middle school students robotics, block coding, and Python programming</li>
-                        <li>• Led interactive workshops on sensors and motor controls</li>
-                        <li>• Mentored students in troubleshooting technical issues and project completion</li>
-                    </ul>
+            <h2 class="text-4xl font-bold text-center mb-12">Thoughts & Insights</h2>
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-800 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-3">Engineering & Innovation</h3>
+                    <p class="text-slate-300 mb-4">Exploring the intersection of design, creativity, and practical problem-solving in aerospace and maker culture.</p>
+                    <a href="blog.html" class="text-cyan-400 hover:text-cyan-300 font-bold">Read Articles →</a>
                 </div>
+                <div class="bg-slate-800 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold mb-3">STEM Education</h3>
+                    <p class="text-slate-300 mb-4">Sharing my experiences mentoring students, building inclusive communities, and making engineering accessible to all.</p>
+                    <a href="blog.html" class="text-cyan-400 hover:text-cyan-300 font-bold">Read Articles →</a>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="blog.html" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">View All Articles →</a>
             </div>
         </div>
     </section>
 
-    <!-- Activities & Volunteer Work Section -->
-    <section class="py-24">
+    <!-- Resume / Experience Section -->
+    <section class="py-24 bg-slate-800">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Leadership & Activities</h2>
-            <div class="max-w-3xl mx-auto space-y-8">
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Founder, Untitled Rocketry</h3>
-                        <span class="text-slate-400">Dec 2023 – Present</span>
-                    </div>
-                    <ul class="space-y-2 text-lg">
-                        <li>• Leading 10-member competitive team to nationals in the American Rocketry Challenge</li>
-                        <li>• Coordinating meetings, workshops, and training sessions with school administration</li>
-                        <li>• Directing 20 students through high-power rocketry certifications</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Founder, Fremont Student Makers</h3>
-                        <span class="text-slate-400">Aug 2025 – Present</span>
-                    </div>
-                    <ul class="space-y-2 text-lg">
-                        <li>• Building nonprofit organization supporting 50+ students across 3 schools</li>
-                        <li>• Fostering STEM club growth through collaborative fundraising and mentorship</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Director of Aerospace, Maker Club</h3>
-                        <span class="text-slate-400">Aug 2025 – Present</span>
-                    </div>
-                    <ul class="space-y-2 text-lg">
-                        <li>• Leading 40-member organization focused on aerospace and space exploration</li>
-                        <li>• Building a CubeSat to be launched by NASA CSLI</li>
-                        <li>• Designing modular rocket systems for adaptable flight conditions</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <div class="flex justify-between items-baseline mb-4">
-                        <h3 class="text-2xl font-bold">Captain, Varsity Cross Country & Track</h3>
-                        <span class="text-slate-400">Aug 2023 – Present</span>
-                    </div>
-                    <ul class="space-y-2 text-lg">
-                        <li>• Competed at varsity level in 2-mile and 3-mile races; qualified for state at Mount Sac</li>
-                        <li>• Mentoring teammates in training pacing, nutrition, and injury prevention</li>
-                    </ul>
-                </div>
+            <h2 class="text-4xl font-bold text-center mb-12">Experience & Leadership</h2>
+            <p class="text-center text-lg text-slate-300 mb-12 max-w-2xl mx-auto">Leading teams, building organizations, and making an impact through engineering and education. View my full resume for detailed information on my background and skills.</p>
+            <div class="text-center">
+                <a href="resume.html" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">View Full Resume →</a>
             </div>
         </div>
     </section>
 
-    <!-- Skills & Expertise Section -->
-    <section class="py-24">
+    <!-- Call to Action Section -->
+    <section class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-16">Core Competencies</h2>
-            <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">Leadership</h3>
-                    <ul class="space-y-2">
-                        <li>• Team management & coordination</li>
-                        <li>• Founding & scaling organizations</li>
-                        <li>• Cross-school collaboration</li>
-                        <li>• Athlete mentorship & coaching</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">Engineering</h3>
-                    <ul class="space-y-2">
-                        <li>• Rocket design & simulation</li>
-                        <li>• 3D modeling & printing</li>
-                        <li>• Control systems & avionics</li>
-                        <li>• Project-based problem solving</li>
-                    </ul>
-                </div>
-                <div class="bg-slate-800 p-8 rounded-lg">
-                    <h3 class="text-2xl font-bold mb-4">Technical Skills</h3>
-                    <ul class="space-y-2">
-                        <li>• Python, Java, JavaScript</li>
-                        <li>• HTML, CSS, Web development</li>
-                        <li>• CAD & 3D design</li>
-                        <li>• Block coding & robotics</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="max-w-2xl mx-auto mt-12 text-center">
-                <h3 class="text-2xl font-bold mb-4">Languages</h3>
-                <p class="text-lg">Spanish (proficient in speaking, reading, and writing)</p>
+            <div class="max-w-3xl mx-auto bg-slate-800 p-12 rounded-lg text-center">
+                <h2 class="text-4xl font-bold mb-6">Let's Connect</h2>
+                <p class="text-xl text-slate-300 mb-8">Have questions about my work, projects, or how I might help? I'd love to hear from you.</p>
+                <a href="mailto:dylankwok28@gmail.com" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">Get in Touch →</a>
             </div>
         </div>
     </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top">↑</button>
 
     <!-- Footer -->
     <footer class="py-12 bg-slate-800">
@@ -285,6 +319,24 @@
             } else {
                 menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
             }
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     </script>
 

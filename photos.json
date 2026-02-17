@@ -4,7 +4,7 @@
       "id": 1,
       "title": "Industrial Pyramid",
       "description": "Shot on Canon Powershot SD1100 IS",
-      "imageUrl": "gallery/IMG_0010.JPG",
+      "imageUrl": "gallery/San Francisco/IMG_0010.JPG",
       "date": "2026-01-16",
       "location": "San Francisco, CA",
       "category": "San Francisco"
@@ -13,7 +13,7 @@
       "id": 2,
       "title": "White Bridge",
       "description": "Shot on Canon Powershot SD1100 IS",
-      "imageUrl": "gallery/IMG_0020.JPG",
+      "imageUrl": "gallery/San Francisco/IMG_0020.JPG",
       "date": "2026-01-16",
       "location": "San Francisco, CA",
       "category": "San Francisco"
@@ -22,7 +22,7 @@
       "id": 3,
       "title": "Ferry Building",
       "description": "Shot on Canon Powershot SD1100 IS",
-      "imageUrl": "gallery/IMG_0022.JPG",
+      "imageUrl": "gallery/San Francisco/IMG_0022.JPG",
       "date": "2026-01-16",
       "location": "San Francisco, CA",
       "category": "San Francisco"
@@ -31,7 +31,7 @@
       "id": 4,
       "title": "Hetch Hetchy Reservoir",
       "description": "Shot on Iphone 12",
-      "imageUrl": "gallery/IMG_2932.jpg",
+      "imageUrl": "gallery/Yosemite/IMG_2932.jpg",
       "date": "2023-11-20",
       "location": "Sierra Nevadas, CA",
       "category": "Yosemite"
@@ -40,7 +40,7 @@
       "id": 5,
       "title": "Yosemite",
       "description": "Shot on Iphone 12",
-      "imageUrl": "gallery/IMG_2978.jpg",
+      "imageUrl": "gallery/Yosemite/IMG_2978.jpg",
       "date": "2023-11-21",
       "location": "Yosemite National Park, CA",
       "category": "Yosemite"
@@ -49,7 +49,7 @@
       "id": 6,
       "title": "Yosemite Falls",
       "description": "Shot on Iphone 12",
-      "imageUrl": "gallery/IMG_2988.jpg",
+      "imageUrl": "gallery/Yosemite/IMG_2988.jpg",
       "date": "2023-11-21",
       "location": "Yosemite National Park, CA",
       "category": "Yosemite"
@@ -58,7 +58,7 @@
       "id": 7,
       "title": "Manhattan Bridge",
       "description": "Shot on Iphone 12",
-      "imageUrl": "gallery/IMG_3477.jpg",
+      "imageUrl": "gallery/Personal/IMG_3477.jpg",
       "date": "2024-03-30",
       "location": "Fremont, CA",
       "category": "personal"
@@ -67,7 +67,7 @@
       "id": 8,
       "title": "Lincoln Memorial",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_3582.jpg",
+      "imageUrl": "gallery/D.C./IMG_3582.jpg",
       "date": "2024-04-24",
       "location": "Washington, D.C.",
       "category": "D.C."
@@ -76,7 +76,7 @@
       "id": 9,
       "title": "Snow Ranch",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_4776.jpg",
+      "imageUrl": "gallery/Personal/IMG_4776.jpg",
       "date": "2025-12-30",
       "location": "Farmington, CA",
       "category": "personal"
@@ -85,7 +85,7 @@
       "id": 10,
       "title": "Joshua Tree",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5334.jpg",
+      "imageUrl": "gallery/Travel/IMG_5334.jpg",
       "date": "2025-12-28",
       "location": "Joshua Tree National Park, CA",
       "category": "travel"
@@ -94,7 +94,7 @@
       "id": 11,
       "title": "Plaza de Espania",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5573.jpg",
+      "imageUrl": "gallery/Travel/IMG_5573.jpg",
       "date": "2025-12-26",
       "location": "Seville, Spain",
       "category": "travel"
@@ -103,7 +103,7 @@
       "id": 12,
       "title": "Cathedral de Sevilla",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5596.jpg",
+      "imageUrl": "gallery/Travel/IMG_5596.jpg",
       "date": "2025-12-24",
       "location": "Seville, Spain",
       "category": "travel"
@@ -112,7 +112,7 @@
       "id": 13,
       "title": "Zahara de la Sierra",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5603.jpg",
+      "imageUrl": "gallery/Travel/IMG_5603.jpg",
       "date": "2025-12-22",
       "location": "Zahara de la Sierra, Spain",
       "category": "travel"
@@ -121,7 +121,7 @@
       "id": 14,
       "title": "Grazalema",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5612.jpg",
+      "imageUrl": "gallery/Travel/IMG_5612.jpg",
       "date": "2025-12-20",
       "location": "Grazalema, Spain",
       "category": "travel"
@@ -130,7 +130,7 @@
       "id": 15,
       "title": "Ronda Bridge",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5634.jpg",
+      "imageUrl": "gallery/Travel/IMG_5634.jpg",
       "date": "2025-12-18",
       "location": "Ronda, Spain",
       "category": "travel"
@@ -139,7 +139,7 @@
       "id": 16,
       "title": "Parque Guell",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5644.jpg",
+      "imageUrl": "gallery/Travel/IMG_5644.jpg",
       "date": "2025-12-16",
       "location": "Barcelona, Spain",
       "category": "travel"
@@ -148,7 +148,7 @@
       "id": 17,
       "title": "In Barcelona",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5687.jpg",
+      "imageUrl": "gallery/Travel/IMG_5687.jpg",
       "date": "2025-12-14",
       "location": "Barcelona, Spain",
       "category": "travel"
@@ -157,7 +157,7 @@
       "id": 18,
       "title": "Palma de Mallorca",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5711 Copy.JPG",
+      "imageUrl": "gallery/Travel/IMG_5711 Copy.JPG",
       "date": "2025-12-12",
       "location": "Palma de Mallorca, Spain",
       "category": "travel"
@@ -166,7 +166,7 @@
       "id": 19,
       "title": "Cinque Terre",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5748.jpg",
+      "imageUrl": "gallery/Travel/IMG_5748.jpg",
       "date": "2025-12-10",
       "location": "Cinque Terre, Italy",
       "category": "travel"
@@ -175,7 +175,7 @@
       "id": 20,
       "title": "Johns Hopkins University",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5915.jpg",
+      "imageUrl": "gallery/Personal/IMG_5915.jpg",
       "date": "2025-12-08",
       "location": "Baltimore, MD",
       "category": "personal"
@@ -184,7 +184,7 @@
       "id": 21,
       "title": "Baltimore",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5933.jpg",
+      "imageUrl": "gallery/Personal/IMG_5933.jpg",
       "date": "2025-12-06",
       "location": "Baltimore, MD",
       "category": "personal"
@@ -193,7 +193,7 @@
       "id": 22,
       "title": "Fells Point",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5934.jpg",
+      "imageUrl": "gallery/Personal/IMG_5934.jpg",
       "date": "2025-12-04",
       "location": "Baltimore, MD",
       "category": "personal"
@@ -202,7 +202,7 @@
       "id": 23,
       "title": "In the Sky",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_5968.jpg",
+      "imageUrl": "gallery/Personal/IMG_5968.jpg",
       "date": "2025-12-02",
       "location": "Somewhere",
       "category": "personal"
@@ -211,7 +211,7 @@
       "id": 24,
       "title": "Beach Holiday",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_6549.jpg",
+      "imageUrl": "gallery/Travel/IMG_6549.jpg",
       "date": "2025-11-30",
       "location": "Honolulu, HI",
       "category": "travel"
@@ -220,7 +220,7 @@
       "id": 25,
       "title": "View from Diamond Head",
       "description": "Shot on iPhone 12",
-      "imageUrl": "gallery/IMG_6583-EDIT.jpg",
+      "imageUrl": "gallery/Travel/IMG_6583-EDIT.jpg",
       "date": "2025-11-28",
       "location": "Honolulu, HI",
       "category": "travel"

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dylan Kwok's Resume - Experience, Education, Leadership, and Technical Skills">
+    <meta name="keywords" content="resume, Dylan Kwok, experience, education, skills, engineering">
+    <meta name="author" content="Dylan Kwok">
+    <meta property="og:title" content="Dylan Kwok - Resume">
+    <meta property="og:description" content="Resume of Dylan Kwok - Engineer and STEM Educator">
+    <meta property="og:type" content="website">
+    <title>Dylan Kwok - Resume</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* Menu slide-in and fade animation */
+        #menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #menu.hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            pointer-events: none;
+        }
+        #menu:not(.hidden) {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Menu links fade-in with stagger */
+        #menu a {
+            opacity: 0;
+            animation: fadeInDown 0.5s ease forwards;
+        }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
+        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Back to top button */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #06b6d4;
+            color: #0f172a;
+            border: none;
+            padding: 1rem;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            z-index: 20;
+            transition: background 0.3s ease, opacity 0.3s ease;
+        }
+        #backToTop:hover {
+            background: #22d3ee;
+        }
+        #backToTop.show {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-white">
+
+    <!-- Hamburger Menu Button -->
+    <div class="fixed top-0 right-0 p-4 z-30">
+        <button id="menu-btn" class="text-white focus:outline-none">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Navigation Menu -->
+    <div id="menu" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-20 flex items-center justify-center">
+        <div class="text-center">
+            <a href="index.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
+            <a href="blog.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Blog</a>
+            <a href="photos.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
+            <a href="projects.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
+            <a href="about.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">About</a>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <header class="pt-32 pb-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-5xl font-bold">Resume</h1>
+            <p class="text-xl text-slate-400 mt-4">Experience, Education & Skills</p>
+        </div>
+    </header>
+
+    <!-- Resume Content -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                
+                <!-- Contact Information -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-12 text-center">
+                    <h2 class="text-3xl font-bold mb-4">Dylan Kwok</h2>
+                    <p class="text-slate-300 mb-2">Fremont, California</p>
+                    <p class="text-slate-300">
+                        <a href="tel:+13415002788" class="text-cyan-400 hover:text-cyan-300">(341)-500-2788</a> | 
+                        <a href="mailto:dylankwok28@gmail.com" class="text-cyan-400 hover:text-cyan-300">dylankwok28@gmail.com</a>
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-4">Education</h2>
+                    <div>
+                        <div class="flex justify-between items-baseline mb-2">
+                            <h3 class="text-2xl font-bold">Irvington High School</h3>
+                            <span class="text-slate-400">Fremont, CA</span>
+                        </div>
+                        <p class="text-slate-300 mb-4">Unweighted GPA: 3.73</p>
+                        <p class="text-slate-300"><strong>Relevant Coursework:</strong> Honors Chemistry, Algebra 2, and Trigonometry</p>
+                    </div>
+                </div>
+
+                <!-- Work Experience -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-4">Work Experience</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h3 class="text-2xl font-bold">Robotics Counselor</h3>
+                                <span class="text-slate-400">June – Aug 2024</span>
+                            </div>
+                            <p class="text-slate-300 mb-3"><strong>Robotics and Kids</strong></p>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Taught 16 middle school students robotics, block coding, and Python programming</li>
+                                <li>• Led interactive workshops on sensors and motor controls</li>
+                                <li>• Mentored students in troubleshooting technical issues and project completion</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Leadership & Activities -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-4">Leadership & Activities</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="text-2xl font-bold">Founder, Untitled Rocketry</h3>
+                                <span class="text-slate-400">Dec 2023 – Present</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Leading 10-member competitive team to nationals in the American Rocketry Challenge</li>
+                                <li>• Coordinating meetings, workshops, and training sessions with school administration</li>
+                                <li>• Directing 20 students through high-power rocketry certifications</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="text-2xl font-bold">Founder, Fremont Student Makers</h3>
+                                <span class="text-slate-400">Aug 2025 – Present</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Building nonprofit organization supporting 50+ students across 3 schools</li>
+                                <li>• Fostering STEM club growth through collaborative fundraising and mentorship</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="text-2xl font-bold">Director of Aerospace, Maker Club</h3>
+                                <span class="text-slate-400">Aug 2025 – Present</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Leading 40-member organization focused on aerospace and space exploration</li>
+                                <li>• Building a CubeSat to be launched by NASA CSLI</li>
+                                <li>• Designing modular rocket systems for adaptable flight conditions</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-baseline mb-3">
+                                <h3 class="text-2xl font-bold">Captain, Varsity Cross Country & Track</h3>
+                                <span class="text-slate-400">Aug 2023 – Present</span>
+                            </div>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Competed at varsity level in 2-mile and 3-mile races; qualified for state at Mount Sac</li>
+                                <li>• Mentoring teammates in training pacing, nutrition, and injury prevention</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Competencies -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-4">Core Competencies</h2>
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">Leadership</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Team management & coordination</li>
+                                <li>• Founding & scaling organizations</li>
+                                <li>• Cross-school collaboration</li>
+                                <li>• Athlete mentorship & coaching</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">Engineering</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Rocket design & simulation</li>
+                                <li>• 3D modeling & printing</li>
+                                <li>• Control systems & avionics</li>
+                                <li>• Project-based problem solving</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-4">Technical Skills</h3>
+                            <ul class="space-y-2 text-slate-300">
+                                <li>• Python, Java, JavaScript</li>
+                                <li>• HTML, CSS, Web development</li>
+                                <li>• CAD & 3D design</li>
+                                <li>• Block coding & robotics</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-2">Languages</h3>
+                        <p class="text-slate-300">Spanish (proficient in speaking, reading, and writing)</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Back to top">↑</button>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-slate-800">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <div class="flex justify-center items-center space-x-6 mb-6">
+                    <a href="mailto:dylankwok28@gmail.com" class="text-slate-300 hover:text-cyan-400 transition" title="Email">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
+                    </a>
+                    <a href="https://github.com/earthrise8" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="GitHub">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="LinkedIn">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"></path></svg>
+                    </a>
+                    <a href="tel:+13415002788" class="text-slate-300 hover:text-cyan-400 transition" title="Phone">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C9.85 21 3 14.15 3 5.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
+                    </a>
+                    <a href="https://www.instructables.com/member/flyingpig071/instructables/drafts/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="Instructables">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">    <path d="M12 2 C6.48 2 2 6.48 2 12 s4.48 10 10 10 10-4.48 10-10 S17.52 2 12 2 Z M11 4 h2 v2 h-2 Z M8 8 h8 a2 2 0 0 1 2 2 v4 a2 2 0 0 1-2 2 h-8 a2 2 0 0 1-2-2 v-4 a2 2 0 0 1 2-2 Z M9.5 11 a1 1 0 1 0 0.001 0 Z M14.5 11 a1 1 0 1 0 0.001 0 Z M10 14 h4 v1 h-4 Z"/></svg>
+                    </a>
+                </div>
+                <div class="text-center border-t border-slate-700 pt-6">
+                    <p class="text-slate-300">&copy; 2026 Dylan Kwok. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        let isOpen = false;
+    
+        menuBtn.addEventListener('click', () => {
+            isOpen = !isOpen;
+            menu.classList.toggle('hidden');
+            if (isOpen) {
+                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+            } else {
+                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+            }
+        });
+
+        // Back to top button functionality
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+</html>
