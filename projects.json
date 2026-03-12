@@ -63,6 +63,28 @@
           "caption": "CAD render"
         }
       ]
+    },
+    {
+      "id": 3,
+      "title": "Telemetry Lost",
+      "status": "FEATURED",
+      "organization": "Personal Engineering Project",
+      "timeframe": "2026",
+      "description": "Designed and built a text-based RPG game based on book Mickey 7 by Edward Ashton. The game features a branching narrative, multiple endings, and a unique combat system that combines strategy and chance.",
+      "accomplishments": [
+        "Learned about java and game development",
+        "Adaptive scoring system"
+      ],
+      "technologies": [
+        "Visual Studio Code",
+        "Java, CSS, HTML programming"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/telemetrylost.png",
+          "caption": "Game Main Menu"
+        }
+      ]
     }
   ]
 }
