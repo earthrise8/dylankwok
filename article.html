@@ -99,19 +99,105 @@
             <div class="max-w-3xl mx-auto space-y-8">
                 
                 <!-- Articles Post 1 -->
-                <article class="bg-slate-800 p-8 rounded-lg article-post">
-                    <div class="mb-4">
-                        <span class="text-cyan-400 text-sm font-semibold">January 15, 2026</span>
-                        <h2 class="text-3xl font-bold mt-2 mb-4">Getting Your First Rocketry Certification</h2>
-                        <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                <article class="bg-slate-800 rounded-lg article-post overflow-hidden">
+                    <!-- Article Image -->
+                    <img src="projectphotos/Blaze.jpeg" alt="Rocketry Certification" class="w-full h-64 object-cover">
+                    
+                    <div class="p-8">
+                        <div class="mb-4">
+                            <span class="text-cyan-400 text-sm font-semibold">January 15, 2026</span>
+                            <h2 class="text-3xl font-bold mt-2 mb-4">Getting Your First Rocketry Certification</h2>
+                            <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                        </div>
+                        <p class="text-lg leading-relaxed mb-6 article-preview">High-power rocketry certifications are a crucial milestone for any student interested in aerospace. In this post, I'll walk through what to expect during the Level 1 certification process, common mistakes to avoid, and how to prepare your rocket for success.</p>
+                        <div class="article-full hidden">
+                            <!-- Introduction Section -->
+                            <div class="mb-8">
+                                <p class="text-lg leading-relaxed">Level 1 Certification is an amazing project all people should try. It's surprisingly simple, just like getting a driver's license. Let's get into it.</p>
+                            </div>
+
+                            <!-- Understanding the Basics Section -->
+                            <div class="mb-10 pb-6 border-b border-slate-700">
+                                <h3 class="text-2xl font-bold mb-4 text-cyan-300">Understanding the Basics</h3>
+                                <p class="text-lg leading-relaxed mb-4">Put simply, all you gotta do is launch a rocket with an H or I motor, fly straight and true, and then recover the rocket without significant damage. Now the question is: which rocket to launch?</p>
+                                <p class="text-lg leading-relaxed">I'd recommend going with a kit for your first flight, as many of the techniques required for building higher power rockets are significantly different than low and mid power. If you haven't ever built your own rocket before, please don't make your L1 certification your first launch. In rocketry, you always assume that you can do something easily, only to find out you've made a stupid mistake. Make those stupid mistakes early, with cheaper rockets, rather than with $50 motors.</p>
+                            </div>
+
+                            <!-- Choosing Your Rocket Section -->
+                            <div class="mb-10 pb-6 border-b border-slate-700">
+                                <h3 class="text-2xl font-bold mb-4 text-cyan-300">Choosing Your Rocket</h3>
+                                <p class="text-lg leading-relaxed mb-4">For the kit you choose, I would recommend going with a big rocket. <strong>Reason: Big rockets will fly lower.</strong> This will increase your chance of being able to see the rocket through the entire launch, and therefore increase your chances of recovery.</p>
+                                <p class="text-lg leading-relaxed mb-6">Ideally, you want a rocket with a 38mm motor mount, as it will allow the rocket to support a wider variety of motor sizes, and you also have the option to use an adapter to launch with smaller motors.</p>
+                                
+                                <!-- Recommended Kits Table -->
+                                <div class="mb-6">
+                                    <button class="toggle-kits-table text-cyan-400 hover:text-cyan-300 font-bold mb-4 flex items-center">
+                                        <span class="mr-2">▼</span> Recommended Kits
+                                    </button>
+                                    <div class="kits-table hidden bg-slate-700 rounded-lg overflow-hidden">
+                                        <table class="w-full">
+                                            <thead>
+                                                <tr class="bg-slate-600">
+                                                    <th class="px-4 py-3 text-left font-bold">Kit Name</th>
+                                                    <th class="px-4 py-3 text-left font-bold">Price</th>
+                                                    <th class="px-4 py-3 text-left font-bold">Motor Diameter</th>
+                                                    <th class="px-4 py-3 text-left font-bold">Link</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr class="border-t border-slate-500 hover:bg-slate-650">
+                                                    <td class="px-4 py-3">Zephyr</td>
+                                                    <td class="px-4 py-3">$120</td>
+                                                    <td class="px-4 py-3">38mm</td>
+                                                    <td class="px-4 py-3"><a href="https://www.apogeerockets.com/Rocket-Kits/Skill-Level-3-Model-Rocket-Kits/Zephyr" target="_blank" class="text-cyan-400 hover:text-cyan-300">LOC</a></td>
+                                                </tr>
+                                                <tr class="border-t border-slate-500 hover:bg-slate-650">
+                                                    <td class="px-4 py-3">Kronos</td>
+                                                    <td class="px-4 py-3">$93</td>
+                                                    <td class="px-4 py-3">29mm</td>
+                                                    <td class="px-4 py-3"><a href="https://www.apogeerockets.com/Model-Rocket-Kits/Skill-Level-3-Model-Rocket-Kits/Kronos" target="_blank" class="text-cyan-400 hover:text-cyan-300">LOC</a></td>
+                                                </tr>
+                                                <tr class="border-t border-slate-500 hover:bg-slate-650">
+                                                    <td class="px-4 py-3">[Kit Name]</td>
+                                                    <td class="px-4 py-3">$[Add Price]</td>
+                                                    <td class="px-4 py-3">[Add Size]</td>
+                                                    <td class="px-4 py-3">[Add Link]</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Pre-Launch Preparation Section -->
+                            <div class="mb-10 pb-6 border-b border-slate-700">
+                                <h3 class="text-2xl font-bold mb-4 text-cyan-300">Pre-Launch Preparation</h3>
+                                <p class="text-lg leading-relaxed mb-4">So, you've got your rocket ordered and assembled. Hopefully, you've managed to find the simulation file that comes with the kit, and have loaded it into simulation software to make sure the rocket will fly well. If you don't know how to do that, check out <a href="#" class="text-cyan-400 hover:text-cyan-300 underline">this guide on rocket simulations</a>.</p>
+                                <p class="text-lg leading-relaxed">As a resident of the United States, you're probably going to be looking for a local launch site from <a href="https://www.nar.org/content.aspx?page_id=225&club_id=114127" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">NAR</a> or <a href="https://www.tripoli.org/content.aspx?page_id=225&club_id=795696" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">Tripoli</a>. This guide is for NAR certification, because that is the process I went through. You should be able to use the map to find local organizations and find people to launch with.</p>
+                            </div>
+
+                            <!-- Certification Requirements Section -->
+                            <div class="mb-10 pb-6 border-b border-slate-700">
+                                <h3 class="text-2xl font-bold mb-4 text-cyan-300">Certification Requirements</h3>
+                                <p class="text-lg leading-relaxed mb-4">Before you launch, you will need to get a <a href="https://narocket.clubexpress.com/content.aspx?page_id=60&club_id=114127" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">NAR membership</a>.</p>
+                                <p class="text-lg leading-relaxed mb-4">If you are a highschooler, you will need to pass the <a href="https://www.nar.org/content.aspx?page_id=3037&club_id=114127" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">online safety test</a>. After that, you should get a certificate of completion, which you should print out and bring with you to the launch site.</p>
+                                <p class="text-lg leading-relaxed">You should also print out the <a href="https://s3.amazonaws.com/ClubExpressClubFiles/114127/documents/JrHPP-APPL-2020-V2_857168069.pdf?AWSAccessKeyId=AKIA6MYUE6DNNJ6ROIH3&Expires=1773343341&response-content-disposition=inline%3B%20filename%3DJrHPP-APPL-2020-V2.pdf&Signature=Z9zLx7mYWxl9cGLggkAzCfxqptI%3D" target="_blank" class="text-cyan-400 hover:text-cyan-300 underline">Level 1 Certification Form</a>, which is necessary for certification.</p>
+                            </div>
+
+                            <!-- Related Links Section -->
+                            <div class="mt-8 pt-6 border-t border-slate-700">
+                                <h3 class="text-xl font-bold mb-4 text-cyan-300">Related Links</h3>
+                                <ul class="space-y-3">
+                                    <li><a href="https://www.nar.org/standards-and-testing-committee/model-rocketry-safety-code/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition underline">NAR Safety Code</a></li>
+                                    <li><a href="https://www.nar.org/high-power-rocketry-info/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition underline">High Power Rocketry Information</a></li>
+                                    <li><a href="https://www.tripoli.org/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition underline">Tripoli Rocketry Association</a></li>
+                                    <li><a href="https://www.locprecision.com/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition underline">LOC Precision Rockets</a></li>
+                                    <li><a href="https://www.openrocket.info/" target="_blank" class="text-cyan-400 hover:text-cyan-300 transition underline">OpenRocket - Rocket Simulation Software</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <button class="toggle-article text-cyan-400 hover:text-cyan-300 font-bold inline-block mt-4">Read More →</button>
                     </div>
-                    <p class="text-lg leading-relaxed mb-6 article-preview">High-power rocketry certifications are a crucial milestone for any student interested in aerospace. In this post, I'll walk through what to expect during the Level 1 certification process, common mistakes to avoid, and how to prepare your rocket for success.</p>
-                    <div class="article-full hidden">
-                        <p class="text-lg leading-relaxed mb-6">Level 1 Certification is an amazing project all people should try. Its suprisingly simple, just like getting a drivers license. Lets get into it. </p>
-                        <p class="text-lg leading-relaxed mb-6">The Level 1 certification requires a single-stage rocket with a maximum impulse of 320 Ns. Your rocket must achieve a peak altitude within a target window and be recovered safely. The process involves building, passing a written exam on NAR safety codes, and successfully launching under observation.</p>
-                        <p class="text-lg leading-relaxed mb-6">One of the most important lessons I learned is that preparation is everything. Before your launch day, test your avionics, practice your setup procedures, and have backup components ready. The certification flights themselves are straightforward if you've done the work beforehand.</p>
-                    </div>
-                    <button class="toggle-article text-cyan-400 hover:text-cyan-300 font-bold inline-block">Read More →</button>
                 </article>
 
                
@@ -180,6 +266,24 @@
                     fullContent.classList.remove('hidden');
                     preview.classList.add('hidden');
                     button.textContent = 'Read Less ←';
+                }
+            });
+        });
+
+        // Kits table expand functionality
+        const toggleKitsButtons = document.querySelectorAll('.toggle-kits-table');
+        toggleKitsButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const table = button.closest('div').querySelector('.kits-table');
+                const isHidden = table.classList.contains('hidden');
+                
+                if (isHidden) {
+                    table.classList.remove('hidden');
+                    button.querySelector('span').textContent = '▼';
+                } else {
+                    table.classList.add('hidden');
+                    button.querySelector('span').textContent = '▶';
                 }
             });
         });
