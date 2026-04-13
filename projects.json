@@ -79,10 +79,40 @@
         "Visual Studio Code",
         "Java, CSS, HTML programming"
       ],
+      "link": "https://earthrise8.github.io/telemetrylost/",
       "images": [
         {
           "url": "projectphotos/telemetrylost.png",
           "caption": "Game Main Menu"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "AstroForge",
+      "status": "NEW",
+      "organization": "Personal Game Development Project",
+      "timeframe": "2026",
+      "description": "Developed an AI-assisted rocket construction and simulation game where players design, test, and iterate on rocket builds for different mission goals.",
+      "accomplishments": [
+        "Built a playable rocket construction and simulation experience",
+        "Implemented AI-assisted design concepts for rocket configurations",
+        "Designed gameplay loops around test, refine, and relaunch"
+      ],
+      "technologies": [
+        "Game design & simulation systems",
+        "AI-assisted development workflow",
+        "Web deployment"
+      ],
+      "link": "https://earthrise8.github.io/Astroforge/",
+      "images": [
+        {
+          "url": "projectphotos/AstroForge.png",
+          "caption": "AstroForge project preview"
+        },
+        {
+          "url": "projectphotos/AstroForge2.png",
+          "caption": "AstroForge project preview"
         }
       ]
     }
