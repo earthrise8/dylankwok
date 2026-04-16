@@ -115,6 +115,126 @@
           "caption": "AstroForge project preview"
         }
       ]
+    },
+    {
+      "id": 5,
+      "title": "VENA",
+      "status": "FEATURED",
+      "organization": "Entrepreneurship Project",
+      "timeframe": "2026",
+      "description": "Co-created VENA, an entrepreneurship app concept that uses AI-powered image analysis to support injury triage workflows and user guidance.",
+      "accomplishments": [
+        "Led architecture and core engineering decisions",
+        "Built early AI image analysis pipeline for injury classification",
+        "Translated customer discovery into product requirements"
+      ],
+      "technologies": [
+        "AI image analysis",
+        "Mobile app prototyping",
+        "Product validation and entrepreneurship"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/AstroForge.png",
+          "caption": "VENA app concept and prototype work"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "H2GP Team Lead Engineer",
+      "status": "ACTIVE",
+      "organization": "H2GP",
+      "timeframe": "2025-Present",
+      "description": "Serve as lead engineer on an H2GP team, managing technical development, subsystem integration, and race-focused vehicle performance improvements.",
+      "accomplishments": [
+        "Coordinated drivetrain, energy, and mechanical subsystem decisions",
+        "Led iterative testing and performance tuning cycles",
+        "Established engineering workflows for rapid troubleshooting"
+      ],
+      "technologies": [
+        "Hydrogen systems fundamentals",
+        "Vehicle systems integration",
+        "Performance testing and data analysis"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/rockettable.JPG",
+          "caption": "Engineering leadership and technical build sessions"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "CubeSat Development with IST",
+      "status": "NEW",
+      "organization": "Fremont Student Makers x International Space Teams",
+      "timeframe": "2026-Present",
+      "description": "Contributing to a student CubeSat initiative planned for launch with IST, focused on systems engineering, payload planning, and mission readiness.",
+      "accomplishments": [
+        "Supported early CubeSat architecture and mission definition",
+        "Collaborated across student teams on launch preparation",
+        "Developed documentation and readiness checklists"
+      ],
+      "technologies": [
+        "CubeSat systems engineering",
+        "Mission planning",
+        "Technical documentation"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/Scylla.jpg",
+          "caption": "Early-stage CubeSat design and mission planning"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Founder, Fremont Student Makers",
+      "status": "FEATURED",
+      "organization": "Fremont Student Makers",
+      "timeframe": "2025-Present",
+      "description": "Founded Fremont Student Makers to build a student-led engineering community focused on aerospace, robotics, and hands-on innovation.",
+      "accomplishments": [
+        "Established club operations, leadership structure, and project tracks",
+        "Organized collaborative build sessions and mentorship opportunities",
+        "Connected students with real-world engineering initiatives"
+      ],
+      "technologies": [
+        "Program leadership",
+        "Team operations",
+        "STEM community building"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/standingAstraea.JPG",
+          "caption": "Fremont Student Makers collaborative engineering culture"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Niryo Robot Barista Automation",
+      "status": "NEW",
+      "organization": "Robotics Project",
+      "timeframe": "2026",
+      "description": "Built a coffee-making workflow with a Niryo robotic arm, integrating repeatable motion sequences and task automation for a practical robotics demo.",
+      "accomplishments": [
+        "Programmed robotic arm motion paths for drink preparation steps",
+        "Improved repeatability through iterative calibration",
+        "Demonstrated reliable end-to-end coffee task automation"
+      ],
+      "technologies": [
+        "Niryo robotic arm",
+        "Motion planning",
+        "Robotics workflow automation"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/astraeacad.jpg",
+          "caption": "Robotics automation prototype and workflow testing"
+        }
+      ]
     }
   ]
 }
