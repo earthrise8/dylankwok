@@ -16,44 +16,181 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050505;
-            --panel: rgba(18, 18, 20, 0.92);
-            --panel-2: rgba(28, 28, 32, 0.92);
-            --line: rgba(255, 255, 255, 0.12);
-            --text: #f5f5f5;
-            --muted: #b4b4b8;
-            --red: #ef4444;
-            --blue: #38bdf8;
-        }
-
-        html { scroll-behavior: smooth; }
-
         body {
-            margin: 0;
             font-family: 'Space Grotesk', sans-serif;
-            color: var(--text);
             background:
-                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
-                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
-                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
-                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+                radial-gradient(circle at top left, rgba(239, 68, 68, 0.10), transparent 22%),
+                radial-gradient(circle at top right, rgba(56, 189, 248, 0.10), transparent 18%),
+                linear-gradient(180deg, #09090b 0%, #050505 60%, #111111 100%);
+        }
+        h1, h2, h3, h4, h5, h6, .mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+        .panel {
+            background: rgba(18, 18, 20, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(16px);
+        }
+        
+        /* Menu slide-in and fade animation */
+        #menu {
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+        #menu.hidden {
+            opacity: 0;
+            transform: translateY(-1rem);
+            pointer-events: none;
+        }
+        #menu:not(.hidden) {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Menu links fade-in with stagger */
+        #menu a {
+            opacity: 0;
+            animation: fadeInDown 0.5s ease forwards;
+        }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
+        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
+        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.6s; }
+        
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        :root { --nav-height: 4rem; }
+
+        /* Fixed tab bar */
+        #site-tabs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(180deg, rgba(6,6,8,0.95), rgba(6,6,8,0.6));
+            backdrop-filter: blur(6px);
         }
 
-        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+        #top-fade {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            right: 0;
+            height: 3.5rem;
+            pointer-events: none;
+            z-index: 30;
+            background: linear-gradient(to bottom, rgba(6,6,8,0.96), rgba(6,6,8,0));
+        }
 
-        .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(0,0,0,0.35); backdrop-filter: blur(16px); overflow: hidden; }
-        .panel img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover; }
+        .tab { transition: color .12s ease, border-color .12s ease; padding-bottom: .35rem; }
+        .tab.active { border-bottom-color: #38bdf8 !important; color: #38bdf8 !important; }
+        
+        /* Carousel styles */
+        .carousel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+        }
+        
+        .carousel-slide {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            transition: opacity 0.5s ease;
+        }
+        
+        .carousel-controls {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+        
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.45);
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .carousel-dot.active {
+            background-color: rgba(56, 189, 248, 1);
+            transform: scale(1.3);
+        }
+        
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+            font-size: 20px;
+            z-index: 5;
+        }
+        
+        .carousel-nav:hover {
+            background-color: rgba(0, 0, 0, 0.85);
+        }
+        
+        .carousel-nav-prev {
+            left: 8px;
+        }
+        
+        .carousel-nav-next {
+            right: 8px;
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent);
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-size: 14px;
+        }
 
-        .tab { transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease; padding-bottom:0.35rem; }
-        .tab.active { border-bottom-color: var(--blue) !important; color: var(--blue) !important; background: rgba(255,255,255,0.02); }
-
-        :root { --nav-height: 4rem; }
-        #site-tabs { position: fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0.5rem 1rem; background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6)); backdrop-filter: blur(6px); }
-        #top-fade { position:fixed; top:var(--nav-height); left:0; right:0; height:3.5rem; pointer-events:none; z-index:30; background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); }
+        .label {
+            font-size: 0.72rem;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+        }
     </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
-<body class="text-white">
+<body class="space-theme text-white">
 
     <!-- Hamburger Menu Button -->
     <div class="fixed top-0 right-0 p-4 z-30">
@@ -149,7 +286,7 @@
             menuBtn.innerHTML = isOpen ? closeIcon : menuIcon;
         });
 
-        (function activateTabs(){
+        (function activateTabs() {
             const tabs = document.querySelectorAll('#site-tabs .tab');
             const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
             tabs.forEach(tab => {
@@ -158,129 +295,105 @@
                     tab.classList.add('active');
                 }
                 tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
+                    tabs.forEach(item => item.classList.remove('active'));
                     tab.classList.add('active');
                 });
             });
         })();
 
-        // Carousel management
-        class ProjectCarousel {
-            constructor(containerId, images) {
-                this.container = document.getElementById(containerId);
-                this.images = images;
-                    const projectHTML = `
-                        <article class="panel overflow-hidden rounded-[2rem]">
-            }
-                                <div class="relative min-h-[18rem] lg:min-h-full bg-black" id="${carouselId}">
-            init() {
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
-                                    <div class="carousel-caption absolute bottom-0 left-0 right-0 p-4 text-sm text-zinc-100"></div>
-            }
+        function initCarousel(container) {
+            const slide = container.querySelector('.carousel-slide');
+            const caption = container.querySelector('.carousel-caption');
+            const prevBtn = container.querySelector('.carousel-nav-prev');
+            const nextBtn = container.querySelector('.carousel-nav-next');
+            const dots = Array.from(container.querySelectorAll('.carousel-dot'));
+            const images = JSON.parse(container.dataset.images || '[]');
+            const projectTitle = container.dataset.title || '';
+            let currentIndex = 0;
 
-            updateSlide() {
-                const slide = this.container.querySelector('.carousel-slide');
-                slide.style.backgroundImage = `url('${this.images[this.currentIndex].url}')`;
-                
-                                <div class="p-6 sm:p-8 lg:p-10">
-                                    <div class="flex flex-wrap items-center gap-3 mb-4">
-                                        <span class="label text-red-300">System / Project</span>
-                                        <span class="rounded-full border border-blue-400/35 bg-white px-3 py-1 text-xs font-semibold text-black">${project.status}</span>
-                const dots = this.container.querySelectorAll('.carousel-dot');
-                dots.forEach((dot, index) => {
-                                    <p class="mt-3 text-sm uppercase tracking-[0.2em] text-zinc-400">${project.organization} • ${project.timeframe}</p>
-                                    <p class="mt-6 text-base leading-7 text-zinc-300">${project.description}</p>
+            function render() {
+                const current = images[currentIndex] || {};
+                slide.style.backgroundImage = `url('${current.url || ''}')`;
+                caption.textContent = current.caption || projectTitle;
+                dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
             }
 
-                                            <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Key Results</h3>
-                                            <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
-                                                ${project.accomplishments.map(item => `<li class="border-l border-red-400/40 pl-3">${item}</li>`).join('')}
-                const dots = this.container.querySelectorAll('.carousel-dot');
+            prevBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                render();
+            });
 
-                prevBtn.addEventListener('click', () => this.prev());
-                                            <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Systems Used</h3>
-                                            <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
-                                                ${project.technologies.map(item => `<li class="border-l border-blue-400/40 pl-3">${item}</li>`).join('')}
-                    dot.addEventListener('click', () => this.goTo(index));
+            nextBtn.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                render();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    render();
                 });
-            }
+            });
 
-            next() {
-                this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                                                <div class="overflow-hidden rounded-2xl border border-white/10">
-            }
-
-            prev() {
-                this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
-                this.updateSlide();
-                                    ${project.link ? `<div class="mt-8"><a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-red-400/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">View Project</a></div>` : ''}
-
-            goTo(index) {
-                this.currentIndex = index;
-                this.updateSlide();
-            }
+            render();
         }
 
-        // Load projects from JSON
         fetch('projects.json')
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('projects-container');
-                
-                data.projects.forEach((project, projectIndex) => {
+                container.innerHTML = '';
+
+                data.projects.forEach(project => {
                     const carouselId = `carousel-${project.id}`;
-                    
+                    const images = Array.isArray(project.images) ? project.images : [];
+
                     const projectHTML = `
-                        <article class="bg-slate-800 rounded-lg overflow-hidden">
+                        <article class="panel overflow-hidden rounded-[2rem]">
                             <div class="flex flex-col">
-                                <!-- Image Carousel -->
-                                <div class="carousel-container" id="${carouselId}">
+                                <div class="carousel-container" id="${carouselId}" data-title="${project.title.replace(/"/g, '&quot;')}" data-images='${JSON.stringify(images).replace(/'/g, '&apos;')}'>
                                     <div class="carousel-slide"></div>
-                                    <button class="carousel-nav carousel-nav-prev">‹</button>
-                                    <button class="carousel-nav carousel-nav-next">›</button>
+                                    <button class="carousel-nav carousel-nav-prev" type="button">‹</button>
+                                    <button class="carousel-nav carousel-nav-next" type="button">›</button>
                                     <div class="carousel-caption"></div>
                                     <div class="carousel-controls">
-                                        ${project.images.map((_, idx) => `<div class="carousel-dot${idx === 0 ? ' active' : ''}"></div>`).join('')}
+                                        ${images.map((_, idx) => `<div class="carousel-dot${idx === 0 ? ' active' : ''}"></div>`).join('')}
                                     </div>
                                 </div>
 
-                                <!-- Project Info -->
-                                <div class="p-6 sm:p-8">
-                                    <div class="flex items-center justify-between mb-4 flex-wrap gap-2">
-                                        <h2 class="text-2xl sm:text-3xl font-bold">${project.title}</h2>
-                                        <span class="bg-cyan-400 text-slate-900 text-xs font-bold px-3 py-1 rounded whitespace-nowrap">${project.status}</span>
+                                <div class="p-6 sm:p-8 lg:p-10">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
+                                        <h2 class="text-2xl sm:text-3xl font-bold text-white">${project.title}</h2>
+                                        <span class="rounded-full border border-blue-400/35 bg-white px-3 py-1 text-xs font-bold whitespace-nowrap text-black">${project.status}</span>
                                     </div>
-                                    <p class="text-slate-400 mb-6 text-sm sm:text-base">${project.organization} • ${project.timeframe}</p>
-                                    
-                                    <p class="text-base sm:text-lg mb-6 leading-relaxed">${project.description}</p>
-                                    
-                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                                    <p class="text-sm sm:text-base text-zinc-400 mb-6">${project.organization} • ${project.timeframe}</p>
+
+                                    <p class="text-base sm:text-lg leading-relaxed text-zinc-300 mb-6">${project.description}</p>
+
+                                    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
                                         <div>
-                                            <h3 class="text-lg font-bold mb-3">Key Points</h3>
-                                            <ul class="space-y-2 text-sm sm:text-base text-slate-300">
-                                                ${project.accomplishments.map(item => `<li>✓ ${item}</li>`).join('')}
+                                            <h3 class="text-lg font-bold text-white mb-3">Key Points</h3>
+                                            <ul class="space-y-2 text-sm sm:text-base text-zinc-300">
+                                                ${(project.accomplishments || []).map(item => `<li>• ${item}</li>`).join('')}
                                             </ul>
                                         </div>
                                         <div>
-                                            <h3 class="text-lg font-bold mb-3">Technologies</h3>
-                                            <ul class="space-y-2 text-sm sm:text-base text-slate-300">
-                                                ${project.technologies.map(item => `<li>• ${item}</li>`).join('')}
+                                            <h3 class="text-lg font-bold text-white mb-3">Technologies</h3>
+                                            <ul class="space-y-2 text-sm sm:text-base text-zinc-300">
+                                                ${(project.technologies || []).map(item => `<li>• ${item}</li>`).join('')}
                                             </ul>
                                         </div>
                                     </div>
 
-                                    ${project.link ? `<div class="mt-8"><a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-block bg-cyan-400 text-slate-900 text-sm font-bold px-4 py-2 rounded hover:bg-cyan-300 transition">View Project</a></div>` : ''}
+                                    ${project.link ? `<div class="mt-8"><a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-red-400/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">View Project</a></div>` : ''}
                                 </div>
                             </div>
                         </article>
                     `;
 
-                    container.innerHTML += projectHTML;
-
-                    // Initialize carousel after adding to DOM
-                    setTimeout(() => {
-                        new ProjectCarousel(carouselId, project.images);
-                    }, 0);
+                    container.insertAdjacentHTML('beforeend', projectHTML);
+                    const carousel = document.getElementById(carouselId);
+                    initCarousel(carousel);
                 });
             })
             .catch(error => console.error('Error loading projects:', error));

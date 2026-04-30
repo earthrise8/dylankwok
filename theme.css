@@ -1,0 +1,165 @@
+:root {
+    --bg: #050505;
+    --panel: rgba(18, 18, 20, 0.92);
+    --panel-2: rgba(28, 28, 32, 0.92);
+    --line: rgba(255, 255, 255, 0.12);
+    --text: #f5f5f5;
+    --muted: #b4b4b8;
+    --red: #ef4444;
+    --blue: #38bdf8;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.space-theme {
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
+        radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+        radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
+        linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+    background-attachment: fixed;
+}
+
+body.space-theme::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 24px 24px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 80%);
+    opacity: 0.35;
+    z-index: 0;
+}
+
+body.space-theme h1,
+body.space-theme h2,
+body.space-theme h3,
+body.space-theme h4,
+body.space-theme h5,
+body.space-theme h6,
+body.space-theme .mono {
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+body.space-theme .panel,
+body.space-theme [class*="bg-slate-800"],
+body.space-theme [class*="bg-slate-900"],
+body.space-theme [class*="bg-black/40"],
+body.space-theme [class*="bg-black/50"],
+body.space-theme [class*="bg-black/92"],
+body.space-theme [class*="bg-white/5"],
+body.space-theme [class*="bg-white/10"] {
+    background: var(--panel) !important;
+    border: 1px solid var(--line) !important;
+    box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35) !important;
+    backdrop-filter: blur(16px) !important;
+}
+
+body.space-theme [class*="bg-slate-900"] {
+    background: var(--bg) !important;
+}
+
+body.space-theme [class*="bg-black/40"],
+body.space-theme [class*="bg-black/50"],
+body.space-theme [class*="bg-black/92"] {
+    background-color: rgba(10, 10, 12, 0.72) !important;
+}
+
+body.space-theme [class*="text-slate-300"],
+body.space-theme [class*="text-slate-400"],
+body.space-theme [class*="text-zinc-300"],
+body.space-theme [class*="text-zinc-400"] {
+    color: var(--muted) !important;
+}
+
+body.space-theme [class*="text-cyan-300"],
+body.space-theme [class*="text-cyan-400"],
+body.space-theme [class*="hover:text-cyan-300"]:hover,
+body.space-theme [class*="hover:text-cyan-400"]:hover {
+    color: var(--blue) !important;
+}
+
+body.space-theme [class*="text-red-300"],
+body.space-theme [class*="text-red-400"],
+body.space-theme [class*="hover:text-red-300"]:hover,
+body.space-theme [class*="hover:text-red-400"]:hover {
+    color: var(--red) !important;
+}
+
+body.space-theme [class*="border-slate-700"],
+body.space-theme [class*="border-slate-600"],
+body.space-theme [class*="border-white/10"],
+body.space-theme [class*="border-white/15"],
+body.space-theme [class*="border-white/20"] {
+    border-color: var(--line) !important;
+}
+
+body.space-theme a {
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.15em;
+}
+
+body.space-theme .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: #d4d4d8;
+}
+
+body.space-theme .frame {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+body.space-theme #site-tabs {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6));
+    backdrop-filter: blur(6px);
+}
+
+body.space-theme #top-fade {
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    height: 3.5rem;
+    pointer-events: none;
+    z-index: 30;
+    background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0));
+}
+
+body.space-theme .tab {
+    transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    padding-bottom: 0.35rem;
+}
+
+body.space-theme .tab.active {
+    border-bottom-color: var(--blue) !important;
+    color: var(--blue) !important;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+body.space-theme .carousel-container,
+body.space-theme .carousel-track,
+body.space-theme .carousel-card {
+    border-color: var(--line) !important;
+}
+
+body.space-theme .carousel-caption {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent);
+}

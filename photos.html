@@ -14,46 +14,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #050505;
-            --panel: rgba(18, 18, 20, 0.92);
-            --panel-2: rgba(28, 28, 32, 0.92);
-            --line: rgba(255, 255, 255, 0.12);
-            --text: #f5f5f5;
-            --muted: #b4b4b8;
-            --red: #ef4444;
-            --blue: #38bdf8;
-        }
-
-        html { scroll-behavior: smooth; }
-
         body {
-            margin: 0;
-            font-family: 'Space Grotesk', sans-serif;
-            color: var(--text);
-            background:
-                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
-                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
-                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
-                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        .modal-container {
+            transition: opacity 0.25s ease;
+        }
+        
+        /* Menu slide-in and fade animation */
+        #menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #menu.hidden {
+            opacity: 0;
+            transform: translateX(100%);
+            pointer-events: none;
+        }
+        #menu:not(.hidden) {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Menu links fade-in with stagger */
+        #menu a {
+            opacity: 0;
+            animation: fadeInDown 0.5s ease forwards;
+        }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
+        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
+        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.6s; }
+        
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        :root { --nav-height: 4rem; }
+
+        /* Fixed tab bar */
+        #site-tabs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(180deg, rgba(15,15,20,0.95), rgba(15,15,20,0.6));
+            backdrop-filter: blur(6px);
         }
 
-        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+        #top-fade {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            right: 0;
+            height: 3.5rem;
+            pointer-events: none;
+            z-index: 30;
+            background: linear-gradient(to bottom, rgba(15,15,20,0.96), rgba(15,15,20,0));
+        }
 
-        .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(0,0,0,0.35); backdrop-filter: blur(16px); overflow: hidden; }
-        .panel img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover; }
-
-        .tab { transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease; padding-bottom:0.35rem; }
-        .tab.active { border-bottom-color: var(--blue) !important; color: var(--blue) !important; background: rgba(255,255,255,0.02); }
-
-        :root { --nav-height: 4rem; }
-        #site-tabs { position: fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0.5rem 1rem; background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6)); backdrop-filter: blur(6px); }
-        #top-fade { position:fixed; top:var(--nav-height); left:0; right:0; height:3.5rem; pointer-events:none; z-index:30; background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); }
+        .tab { transition: color .12s ease, border-color .12s ease; padding-bottom: .35rem; }
+        .tab.active { border-bottom-color: #06b6d4 !important; color: #06b6d4 !important; }
     </style>
+    <link rel="stylesheet" href="theme.css">
 </head>
-<body class="bg-slate-900 text-white">
+<body class="space-theme text-white">
 
     <!-- Hamburger Menu Button -->
     <div class="fixed top-0 right-0 p-4 z-30">
