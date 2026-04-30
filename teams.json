@@ -53,8 +53,12 @@
       ],
       "images": [
         {
-          "url": "projectphotos/rockettable.JPG",
-          "caption": "Engineering leadership and technical build sessions"
+          "url": "projectphotos/H2GPMayor.JPG",
+          "caption": "Meeting with Mayor of Fremont to discuss H2GP"
+        },
+        {
+          "url": "projectphotos/H2GPStates.jpg",
+          "caption": "Team posing with our car at the H2GP World Qualifier in California"
         }
       ]
     },
@@ -62,7 +66,7 @@
       "id": 3,
       "title": "CubeSat Development with IST",
       "status": "NEW",
-      "organization": "Fremont Student Makers x International Space Teams",
+      "organization": "Fremont Student Makers x Interstellar Space Technologies",
       "timeframe": "2026-Present",
       "description": "Contributing to a student CubeSat initiative planned for launch with IST, focused on systems engineering, payload planning, and mission readiness.",
       "accomplishments": [
@@ -77,7 +81,7 @@
       ],
       "images": [
         {
-          "url": "projectphotos/Scylla.jpg",
+          "url": "https://makersat.fremontstudentmakers.org/images/hardware2.png",
           "caption": "Early-stage CubeSat design and mission planning"
         }
       ]
@@ -101,7 +105,7 @@
       ],
       "images": [
         {
-          "url": "projectphotos/standingAstraea.JPG",
+          "url": "https://fremontstudentmakers.org/photos/worksession.JPG",
           "caption": "Fremont Student Makers collaborative engineering culture"
         }
       ]
@@ -125,7 +129,7 @@
       ],
       "images": [
         {
-          "url": "projectphotos/standingAstraea.JPG",
+          "url": "https://fremontstudentmakers.org/photos/Meeting.jpg",
           "caption": "Club engineering and aerospace work"
         }
       ]

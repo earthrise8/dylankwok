@@ -134,13 +134,13 @@ body.space-theme #site-tabs {
 
 body.space-theme #top-fade {
     position: fixed;
-    top: 4rem;
+    top: 0;
     left: 0;
     right: 0;
-    height: 3.5rem;
+    height: 6rem;
     pointer-events: none;
     z-index: 30;
-    background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0));
+    background: linear-gradient(to bottom, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.58) 52%, rgba(5,5,5,0) 100%);
 }
 
 body.space-theme .tab {
@@ -162,4 +162,18 @@ body.space-theme .carousel-card {
 
 body.space-theme .carousel-caption {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.82), transparent);
+}
+
+/* Main-page thumbnail crop: force a consistent short height and crop tall images */
+.main-thumb {
+    height: 14rem !important; /* matches h-56 */
+    width: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+@media (min-width: 1024px) {
+    .main-thumb {
+        height: 14rem !important;
+    }
 }

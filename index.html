@@ -189,13 +189,13 @@
         /* Top fade overlay beneath the tab bar to fade content as it approaches the top */
         #top-fade {
             position: fixed;
-            top: var(--nav-height);
+            top: 0;
             left: 0;
             right: 0;
-            height: 3.5rem;
+            height: 6rem;
             pointer-events: none;
             z-index: 30;
-            background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0));
+            background: linear-gradient(to bottom, rgba(5,5,5,0.88) 0%, rgba(5,5,5,0.58) 52%, rgba(5,5,5,0) 100%);
         }
 
         #menu a {
@@ -218,42 +218,14 @@
 </head>
 <body class="shell text-white">
 
-    <div class="fixed right-0 top-0 z-30 p-4 sm:p-6">
-        <button id="menu-btn" class="rounded-full border border-white/20 bg-black/50 p-3 text-white backdrop-blur-md focus:outline-none" aria-label="Open navigation menu">
-            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-        </button>
-    </div>
+    <div id="site-chrome-top"></div>
 
-    <nav id="site-tabs" class="panel mx-auto mt-6 hidden w-full max-w-7xl rounded-[1rem] px-4 py-2 text-sm sm:flex sm:items-center sm:justify-start sm:gap-2">
-        <a href="index.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Mission Dossier</a>
-        <a href="projects.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Projects</a>
-        <a href="teams.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Teams</a>
-        <a href="photos.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Photos</a>
-        <a href="article.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Articles</a>
-        <a href="resume.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Resume</a>
-        <a href="about.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">About</a>
-    </nav>
-    <div id="top-fade"></div>
-
-    <header class="relative z-[1] border-b border-white/10">
-        <div class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8 lg:pt-28">
+    <div class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8 lg:pt-28">
             <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
-                    <div class="panel rounded-[2rem] p-6 sm:p-8 lg:p-10">
-                    <p class="label text-red-300">Surface Registry / Sector 04</p>
                     <h1 class="mt-4 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Dylan Kwok</h1>
                     <p class="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">A structured record of aerospace systems, software, leadership, and fieldwork. The interface is staged like a mission console so the story unfolds in a deliberate sequence instead of a casual scroll.</p>
 
                     <div class="mt-8 grid gap-4 sm:grid-cols-3">
-                        <div class="stat">
-                            <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Role</p>
-                            <p class="mt-2 text-lg font-semibold text-white">Systems Builder</p>
-                        </div>
-                        <div class="stat">
-                            <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Location</p>
-                                <p class="mt-2 text-lg font-semibold text-white">Fremont / Field Analog</p>
-                        </div>
                         <div class="stat">
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Status</p>
                             <p class="mt-2 text-lg font-semibold text-white">Active</p>
@@ -353,7 +325,7 @@
                     <button id="projects-carousel-next" class="carousel-control next" type="button" aria-label="Scroll projects right">›</button>
                     <div id="projects-carousel" class="carousel-track">
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
-                        <img src="projectphotos/standingAstraea.JPG" alt="Modular rocket system" class="h-56 w-full object-cover">
+                        <img src="projectphotos/standingAstraea.JPG" alt="Modular rocket system" class="h-56 w-full object-cover main-thumb">
                         <div class="p-6">
                             <p class="label text-red-300">Engineering File 01</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Modular Rocket System</h3>
@@ -362,7 +334,7 @@
                         </div>
                     </article>
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
-                        <img src="projectphotos/telemetrylost.png" alt="Telemetry Lost" class="h-56 w-full object-cover">
+                        <img src="projectphotos/telemetrylost.png" alt="Telemetry Lost" class="h-56 w-full object-cover main-thumb">
                         <div class="p-6">
                             <p class="label text-blue-300">Software File 02</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Telemetry Lost</h3>
@@ -371,7 +343,7 @@
                         </div>
                     </article>
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
-                        <img src="projectphotos/AstroForge.png" alt="AstroForge" class="h-56 w-full object-cover">
+                        <img src="projectphotos/AstroForge.png" alt="AstroForge" class="h-56 w-full object-cover main-thumb">
                         <div class="p-6">
                             <p class="label text-red-300">Simulation File 03</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">AstroForge</h3>
@@ -397,23 +369,27 @@
                 <div class="grid gap-6 lg:grid-cols-2">
                     <article class="panel rounded-[2rem] overflow-hidden">
                         <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
-                            <img src="projectphotos/rockettable.JPG" alt="Untitled Rocketry" class="h-60 w-full object-cover lg:h-full">
+                            <div class="relative min-h-[14rem] lg:h-full overflow-hidden">
+                                <img src="projectphotos/rockettable.JPG" alt="Untitled Rocketry" class="h-full w-full object-cover main-thumb">
+                            </div>
                             <div class="p-6">
                                 <p class="label text-red-300">Crew Record 01</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">Untitled Rocketry</h3>
                                 <p class="mt-3 text-sm leading-7 text-zinc-300">Competitive rocketry leadership centered on design, fabrication, testing, and national-level performance.</p>
-                                <a href="teams.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View record →</a>
+                                <a href="teams.html#team-1" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View record →</a>
                             </div>
                         </div>
                     </article>
                     <article class="panel rounded-[2rem] overflow-hidden">
                         <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
-                            <img src="projectphotos/Scylla.jpg" alt="CubeSat development" class="h-60 w-full object-cover lg:h-full">
+                            <div class="relative min-h-[14rem] lg:h-full overflow-hidden">
+                                <img src="https://makersat.fremontstudentmakers.org/images/hardware2.png" alt="CubeSat development" class="h-full w-full object-cover main-thumb">
+                            </div>
                             <div class="p-6">
                                 <p class="label text-blue-300">Crew Record 02</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">CubeSat Development with IST</h3>
                                 <p class="mt-3 text-sm leading-7 text-zinc-300">Student satellite systems work focused on mission readiness, documentation, and launch preparation.</p>
-                                <a href="teams.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View record →</a>
+                                <a href="teams.html#team-3" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View record →</a>
                             </div>
                         </div>
                     </article>
@@ -433,21 +409,21 @@
 
                 <div class="grid gap-6 md:grid-cols-3">
                     <figure class="panel rounded-[2rem] overflow-hidden">
-                        <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="h-72 w-full object-cover">
+                        <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="h-72 w-full object-cover main-thumb">
                         <figcaption class="border-t border-white/10 p-4">
                             <p class="text-sm font-semibold text-white">Industrial Pyramid</p>
                             <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">San Francisco</p>
                         </figcaption>
                     </figure>
                     <figure class="panel rounded-[2rem] overflow-hidden">
-                        <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="h-72 w-full object-cover">
+                        <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="h-72 w-full object-cover main-thumb">
                         <figcaption class="border-t border-white/10 p-4">
                             <p class="text-sm font-semibold text-white">Yosemite Valley</p>
                             <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">Field photo</p>
                         </figcaption>
                     </figure>
                     <figure class="panel rounded-[2rem] overflow-hidden">
-                        <img src="gallery/Travel/IMG_5334.jpg" alt="Joshua Tree" class="h-72 w-full object-cover">
+                        <img src="gallery/Travel/IMG_5334.jpg" alt="Joshua Tree" class="h-72 w-full object-cover main-thumb">
                         <figcaption class="border-t border-white/10 p-4">
                             <p class="text-sm font-semibold text-white">Joshua Tree Desert</p>
                             <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">Field photo</p>
@@ -482,49 +458,14 @@
         </section>
     </main>
 
-    <footer class="relative z-[1] border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8">
-        <div class="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-            <p class="mono text-sm uppercase tracking-[0.3em] text-zinc-400">Dylan Kwok / Surface Dossier</p>
-            <div class="flex flex-wrap gap-4 text-sm text-zinc-300">
-                <a href="mailto:dylankwok28@gmail.com" class="transition hover:text-red-300">Email</a>
-                <a href="https://github.com/earthrise8" target="_blank" class="transition hover:text-blue-300">GitHub</a>
-                <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="transition hover:text-blue-300">LinkedIn</a>
-                <a href="tel:+13415002788" class="transition hover:text-red-300">Phone</a>
-            </div>
-        </div>
-    </footer>
+    <div id="site-chrome-bottom"></div>
+
+    <script src="site-chrome.js"></script>
 
     <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const siteTabs = document.getElementById('site-tabs');
         const projectsCarousel = document.getElementById('projects-carousel');
         const projectsCarouselPrev = document.getElementById('projects-carousel-prev');
         const projectsCarouselNext = document.getElementById('projects-carousel-next');
-
-        // Toggle the in-page tab bar for small screens
-        menuBtn.addEventListener('click', () => {
-            siteTabs.classList.toggle('hidden');
-            const isOpen = !siteTabs.classList.contains('hidden');
-            menuBtn.innerHTML = isOpen
-                ? `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`
-                : `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
-        });
-
-        // Mark active tab based on current page and add click behavior
-        (function activateTabs(){
-            const tabs = document.querySelectorAll('#site-tabs .tab');
-            const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
-            tabs.forEach(tab => {
-                const href = tab.getAttribute('href') || '';
-                if (href.endsWith(currentFile) || (currentFile === '' && href.endsWith('index.html'))) {
-                    tab.classList.add('active');
-                }
-                tab.addEventListener('click', () => {
-                    tabs.forEach(t => t.classList.remove('active'));
-                    tab.classList.add('active');
-                });
-            });
-        })();
 
         if (projectsCarousel && projectsCarouselPrev && projectsCarouselNext) {
             const scrollAmount = () => Math.min(projectsCarousel.clientWidth * 0.85, 520);

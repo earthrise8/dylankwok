@@ -27,6 +27,10 @@
         {
           "url": "projectphotos/Scylla.jpg",
           "caption": "CAD render"
+        },
+        {
+          "url": "projectphotos/H2GPStates.jpg",
+          "caption": "Engineering competition team photo"
         }
       ]
     },
@@ -103,6 +107,10 @@
         {
           "url": "projectphotos/AstroForge.png",
           "caption": "VENA app concept and prototype work"
+        },
+        {
+          "url": "projectphotos/MakerClubTeam.jpg",
+          "caption": "Team collaboration and planning session"
         }
       ]
     },
