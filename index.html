@@ -3,348 +3,540 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Dylan Kwok - Creator and Innovator based in the East Bay. Portfolio featuring photography, projects, and thoughts on engineering and STEM education.">
-    <meta name="keywords" content="Dylan Kwok, photography, projects, engineering, STEM, rocketry, innovation">
+    <meta name="description" content="Dylan Kwok - mission dossier style portfolio for aerospace systems, project work, and team leadership.">
+    <meta name="keywords" content="Dylan Kwok, aerospace, projects, teams, engineering">
     <meta name="author" content="Dylan Kwok">
-    <meta property="og:title" content="Dylan Kwok">
-    <meta property="og:description" content="Creator and Innovator based in the East Bay">
+    <meta property="og:title" content="Dylan Kwok | Surface Dossier">
+    <meta property="og:description" content="A mission-style portfolio for aerospace systems, project work, and team leadership.">
     <meta property="og:type" content="website">
-    <title>Dylan Kwok</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
+    <title>Dylan Kwok | Surface Dossier</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f172a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23ef4444' stroke-width='6'/><circle cx='50' cy='50' r='12' fill='%2338bdf8'/></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #050505;
+            --panel: rgba(18, 18, 20, 0.92);
+            --panel-2: rgba(28, 28, 32, 0.92);
+            --line: rgba(255, 255, 255, 0.12);
+            --text: #f5f5f5;
+            --muted: #b4b4b8;
+            --red: #ef4444;
+            --blue: #38bdf8;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
+                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
+                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
+
+        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+
+        .shell { position: relative; }
+
+        .shell::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 80%);
+            opacity: 0.35;
+            z-index: 0;
         }
-        .bg-california {
-            background-image: url('https://images.unsplash.com/photo-1500111709600-7761aa8216c7?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-            background-size: cover;
-            background-position: center;
+
+        .panel {
+            background: var(--panel);
+            border: 1px solid var(--line);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(16px);
+            overflow: hidden;
         }
-        
-        /* Menu slide-in and fade animation */
-        #menu {
-            transition: opacity 0.3s ease, transform 0.3s ease;
+
+        /* Ensure images inside panels fit their container cleanly */
+        .panel img {
+            display: block;
+            width: 100%;
+            height: auto;
+            max-height: 520px;
+            object-fit: cover;
         }
+
+        .frame {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .label {
+            font-size: 0.72rem;
+            letter-spacing: 0.34em;
+            text-transform: uppercase;
+            color: #d4d4d8;
+        }
+
+        .stat {
+            border-top: 1px solid var(--line);
+            padding-top: 0.85rem;
+        }
+
+        .carousel-shell {
+            position: relative;
+        }
+
+        .carousel-track {
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(18rem, 30rem);
+            gap: 1.25rem;
+            overflow-x: auto;
+            padding-bottom: 0.75rem;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            scrollbar-width: none;
+        }
+
+        .carousel-track::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-card {
+            scroll-snap-align: start;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(14px);
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .carousel-control:hover {
+            transform: translateY(-50%) scale(1.05);
+            background: rgba(28, 28, 32, 0.88);
+        }
+
+        .carousel-control.prev {
+            left: -0.25rem;
+        }
+
+        .carousel-control.next {
+            right: -0.25rem;
+        }
+
+        /* Tabs */
+        .tab {
+            transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+            padding-bottom: 0.35rem;
+        }
+
+        .tab.active {
+            border-bottom-color: var(--blue) !important;
+            color: var(--blue) !important;
+            background: rgba(255,255,255,0.02);
+        }
+
+        :root { --nav-height: 4rem; }
+
+        #menu { transition: opacity 0.25s ease, transform 0.25s ease; }
         #menu.hidden {
             opacity: 0;
-            transform: translateX(100%);
+            transform: translateY(-1rem);
             pointer-events: none;
         }
         #menu:not(.hidden) {
             opacity: 1;
-            transform: translateX(0);
+            transform: translateY(0);
         }
-        
-        /* Menu links fade-in with stagger */
+
+        /* Fixed tab bar */
+        #site-tabs {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 40;
+            display: flex;
+            justify-content: center;
+            padding: 0.5rem 1rem;
+            background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6));
+            backdrop-filter: blur(6px);
+        }
+
+        /* Top fade overlay beneath the tab bar to fade content as it approaches the top */
+        #top-fade {
+            position: fixed;
+            top: var(--nav-height);
+            left: 0;
+            right: 0;
+            height: 3.5rem;
+            pointer-events: none;
+            z-index: 30;
+            background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0));
+        }
+
         #menu a {
             opacity: 0;
-            animation: fadeInDown 0.5s ease forwards;
+            animation: slideIn 0.45s ease forwards;
         }
-        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
-        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
-        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
-        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
-        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
-        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.6s; }
-        
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.06s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.12s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.18s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.24s; }
+        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.30s; }
+        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.36s; }
+        #menu:not(.hidden) a:nth-child(7) { animation-delay: 0.42s; }
 
-        /* Back to top button */
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #06b6d4;
-            color: #0f172a;
-            border: none;
-            width: 3rem;
-            height: 3rem;
-            padding: 0;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 20;
-            transition: background 0.3s ease, opacity 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        #backToTop:hover {
-            background: #22d3ee;
-        }
-        #backToTop.show {
-            display: flex;
-        }
-
-        /* Image caption */
-        .image-with-caption {
-            position: relative;
-        }
-        .image-caption {
-            background: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 0.75rem;
-            font-size: 0.875rem;
-            text-align: center;
-            border-top: 2px solid #06b6d4;
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-16px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="bg-slate-900 text-white">
+<body class="shell text-white">
 
-    <!-- Hamburger Menu Button -->
-    <div class="fixed top-0 right-0 p-4 z-30">
-        <button id="menu-btn" class="text-white focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <div class="fixed right-0 top-0 z-30 p-4 sm:p-6">
+        <button id="menu-btn" class="rounded-full border border-white/20 bg-black/50 p-3 text-white backdrop-blur-md focus:outline-none" aria-label="Open navigation menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
     </div>
 
-    <!-- Navigation Menu -->
-    <div id="menu" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-20 flex items-center justify-center">
-        <div class="text-center px-4">
-            <a href="index.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
-            <a href="article.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Articles</a>
-            <a href="photos.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
-            <a href="projects.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
-            <a href="resume.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Resume</a>
-            <a href="about.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">About</a>
-        </div>
-    </div>
+    <nav id="site-tabs" class="panel mx-auto mt-6 hidden w-full max-w-7xl rounded-[1rem] px-4 py-2 text-sm sm:flex sm:items-center sm:justify-start sm:gap-2">
+        <a href="index.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Mission Dossier</a>
+        <a href="projects.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Projects</a>
+        <a href="teams.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Teams</a>
+        <a href="photos.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Photos</a>
+        <a href="article.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Articles</a>
+        <a href="resume.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Resume</a>
+        <a href="about.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">About</a>
+    </nav>
+    <div id="top-fade"></div>
 
-    <!-- Hero Section -->
-    <section class="min-h-screen bg-california bg-cover bg-center text-white flex items-center">
-        <div class="flex flex-col items-center justify-center w-full px-4 py-16 bg-black bg-opacity-50 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4">Dylan Kwok</h1>
-            <p class="text-base sm:text-lg md:text-xl mt-2">Creator, Engineer & STEM Educator based in the East Bay.</p>
-            <p class="text-sm sm:text-base md:text-lg mt-4 text-slate-300">Fremont, California | (341)-500-2788 | dylankwok28@gmail.com</p>
-            <div class="mt-8 md:mt-12">
-                <a href="#about-section" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition text-sm md:text-base">Learn More</a>
-            </div>
-        </div>
-    </section>
+    <header class="relative z-[1] border-b border-white/10">
+        <div class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8 lg:pt-28">
+            <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
+                    <div class="panel rounded-[2rem] p-6 sm:p-8 lg:p-10">
+                    <p class="label text-red-300">Surface Registry / Sector 04</p>
+                    <h1 class="mt-4 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Dylan Kwok</h1>
+                    <p class="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">A structured record of aerospace systems, software, leadership, and fieldwork. The interface is staged like a mission console so the story unfolds in a deliberate sequence instead of a casual scroll.</p>
 
-    <!-- Photo Gallery Section -->
-    <section class="py-12 md:py-20 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">Through My Lens</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 max-w-5xl mx-auto">
-                <div class="image-with-caption rounded-lg overflow-hidden">
-                    <div class="overflow-hidden rounded-t-lg h-40 sm:h-48 md:h-64">
-                        <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
-                    </div>
-                    <div class="image-caption">
-                        <p class="font-bold text-sm md:text-base">Industrial Pyramid</p>
-                        <p class="text-xs text-slate-300">San Francisco, CA</p>
-                    </div>
-                </div>
-                <div class="image-with-caption rounded-lg overflow-hidden">
-                    <div class="overflow-hidden rounded-t-lg h-40 sm:h-48 md:h-64">
-                        <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
-                    </div>
-                    <div class="image-caption">
-                        <p class="font-bold text-sm md:text-base">Yosemite Valley</p>
-                        <p class="text-xs text-slate-300">Yosemite National Park, CA</p>
-                    </div>
-                </div>
-                <div class="image-with-caption rounded-lg overflow-hidden">
-                    <div class="overflow-hidden rounded-t-lg h-40 sm:h-48 md:h-64">
-                        <img src="gallery/Travel/IMG_5334.jpg" alt="Joshua Tree" class="w-full h-full object-cover hover:scale-105 transition duration-300 cursor-pointer">
-                    </div>
-                    <div class="image-caption">
-                        <p class="font-bold text-sm md:text-base">Joshua Tree Desert</p>
-                        <p class="text-xs text-slate-300">Joshua Tree National Park, CA</p>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-8 md:mt-12">
-                <a href="photos.html" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition text-sm md:text-base">View Full Gallery →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section class="py-12 md:py-20" id="about-section">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">About Me</h2>
-                <div class="bg-slate-800 p-6 md:p-8 rounded-lg mb-6 md:mb-8">
-                    <p class="text-base md:text-lg leading-relaxed mb-6">
-                        I'm Dylan Kwok, a high school student from Fremont, California with a passion for engineering, photography, and education. I believe in building things that matter, sharing knowledge with others, and pushing the boundaries of what's possible through innovation and persistence.
-                    </p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
-                        <div>
-                            <h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">What I Do</h3>
-                            <ul class="space-y-2 text-sm md:text-base text-slate-300">
-                                <li>• Lead high-power rocketry teams</li>
-                                <li>• Capture moments through photography</li>
-                                <li>• Mentor students in STEM</li>
-                                <li>• Design and build innovative projects</li>
-                                <li>• Compete at varsity track level</li>
-                            </ul>
+                    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+                        <div class="stat">
+                            <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Role</p>
+                            <p class="mt-2 text-lg font-semibold text-white">Systems Builder</p>
                         </div>
-                        <div>
-                            <h3 class="text-xl md:text-2xl font-bold text-cyan-400 mb-4">My Values</h3>
-                            <ul class="space-y-2 text-sm md:text-base text-slate-300">
-                                <li>• Lifelong learning</li>
-                                <li>• Persistence through challenges</li>
-                                <li>• Building inclusive communities</li>
-                                <li>• Creating meaningful impact</li>
-                                <li>• Sharing knowledge freely</li>
-                            </ul>
+                        <div class="stat">
+                            <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Location</p>
+                                <p class="mt-2 text-lg font-semibold text-white">Fremont / Field Analog</p>
+                        </div>
+                        <div class="stat">
+                            <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">Status</p>
+                            <p class="mt-2 text-lg font-semibold text-white">Active</p>
                         </div>
                     </div>
-                    <a href="about.html" class="inline-block px-6 py-2 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition text-sm md:text-base">Read My Full Story →</a>
+
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <a href="#mission-log" class="inline-flex items-center rounded-full border border-red-500/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">Open Mission Log</a>
+                        <a href="#systems-archive" class="inline-flex items-center rounded-full border border-blue-400/40 bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200">View Systems Archive</a>
+                        <a href="resume.html" class="inline-flex items-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-blue-300 hover:text-blue-200">Resume</a>
+                    </div>
+
+                    <div class="mt-8 flex flex-wrap gap-2 text-xs uppercase tracking-[0.28em] text-zinc-400">
+                        <span class="rounded-full border border-white/10 px-3 py-2">Aerospace</span>
+                        <span class="rounded-full border border-white/10 px-3 py-2">Software</span>
+                        <span class="rounded-full border border-white/10 px-3 py-2">Leadership</span>
+                        <span class="rounded-full border border-white/10 px-3 py-2">Photography</span>
+                    </div>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="panel rounded-[2rem] p-4 sm:p-5 lg:row-span-2">
+                        <div class="flex items-center justify-between">
+                            <p class="mono text-[11px] uppercase tracking-[0.35em] text-zinc-400">Primary Signal</p>
+                            <span class="rounded-full border border-red-500/30 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-red-300">Live</span>
+                        </div>
+                        <img src="projectphotos/standingAstraea.JPG" alt="Rocket platform" class="mt-4 h-full min-h-80 w-full rounded-[1.5rem] object-cover">
+                        <p class="mt-4 text-sm text-zinc-300">Modular hardware, launch preparation, and iterative build cycles.</p>
+                    </div>
+                    <div class="panel rounded-[2rem] p-4 sm:p-5">
+                        <div class="flex items-center justify-between">
+                            <p class="mono text-[11px] uppercase tracking-[0.35em] text-zinc-400">Project File</p>
+                            <span class="rounded-full border border-blue-400/30 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-blue-300">Archive</span>
+                        </div>
+                        <img src="projectphotos/AstroForge.png" alt="AstroForge" class="mt-4 h-56 w-full rounded-[1.5rem] object-cover">
+                    </div>
+                    <div class="panel rounded-[2rem] p-4 sm:p-5">
+                        <div class="flex items-center justify-between">
+                            <p class="mono text-[11px] uppercase tracking-[0.35em] text-zinc-400">Software File</p>
+                            <span class="rounded-full border border-red-500/30 px-3 py-1 text-[10px] uppercase tracking-[0.28em] text-red-300">Code</span>
+                        </div>
+                        <img src="projectphotos/telemetrylost.png" alt="Telemetry Lost" class="mt-4 h-56 w-full rounded-[1.5rem] object-cover">
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Featured Projects Section -->
-    <section class="py-12 md:py-24 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">Featured Projects</h2>
-            <div class="max-w-5xl mx-auto">
-                <div class="bg-slate-700 p-6 md:p-8 rounded-lg mb-6 md:mb-8">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Untitled Rocketry</h3>
-                    <p class="text-base md:text-lg mb-4 leading-relaxed text-slate-300">Led a 10-member team to qualify for the American Rocketry Challenge nationals. This involved designing, building, and testing rockets to meet specific flight requirements.</p>
-                    <a href="projects.html" class="text-lg font-bold text-cyan-400 hover:text-cyan-300 inline-block">View Details →</a>
+    <main class="relative z-[1]">
+        <section id="mission-log" class="border-b border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="label text-blue-300">Mission Log</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">The story, in order</h2>
+                    </div>
+                    <p class="max-w-xl text-sm leading-7 text-zinc-400">The page is staged as a sequence: who I am, what I build, who I work with, and where the evidence lives.</p>
                 </div>
-                <div class="bg-slate-700 p-6 md:p-8 rounded-lg">
-                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Modular Rocket Design</h3>
-                    <p class="text-base md:text-lg mb-4 leading-relaxed text-slate-300">Designed and 3D-printed a modular rocket system that can be adapted for various conditions, including different altitudes, payloads, and weather.</p>
-                    <a href="projects.html" class="text-lg font-bold text-cyan-400 hover:text-cyan-300 inline-block">View Details →</a>
+
+                <div class="grid gap-4 lg:grid-cols-4">
+                    <article class="panel rounded-[1.75rem] p-5">
+                        <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">01 / Signal</p>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Profile</h3>
+                        <p class="mt-3 text-sm leading-7 text-zinc-300">A structured introduction that reads like a dossier, not a casual intro.</p>
+                    </article>
+                    <article class="panel rounded-[1.75rem] p-5">
+                        <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">02 / Build</p>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Projects</h3>
+                        <p class="mt-3 text-sm leading-7 text-zinc-300">Personal engineering and software work presented as a clean archive.</p>
+                    </article>
+                    <article class="panel rounded-[1.75rem] p-5">
+                        <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">03 / Crew</p>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Teams</h3>
+                        <p class="mt-3 text-sm leading-7 text-zinc-300">Organizations and leadership roles separated into their own record set.</p>
+                    </article>
+                    <article class="panel rounded-[1.75rem] p-5">
+                        <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">04 / Proof</p>
+                        <h3 class="mt-4 text-xl font-semibold text-white">Resume Link</h3>
+                        <p class="mt-3 text-sm leading-7 text-zinc-300">Built to be professional enough for admissions, internships, and resume use.</p>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Articles Highlights Section -->
-    <section class="py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12">Thoughts & Insights</h2>
-            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <div class="bg-slate-800 p-6 md:p-8 rounded-lg">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">Engineering & Innovation</h3>
-                    <p class="text-sm md:text-base text-slate-300 mb-4">Exploring the intersection of design, creativity, and practical problem-solving in aerospace and maker culture.</p>
-                    <a href="article.html" class="text-cyan-400 hover:text-cyan-300 font-bold">Read Articles →</a>
+        <section id="systems-archive" class="border-b border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="label text-red-300">Systems Archive</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected project files</h2>
+                    </div>
+                    <a href="projects.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open archive</a>
                 </div>
-                <div class="bg-slate-800 p-6 md:p-8 rounded-lg">
-                    <h3 class="text-xl md:text-2xl font-bold mb-3">STEM Education</h3>
-                    <p class="text-sm md:text-base text-slate-300 mb-4">Sharing my experiences mentoring students, building inclusive communities, and making engineering accessible to all.</p>
-                    <a href="article.html" class="text-cyan-400 hover:text-cyan-300 font-bold">Read Articles →</a>
+
+                <div class="carousel-shell">
+                    <button id="projects-carousel-prev" class="carousel-control prev" type="button" aria-label="Scroll projects left">‹</button>
+                    <button id="projects-carousel-next" class="carousel-control next" type="button" aria-label="Scroll projects right">›</button>
+                    <div id="projects-carousel" class="carousel-track">
+                    <article class="panel carousel-card rounded-[2rem] overflow-hidden">
+                        <img src="projectphotos/standingAstraea.JPG" alt="Modular rocket system" class="h-56 w-full object-cover">
+                        <div class="p-6">
+                            <p class="label text-red-300">Engineering File 01</p>
+                            <h3 class="mt-3 text-2xl font-semibold text-white">Modular Rocket System</h3>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A configurable launch platform designed for adaptability, testing, and controlled iteration.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">Read file →</a>
+                        </div>
+                    </article>
+                    <article class="panel carousel-card rounded-[2rem] overflow-hidden">
+                        <img src="projectphotos/telemetrylost.png" alt="Telemetry Lost" class="h-56 w-full object-cover">
+                        <div class="p-6">
+                            <p class="label text-blue-300">Software File 02</p>
+                            <h3 class="mt-3 text-2xl font-semibold text-white">Telemetry Lost</h3>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A narrative game with branching choices and systems-based play structure.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">Read file →</a>
+                        </div>
+                    </article>
+                    <article class="panel carousel-card rounded-[2rem] overflow-hidden">
+                        <img src="projectphotos/AstroForge.png" alt="AstroForge" class="h-56 w-full object-cover">
+                        <div class="p-6">
+                            <p class="label text-red-300">Simulation File 03</p>
+                            <h3 class="mt-3 text-2xl font-semibold text-white">AstroForge</h3>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">An AI-assisted rocket simulation game built around design-test-refine loops.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">Read file →</a>
+                        </div>
+                    </article>
+                    </div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <a href="article.html" class="inline-block px-8 py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition">View All Articles →</a>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Resume / Experience Section -->
-    <section class="py-12 md:py-24 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 md:mb-12">Experience & Leadership</h2>
-            <p class="text-center text-base md:text-lg text-slate-300 mb-8 md:mb-12 max-w-2xl mx-auto">Leading teams, building organizations, and making an impact through engineering and education. View my full resume for detailed information on my background and skills.</p>
-            <div class="text-center">
-                <a href="resume.html" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition text-sm md:text-base">View Full Resume →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-12 md:py-20">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto bg-slate-800 p-6 md:p-12 rounded-lg text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6">Let's Connect</h2>
-                <p class="text-base md:text-xl text-slate-300 mb-6 md:mb-8">Have questions about my work, projects, or how I might help? I'd love to hear from you.</p>
-                <a href="mailto:dylankwok28@gmail.com" class="inline-block px-6 md:px-8 py-2 md:py-3 bg-cyan-500 text-slate-900 font-bold rounded hover:bg-cyan-400 transition text-sm md:text-base">Get in Touch →</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Back to top">↑</button>
-
-    <!-- Footer -->
-    <footer class="py-8 md:py-12 bg-slate-800">
-        <div class="container mx-auto px-4">
-            <div class="max-w-3xl mx-auto">
-                <div class="flex justify-center items-center flex-wrap gap-4 md:gap-6 mb-6">
-                    <a href="mailto:dylankwok28@gmail.com" class="text-slate-300 hover:text-cyan-400 transition" title="Email">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
-                    </a>
-                    <a href="https://github.com/earthrise8" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="GitHub">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="LinkedIn">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"></path></svg>
-                    </a>
-                    <a href="tel:+13415002788" class="text-slate-300 hover:text-cyan-400 transition" title="Phone">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C9.85 21 3 14.15 3 5.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
-                    </a>
-                    <a href="https://www.instructables.com/member/flyingpig071/instructables/drafts/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="Instructables">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">    <path d="M12 2 C6.48 2 2 6.48 2 12 s4.48 10 10 10 10-4.48 10-10 S17.52 2 12 2 Z M11 4 h2 v2 h-2 Z M8 8 h8 a2 2 0 0 1 2 2 v4 a2 2 0 0 1-2 2 h-8 a2 2 0 0 1-2-2 v-4 a2 2 0 0 1 2-2 Z M9.5 11 a1 1 0 1 0 0.001 0 Z M14.5 11 a1 1 0 1 0 0.001 0 Z M10 14 h4 v1 h-4 Z"/></svg>
-                    </a>
+        <section class="border-b border-white/10 px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="label text-blue-300">Crew Records</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Teams and leadership</h2>
+                    </div>
+                    <a href="teams.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open records</a>
                 </div>
-                <div class="text-center border-t border-slate-700 pt-6">
-                    <p class="text-slate-300 text-sm md:text-base">&copy; 2026 Dylan Kwok. All rights reserved.</p>
+
+                <div class="grid gap-6 lg:grid-cols-2">
+                    <article class="panel rounded-[2rem] overflow-hidden">
+                        <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
+                            <img src="projectphotos/rockettable.JPG" alt="Untitled Rocketry" class="h-60 w-full object-cover lg:h-full">
+                            <div class="p-6">
+                                <p class="label text-red-300">Crew Record 01</p>
+                                <h3 class="mt-3 text-2xl font-semibold text-white">Untitled Rocketry</h3>
+                                <p class="mt-3 text-sm leading-7 text-zinc-300">Competitive rocketry leadership centered on design, fabrication, testing, and national-level performance.</p>
+                                <a href="teams.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View record →</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="panel rounded-[2rem] overflow-hidden">
+                        <div class="grid lg:grid-cols-[0.9fr_1.1fr]">
+                            <img src="projectphotos/Scylla.jpg" alt="CubeSat development" class="h-60 w-full object-cover lg:h-full">
+                            <div class="p-6">
+                                <p class="label text-blue-300">Crew Record 02</p>
+                                <h3 class="mt-3 text-2xl font-semibold text-white">CubeSat Development with IST</h3>
+                                <p class="mt-3 text-sm leading-7 text-zinc-300">Student satellite systems work focused on mission readiness, documentation, and launch preparation.</p>
+                                <a href="teams.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View record →</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
+            </div>
+        </section>
+
+        <section class="px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p class="label text-red-300">Field Archive</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Field-side imagery</h2>
+                    </div>
+                    <a href="photos.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open gallery</a>
+                </div>
+
+                <div class="grid gap-6 md:grid-cols-3">
+                    <figure class="panel rounded-[2rem] overflow-hidden">
+                        <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="h-72 w-full object-cover">
+                        <figcaption class="border-t border-white/10 p-4">
+                            <p class="text-sm font-semibold text-white">Industrial Pyramid</p>
+                            <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">San Francisco</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="panel rounded-[2rem] overflow-hidden">
+                        <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="h-72 w-full object-cover">
+                        <figcaption class="border-t border-white/10 p-4">
+                            <p class="text-sm font-semibold text-white">Yosemite Valley</p>
+                            <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">Field photo</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="panel rounded-[2rem] overflow-hidden">
+                        <img src="gallery/Travel/IMG_5334.jpg" alt="Joshua Tree" class="h-72 w-full object-cover">
+                        <figcaption class="border-t border-white/10 p-4">
+                            <p class="text-sm font-semibold text-white">Joshua Tree Desert</p>
+                            <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">Field photo</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="border-t border-white/10 px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pb-20">
+            <div class="mx-auto max-w-7xl">
+                <div class="panel rounded-[2rem] px-6 py-8 sm:px-8 lg:px-10">
+                    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                        <div>
+                            <p class="label text-blue-300">Access</p>
+                            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Built for resume use, but structured like a mission log.</h2>
+                            <p class="mt-4 max-w-2xl text-base leading-8 text-zinc-300">The viewer moves through a deliberate sequence: profile, projects, teams, imagery, then contact. It should feel like reading a field database entry from a remote surface.</p>
+                        </div>
+                        <div class="grid gap-3 sm:grid-cols-2">
+                            <a href="resume.html" class="frame rounded-[1.5rem] px-5 py-5 transition hover:border-blue-300">
+                                <p class="label text-red-300">Resume</p>
+                                <p class="mt-3 text-lg font-semibold text-white">View credentials</p>
+                            </a>
+                            <a href="about.html" class="frame rounded-[1.5rem] px-5 py-5 transition hover:border-red-300">
+                                <p class="label text-blue-300">Profile</p>
+                                <p class="mt-3 text-lg font-semibold text-white">Read background</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="relative z-[1] border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <p class="mono text-sm uppercase tracking-[0.3em] text-zinc-400">Dylan Kwok / Surface Dossier</p>
+            <div class="flex flex-wrap gap-4 text-sm text-zinc-300">
+                <a href="mailto:dylankwok28@gmail.com" class="transition hover:text-red-300">Email</a>
+                <a href="https://github.com/earthrise8" target="_blank" class="transition hover:text-blue-300">GitHub</a>
+                <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="transition hover:text-blue-300">LinkedIn</a>
+                <a href="tel:+13415002788" class="transition hover:text-red-300">Phone</a>
             </div>
         </div>
     </footer>
 
     <script>
         const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        let isOpen = false;
-    
+        const siteTabs = document.getElementById('site-tabs');
+        const projectsCarousel = document.getElementById('projects-carousel');
+        const projectsCarouselPrev = document.getElementById('projects-carousel-prev');
+        const projectsCarouselNext = document.getElementById('projects-carousel-next');
+
+        // Toggle the in-page tab bar for small screens
         menuBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            menu.classList.toggle('hidden');
-            if (isOpen) {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-            } else {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
-            }
+            siteTabs.classList.toggle('hidden');
+            const isOpen = !siteTabs.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen
+                ? `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`
+                : `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
         });
 
-        // Back to top button functionality
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
+        // Mark active tab based on current page and add click behavior
+        (function activateTabs(){
+            const tabs = document.querySelectorAll('#site-tabs .tab');
+            const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
+            tabs.forEach(tab => {
+                const href = tab.getAttribute('href') || '';
+                if (href.endsWith(currentFile) || (currentFile === '' && href.endsWith('index.html'))) {
+                    tab.classList.add('active');
+                }
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
             });
-        });
+        })();
+
+        if (projectsCarousel && projectsCarouselPrev && projectsCarouselNext) {
+            const scrollAmount = () => Math.min(projectsCarousel.clientWidth * 0.85, 520);
+
+            projectsCarouselPrev.addEventListener('click', () => {
+                projectsCarousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+            });
+
+            projectsCarouselNext.addEventListener('click', () => {
+                projectsCarousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+            });
+        }
     </script>
 
 </body>

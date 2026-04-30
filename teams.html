@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dylan Kwok's Teams and Leadership - Competitive teams, clubs, and organizational roles.">
+    <meta name="keywords" content="teams, leadership, rocketry, CubeSat, maker club, Dylan Kwok">
+    <meta name="author" content="Dylan Kwok">
+    <meta property="og:title" content="Dylan Kwok - Teams">
+    <meta property="og:description" content="Team leadership, clubs, and organizational roles">
+    <meta property="og:type" content="website">
+    <title>Dylan Kwok - Teams</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f172a'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #050505;
+            --panel: rgba(18, 18, 20, 0.92);
+            --panel-2: rgba(28, 28, 32, 0.92);
+            --line: rgba(255, 255, 255, 0.12);
+            --text: #f5f5f5;
+            --muted: #b4b4b8;
+            --red: #ef4444;
+            --blue: #38bdf8;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
+                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
+                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+        }
+
+        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+
+        .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(0,0,0,0.35); backdrop-filter: blur(16px); overflow: hidden; }
+        .panel img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover; }
+
+        :root { --nav-height: 4rem; }
+        #site-tabs { position: fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0.5rem 1rem; background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6)); backdrop-filter: blur(6px); }
+        #top-fade { position:fixed; top:var(--nav-height); left:0; right:0; height:3.5rem; pointer-events:none; z-index:30; background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); }
+        .tab { transition: color .12s ease, border-color .12s ease; padding-bottom: .35rem; }
+        .tab.active { border-bottom-color: var(--blue) !important; color: var(--blue) !important; }
+    </style>
+</head>
+<body class="text-white">
+    <div class="fixed right-0 top-0 z-30 p-4 sm:p-6">
+        <button id="menu-btn" class="rounded-full border border-white/20 bg-black/50 p-3 text-white backdrop-blur-md focus:outline-none" aria-label="Open navigation menu">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div id="menu" class="hidden fixed inset-0 z-20 flex items-center justify-center bg-black/92 backdrop-blur-xl">
+        <div class="panel rounded-[2rem] px-8 py-10 text-center">
+            <p class="label mb-4 text-blue-300">Surface Navigation</p>
+            <a href="index.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-red-300">Mission Dossier</a>
+            <a href="projects.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Projects</a>
+            <a href="teams.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-red-300">Teams</a>
+            <a href="photos.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Photos</a>
+            <a href="article.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Articles</a>
+            <a href="resume.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Resume</a>
+            <a href="about.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">About</a>
+        </div>
+    </div>
+        <nav id="site-tabs" class="hidden w-full z-40">
+            <div class="panel mx-auto max-w-7xl rounded-b-md px-4 py-2 flex gap-2 items-center justify-start">
+                <a href="index.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Mission Dossier</a>
+                <a href="projects.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Projects</a>
+                <a href="teams.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Teams</a>
+                <a href="photos.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Photos</a>
+                <a href="article.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Articles</a>
+                <a href="resume.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Resume</a>
+                <a href="about.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">About</a>
+            </div>
+        </nav>
+        <div id="top-fade"></div>
+
+    <header class="border-b border-white/10 px-4 pt-28 pb-12 sm:px-6 lg:pt-32">
+        <div class="mx-auto max-w-7xl">
+            <p class="label text-blue-300">Team Operations / Leadership</p>
+            <div class="mt-5 grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+                <div>
+                    <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Teams</h1>
+                    <p class="mt-5 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">Organizations, crews, and leadership roles presented separately from personal build work. This section is meant to read like a formal operations record: concise, technical, and easy to scan on a resume.</p>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs uppercase tracking-[0.25em] text-zinc-300">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Rocketry</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Clubs</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Systems</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="px-4 py-16 sm:px-6 lg:py-20">
+        <div class="mx-auto max-w-7xl">
+            <div id="teams-container" class="space-y-8"></div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 bg-black/40 px-4 py-10 sm:px-6">
+        <div class="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+            <p class="mono text-sm uppercase tracking-[0.3em] text-zinc-400">Dylan Kwok / Team Archive</p>
+            <div class="flex flex-wrap gap-4 text-sm text-zinc-300">
+                <a href="mailto:dylankwok28@gmail.com" class="transition hover:text-red-300">Email</a>
+                <a href="https://github.com/earthrise8" target="_blank" class="transition hover:text-blue-300">GitHub</a>
+                <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="transition hover:text-blue-300">LinkedIn</a>
+                <a href="tel:+13415002788" class="transition hover:text-red-300">Phone</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const siteTabs = document.getElementById('site-tabs');
+
+        const menuIcon = `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+        const closeIcon = `<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
+        menuBtn.addEventListener('click', () => {
+            siteTabs.classList.toggle('hidden');
+            const isOpen = !siteTabs.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? closeIcon : menuIcon;
+        });
+
+        (function activateTabs(){
+            const tabs = document.querySelectorAll('#site-tabs .tab');
+            const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
+            tabs.forEach(tab => {
+                const href = tab.getAttribute('href') || '';
+                if (href.endsWith(currentFile) || (currentFile === '' && href.endsWith('index.html'))) {
+                    tab.classList.add('active');
+                }
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        })();
+
+        function buildTeamCard(team, index) {
+            const image = team.images?.[0];
+            const extraImages = team.images?.slice(1, 3) ?? [];
+
+            return `
+                <article class="panel overflow-hidden rounded-[2rem]">
+                    <div class="grid lg:grid-cols-[0.95fr_1.05fr]">
+                        <div class="relative min-h-[18rem] bg-black">
+                            ${image ? `<img src="${image.url}" alt="${team.title}" class="h-full w-full object-cover">` : ''}
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+                            <div class="absolute left-5 top-5 rounded-full border border-red-400/40 bg-black/80 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-red-300">${String(index + 1).padStart(2, '0')}</div>
+                        </div>
+                        <div class="p-6 sm:p-8 lg:p-10">
+                            <div class="flex flex-wrap items-center gap-3">
+                                <span class="label text-blue-300">Team / Organization</span>
+                                <span class="rounded-full border border-blue-400/35 bg-white px-3 py-1 text-xs font-semibold text-black">${team.status}</span>
+                            </div>
+                            <h2 class="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">${team.title}</h2>
+                            <p class="mt-3 text-sm uppercase tracking-[0.2em] text-zinc-400">${team.organization} • ${team.timeframe}</p>
+                            <p class="mt-6 text-base leading-7 text-zinc-300">${team.description}</p>
+
+                            <div class="mt-8 grid gap-6 sm:grid-cols-2">
+                                <div>
+                                    <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Responsibilities</h3>
+                                    <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
+                                        ${team.accomplishments.map(item => `<li class="border-l border-red-400/40 pl-3">${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Systems Used</h3>
+                                    <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
+                                        ${team.technologies.map(item => `<li class="border-l border-blue-400/40 pl-3">${item}</li>`).join('')}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            ${extraImages.length ? `
+                                <div class="mt-8 grid grid-cols-2 gap-3">
+                                    ${extraImages.map(photo => `
+                                        <div class="overflow-hidden rounded-2xl border border-white/10">
+                                            <img src="${photo.url}" alt="${photo.caption}" class="h-28 w-full object-cover transition duration-300 hover:scale-105">
+                                        </div>
+                                    `).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                    </div>
+                </article>
+            `;
+        }
+
+        fetch('teams.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('teams-container');
+                container.innerHTML = data.teams.map((team, index) => buildTeamCard(team, index)).join('');
+            })
+            .catch(error => console.error('Error loading teams:', error));
+    </script>
+</body>
+</html>

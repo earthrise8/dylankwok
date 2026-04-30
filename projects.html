@@ -14,269 +14,206 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #050505;
+            --panel: rgba(18, 18, 20, 0.92);
+            --panel-2: rgba(28, 28, 32, 0.92);
+            --line: rgba(255, 255, 255, 0.12);
+            --text: #f5f5f5;
+            --muted: #b4b4b8;
+            --red: #ef4444;
+            --blue: #38bdf8;
+        }
+
+        html { scroll-behavior: smooth; }
+
         body {
-            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
+                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
+                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
         }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
-        }
-        
-        /* Menu slide-in and fade animation */
-        #menu {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        #menu.hidden {
-            opacity: 0;
-            transform: translateX(100%);
-            pointer-events: none;
-        }
-        #menu:not(.hidden) {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Menu links fade-in with stagger */
-        #menu a {
-            opacity: 0;
-            animation: fadeInDown 0.5s ease forwards;
-        }
-        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
-        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
-        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
-        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
-        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
-        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.6s; }
-        
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Carousel styles */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-        }
-        
-        .carousel-slide {
-            width: 100%;
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            transition: opacity 0.5s ease;
-        }
-        
-        .carousel-controls {
-            position: absolute;
-            bottom: 12px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 8px;
-            z-index: 10;
-        }
-        
-        .carousel-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        
-        .carousel-dot.active {
-            background-color: rgba(34, 211, 238, 1);
-            transform: scale(1.3);
-        }
-        
-        .carousel-nav {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: background-color 0.3s ease;
-            font-size: 20px;
-            z-index: 5;
-        }
-        
-        .carousel-nav:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        
-        .carousel-nav-prev {
-            left: 8px;
-        }
-        
-        .carousel-nav-next {
-            right: 8px;
-        }
-        
-        .carousel-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
-            color: white;
-            padding: 16px;
-            text-align: center;
-            font-size: 14px;
-        }
+
+        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+
+        .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(0,0,0,0.35); backdrop-filter: blur(16px); overflow: hidden; }
+        .panel img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover; }
+
+        .tab { transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease; padding-bottom:0.35rem; }
+        .tab.active { border-bottom-color: var(--blue) !important; color: var(--blue) !important; background: rgba(255,255,255,0.02); }
+
+        :root { --nav-height: 4rem; }
+        #site-tabs { position: fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0.5rem 1rem; background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6)); backdrop-filter: blur(6px); }
+        #top-fade { position:fixed; top:var(--nav-height); left:0; right:0; height:3.5rem; pointer-events:none; z-index:30; background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); }
     </style>
 </head>
-<body class="bg-slate-900 text-white">
+<body class="text-white">
 
     <!-- Hamburger Menu Button -->
     <div class="fixed top-0 right-0 p-4 z-30">
-        <button id="menu-btn" class="text-white focus:outline-none">
-            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <button id="menu-btn" class="rounded-full border border-white/20 bg-black/50 p-3 text-white backdrop-blur-md focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
             </svg>
         </button>
     </div>
 
     <!-- Navigation Menu -->
-    <div id="menu" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-20 flex items-center justify-center">
-        <div class="text-center">
-            <a href="index.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
-            <a href="article.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Articles</a>
-            <a href="photos.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
-            <a href="projects.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
-            <a href="resume.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">Resume</a>
-            <a href="about.html" class="block text-2xl sm:text-3xl md:text-4xl font-bold text-white py-4 hover:text-slate-300">About</a>
+    <div id="menu" class="hidden fixed inset-0 z-20 flex items-center justify-center bg-black/92 backdrop-blur-xl">
+        <div class="panel rounded-[2rem] px-8 py-10 text-center">
+            <p class="label mb-4 text-blue-300">Surface Navigation</p>
+            <a href="index.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-red-300">Mission Dossier</a>
+            <a href="article.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Articles</a>
+            <a href="photos.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Photos</a>
+            <a href="projects.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-red-300">Projects</a>
+            <a href="teams.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Teams</a>
+            <a href="resume.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">Resume</a>
+            <a href="about.html" class="block py-3 text-2xl font-semibold tracking-[0.22em] text-white hover:text-blue-300">About</a>
         </div>
     </div>
+        <nav id="site-tabs" class="hidden w-full z-40">
+            <div class="panel mx-auto max-w-7xl rounded-b-md px-4 py-2 flex gap-2 items-center justify-start">
+                <a href="index.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Mission Dossier</a>
+                <a href="projects.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Projects</a>
+                <a href="teams.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Teams</a>
+                <a href="photos.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Photos</a>
+                <a href="article.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Articles</a>
+                <a href="resume.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">Resume</a>
+                <a href="about.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-blue-300">About</a>
+            </div>
+        </nav>
+        <div id="top-fade"></div>
 
     <!-- Page Header -->
-    <header class="pt-32 pb-16 text-center px-4">
+    <header class="border-b border-white/10 px-4 pt-28 pb-12 text-center">
         <div class="container mx-auto">
-            <h1 class="text-4xl sm:text-5xl font-bold">My Projects</h1>
-            <p class="text-lg sm:text-xl text-slate-400 mt-4">Engineering, aerospace, and STEM education initiatives</p>
+            <p class="label text-red-300">Personal Systems Archive</p>
+            <h1 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Project Systems</h1>
+            <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">Personal engineering and software projects, separated from team roles so the portfolio stays easy to scan and easy to trust.</p>
         </div>
     </header>
 
     <!-- Projects Section -->
-    <section class="py-16 px-4">
+    <section class="px-4 py-16">
         <div class="container mx-auto">
-            <div id="projects-container" class="max-w-4xl mx-auto space-y-12">
+            <div id="projects-container" class="mx-auto max-w-5xl space-y-12">
                 <!-- Projects loaded dynamically from projects.json -->
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-12 bg-slate-800">
+    <footer class="border-t border-white/10 bg-black/40 py-12">
         <div class="container mx-auto px-4">
             <div class="max-w-3xl mx-auto">
                 <div class="flex justify-center items-center space-x-6 mb-6">
-                    <a href="mailto:dylankwok28@gmail.com" class="text-slate-300 hover:text-cyan-400 transition" title="Email">
+                    <a href="mailto:dylankwok28@gmail.com" class="text-zinc-300 hover:text-red-300 transition" title="Email">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path></svg>
                     </a>
-                    <a href="https://github.com/earthrise8" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="GitHub">
+                    <a href="https://github.com/earthrise8" target="_blank" class="text-zinc-300 hover:text-blue-300 transition" title="GitHub">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
                     </a>
-                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" class="text-zinc-300 hover:text-blue-300 transition" title="LinkedIn">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.469v6.766z"></path></svg>
                     </a>
-                    <a href="tel:+13415002788" class="text-slate-300 hover:text-cyan-400 transition" title="Phone">
+                    <a href="tel:+13415002788" class="text-zinc-300 hover:text-red-300 transition" title="Phone">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"> <path d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 0 1 1 1v3.5a1 1 0 0 1-1 1C9.85 21 3 14.15 3 5.5a1 1 0 0 1 1-1H7.5a1 1 0 0 1 1 1c0 1.25.2 2.46.57 3.58a1 1 0 0 1-.24 1.01l-2.2 2.2z"/></svg>
                     </a>
-                    <a href="https://www.instructables.com/member/flyingpig071/instructables/drafts/" target="_blank" class="text-slate-300 hover:text-cyan-400 transition" title="Instructables">
+                    <a href="https://www.instructables.com/member/flyingpig071/instructables/drafts/" target="_blank" class="text-zinc-300 hover:text-blue-300 transition" title="Instructables">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">    <path d="M12 2 C6.48 2 2 6.48 2 12 s4.48 10 10 10 10-4.48 10-10 S17.52 2 12 2 Z M11 4 h2 v2 h-2 Z M8 8 h8 a2 2 0 0 1 2 2 v4 a2 2 0 0 1-2 2 h-8 a2 2 0 0 1-2-2 v-4 a2 2 0 0 1 2-2 Z M9.5 11 a1 1 0 1 0 0.001 0 Z M14.5 11 a1 1 0 1 0 0.001 0 Z M10 14 h4 v1 h-4 Z"/></svg>
                     </a>
                 </div>
-                <div class="text-center border-t border-slate-700 pt-6">
-                    <p class="text-slate-300">&copy; 2026 Dylan Kwok. All rights reserved.</p>
+                <div class="text-center border-t border-white/10 pt-6">
+                    <p class="text-zinc-400">&copy; 2026 Dylan Kwok. All rights reserved.</p>
                 </div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Menu toggle with slide and fade animation
         const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        let isOpen = false;
-    
+        const siteTabs = document.getElementById('site-tabs');
+
+        const menuIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+        const closeIcon = `<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
         menuBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            menu.classList.toggle('hidden');
-            if (isOpen) {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-            } else {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
-            }
+            siteTabs.classList.toggle('hidden');
+            const isOpen = !siteTabs.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? closeIcon : menuIcon;
         });
+
+        (function activateTabs(){
+            const tabs = document.querySelectorAll('#site-tabs .tab');
+            const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
+            tabs.forEach(tab => {
+                const href = tab.getAttribute('href') || '';
+                if (href.endsWith(currentFile) || (currentFile === '' && href.endsWith('index.html'))) {
+                    tab.classList.add('active');
+                }
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        })();
 
         // Carousel management
         class ProjectCarousel {
             constructor(containerId, images) {
                 this.container = document.getElementById(containerId);
                 this.images = images;
-                this.currentIndex = 0;
-                this.init();
+                    const projectHTML = `
+                        <article class="panel overflow-hidden rounded-[2rem]">
             }
-
+                                <div class="relative min-h-[18rem] lg:min-h-full bg-black" id="${carouselId}">
             init() {
-                this.updateSlide();
-                this.attachEventListeners();
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
+                                    <div class="carousel-caption absolute bottom-0 left-0 right-0 p-4 text-sm text-zinc-100"></div>
             }
 
             updateSlide() {
                 const slide = this.container.querySelector('.carousel-slide');
                 slide.style.backgroundImage = `url('${this.images[this.currentIndex].url}')`;
                 
-                const caption = this.container.querySelector('.carousel-caption');
-                caption.textContent = this.images[this.currentIndex].caption;
-
-                // Update dots
+                                <div class="p-6 sm:p-8 lg:p-10">
+                                    <div class="flex flex-wrap items-center gap-3 mb-4">
+                                        <span class="label text-red-300">System / Project</span>
+                                        <span class="rounded-full border border-blue-400/35 bg-white px-3 py-1 text-xs font-semibold text-black">${project.status}</span>
                 const dots = this.container.querySelectorAll('.carousel-dot');
                 dots.forEach((dot, index) => {
-                    dot.classList.toggle('active', index === this.currentIndex);
-                });
+                                    <p class="mt-3 text-sm uppercase tracking-[0.2em] text-zinc-400">${project.organization} • ${project.timeframe}</p>
+                                    <p class="mt-6 text-base leading-7 text-zinc-300">${project.description}</p>
             }
 
-            attachEventListeners() {
-                const prevBtn = this.container.querySelector('.carousel-nav-prev');
-                const nextBtn = this.container.querySelector('.carousel-nav-next');
+                                            <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Key Results</h3>
+                                            <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
+                                                ${project.accomplishments.map(item => `<li class="border-l border-red-400/40 pl-3">${item}</li>`).join('')}
                 const dots = this.container.querySelectorAll('.carousel-dot');
 
                 prevBtn.addEventListener('click', () => this.prev());
-                nextBtn.addEventListener('click', () => this.next());
-
-                dots.forEach((dot, index) => {
+                                            <h3 class="text-sm uppercase tracking-[0.25em] text-zinc-400">Systems Used</h3>
+                                            <ul class="mt-4 space-y-3 text-sm leading-6 text-zinc-300">
+                                                ${project.technologies.map(item => `<li class="border-l border-blue-400/40 pl-3">${item}</li>`).join('')}
                     dot.addEventListener('click', () => this.goTo(index));
                 });
             }
 
             next() {
                 this.currentIndex = (this.currentIndex + 1) % this.images.length;
-                this.updateSlide();
+                                                <div class="overflow-hidden rounded-2xl border border-white/10">
             }
 
             prev() {
                 this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
                 this.updateSlide();
-            }
+                                    ${project.link ? `<div class="mt-8"><a href="${project.link}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center rounded-full border border-red-400/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">View Project</a></div>` : ''}
 
             goTo(index) {
                 this.currentIndex = index;

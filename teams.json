@@ -1,0 +1,134 @@
+{
+  "teams": [
+    {
+      "id": 1,
+      "title": "Untitled Rocketry",
+      "status": "ACTIVE",
+      "organization": "American Rocketry Challenge",
+      "timeframe": "2023-Present",
+      "description": "Founded and led a 10-member competitive rocketry team that qualified for nationals in the American Rocketry Challenge. The team is responsible for designing, building, testing, and launching rockets that meet specific mission requirements while staying within strict constraints.",
+      "accomplishments": [
+        "Qualified for nationals competition",
+        "Built rockets from materials to flight",
+        "Coordinated team meetings and training",
+        "Documented design process and results"
+      ],
+      "technologies": [
+        "Rocket design and simulation",
+        "OpenRocket and XCAL software",
+        "Materials selection and construction",
+        "Test flight analysis"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/rockettable.JPG",
+          "caption": "Rocket design and assembly"
+        },
+        {
+          "url": "projectphotos/dylansanding.JPG",
+          "caption": "Launch preparation"
+        },
+        {
+          "url": "projectphotos/rocketload.JPG",
+          "caption": "Loading rocket"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "H2GP Team Lead Engineer",
+      "status": "ACTIVE",
+      "organization": "H2GP",
+      "timeframe": "2025-Present",
+      "description": "Serve as lead engineer on an H2GP team, managing technical development, subsystem integration, and race-focused vehicle performance improvements.",
+      "accomplishments": [
+        "Coordinated drivetrain, energy, and mechanical subsystem decisions",
+        "Led iterative testing and performance tuning cycles",
+        "Established engineering workflows for rapid troubleshooting"
+      ],
+      "technologies": [
+        "Hydrogen systems fundamentals",
+        "Vehicle systems integration",
+        "Performance testing and data analysis"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/rockettable.JPG",
+          "caption": "Engineering leadership and technical build sessions"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "CubeSat Development with IST",
+      "status": "NEW",
+      "organization": "Fremont Student Makers x International Space Teams",
+      "timeframe": "2026-Present",
+      "description": "Contributing to a student CubeSat initiative planned for launch with IST, focused on systems engineering, payload planning, and mission readiness.",
+      "accomplishments": [
+        "Supported early CubeSat architecture and mission definition",
+        "Collaborated across student teams on launch preparation",
+        "Developed documentation and readiness checklists"
+      ],
+      "technologies": [
+        "CubeSat systems engineering",
+        "Mission planning",
+        "Technical documentation"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/Scylla.jpg",
+          "caption": "Early-stage CubeSat design and mission planning"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Founder, Fremont Student Makers",
+      "status": "FEATURED",
+      "organization": "Fremont Student Makers",
+      "timeframe": "2025-Present",
+      "description": "Founded Fremont Student Makers to build a student-led engineering community focused on aerospace, robotics, and hands-on innovation.",
+      "accomplishments": [
+        "Established club operations, leadership structure, and project tracks",
+        "Organized collaborative build sessions and mentorship opportunities",
+        "Connected students with real-world engineering initiatives"
+      ],
+      "technologies": [
+        "Program leadership",
+        "Team operations",
+        "STEM community building"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/standingAstraea.JPG",
+          "caption": "Fremont Student Makers collaborative engineering culture"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Director of Aerospace, Maker Club",
+      "status": "ACTIVE",
+      "organization": "Maker Club",
+      "timeframe": "2025-Present",
+      "description": "Leading aerospace initiatives within Maker Club, including technical planning, team coordination, and systems development for student projects.",
+      "accomplishments": [
+        "Directed aerospace-focused project planning and execution",
+        "Managed team collaboration around launch and build cycles",
+        "Supported outreach and skill-building across the club"
+      ],
+      "technologies": [
+        "Team leadership",
+        "Systems planning",
+        "Technical mentorship"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/standingAstraea.JPG",
+          "caption": "Club engineering and aerospace work"
+        }
+      ]
+    }
+  ]
+}

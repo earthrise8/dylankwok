@@ -2,56 +2,22 @@
   "projects": [
     {
       "id": 1,
-      "title": "Untitled Rocketry",
-      "status": "ACTIVE",
-      "organization": "American Rocketry Challenge",
-      "timeframe": "2023-Present",
-      "description": "Founded and lead a 10-member competitive rocketry team that qualified for nationals in the American Rocketry Challenge. The team is responsible for designing, building, testing, and launching rockets that meet specific mission requirements while staying within strict constraints.",
-      "accomplishments": [
-        "Qualified for nationals competition",
-        "Built rockets from materials to flight",
-        "Coordinated team meetings and training",
-        "Documented design process and results"
-      ],
-      "technologies": [
-        "Rocket design & simulation",
-        "OpenRocket & XCAL software",
-        "Materials selection & construction",
-        "Test flight analysis"
-      ],
-      "images": [
-        {
-          "url": "projectphotos/rockettable.JPG",
-          "caption": "Rocket design and assembly"
-        },
-        {
-          "url": "projectphotos/dylansanding.JPG",
-          "caption": "Launch preparation"
-        },
-        {
-          "url": "projectphotos/rocketload.JPG",
-          "caption": "Loading rocket"
-        }
-      ]
-    },
-    {
-      "id": 2,
       "title": "Modular Rocket System",
       "status": "FEATURED",
       "organization": "Personal Engineering Project",
       "timeframe": "2025",
-      "description": "Designed and 3D-printed a fully modular rocket system that adapts to different flight conditions, payloads, and environmental factors. The system uses standardized components and quick-connect mechanisms for rapid assembly and testing.",
+      "description": "Designed and 3D-printed a modular rocket system that adapts to different flight conditions, payloads, and environmental factors. The system uses standardized components and quick-connect mechanisms for rapid assembly and testing.",
       "accomplishments": [
         "Swappable fin designs for stability",
         "Variable payload bay",
         "Quick-disconnect motor system",
-        "Wind/altitude adaptation"
+        "Wind and altitude adaptation"
       ],
       "technologies": [
         "CAD: Fusion 360",
-        "3D printing: FDM (PETG & ABS)",
+        "3D printing: FDM (PETG and ABS)",
         "Simulation: OpenRocket",
-        "Material testing & validation"
+        "Material testing and validation"
       ],
       "images": [
         {
@@ -65,15 +31,15 @@
       ]
     },
     {
-      "id": 3,
+      "id": 2,
       "title": "Telemetry Lost",
       "status": "FEATURED",
       "organization": "Personal Engineering Project",
       "timeframe": "2026",
-      "description": "Designed and built a text-based RPG game based on book Mickey 7 by Edward Ashton. The game features a branching narrative, multiple endings, and a unique combat system that combines strategy and chance.",
+      "description": "Designed and built a text-based RPG game based on Mickey 7 by Edward Ashton. The game features a branching narrative, multiple endings, and a combat system that combines strategy and chance.",
       "accomplishments": [
-        "Learned about java and game development",
-        "Adaptive scoring system"
+        "Learned Java and game development",
+        "Built an adaptive scoring system"
       ],
       "technologies": [
         "Visual Studio Code",
@@ -83,12 +49,12 @@
       "images": [
         {
           "url": "projectphotos/telemetrylost.png",
-          "caption": "Game Main Menu"
+          "caption": "Game main menu"
         }
       ]
     },
     {
-      "id": 4,
+      "id": 3,
       "title": "AstroForge",
       "status": "NEW",
       "organization": "Personal Game Development Project",
@@ -100,7 +66,7 @@
         "Designed gameplay loops around test, refine, and relaunch"
       ],
       "technologies": [
-        "Game design & simulation systems",
+        "Game design and simulation systems",
         "AI-assisted development workflow",
         "Web deployment"
       ],
@@ -117,7 +83,7 @@
       ]
     },
     {
-      "id": 5,
+      "id": 4,
       "title": "VENA",
       "status": "FEATURED",
       "organization": "Entrepreneurship Project",
@@ -125,7 +91,7 @@
       "description": "Co-created VENA, an entrepreneurship app concept that uses AI-powered image analysis to support injury triage workflows and user guidance.",
       "accomplishments": [
         "Led architecture and core engineering decisions",
-        "Built early AI image analysis pipeline for injury classification",
+        "Built an early AI image analysis pipeline for injury classification",
         "Translated customer discovery into product requirements"
       ],
       "technologies": [
@@ -141,79 +107,7 @@
       ]
     },
     {
-      "id": 6,
-      "title": "H2GP Team Lead Engineer",
-      "status": "ACTIVE",
-      "organization": "H2GP",
-      "timeframe": "2025-Present",
-      "description": "Serve as lead engineer on an H2GP team, managing technical development, subsystem integration, and race-focused vehicle performance improvements.",
-      "accomplishments": [
-        "Coordinated drivetrain, energy, and mechanical subsystem decisions",
-        "Led iterative testing and performance tuning cycles",
-        "Established engineering workflows for rapid troubleshooting"
-      ],
-      "technologies": [
-        "Hydrogen systems fundamentals",
-        "Vehicle systems integration",
-        "Performance testing and data analysis"
-      ],
-      "images": [
-        {
-          "url": "projectphotos/rockettable.JPG",
-          "caption": "Engineering leadership and technical build sessions"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "title": "CubeSat Development with IST",
-      "status": "NEW",
-      "organization": "Fremont Student Makers x International Space Teams",
-      "timeframe": "2026-Present",
-      "description": "Contributing to a student CubeSat initiative planned for launch with IST, focused on systems engineering, payload planning, and mission readiness.",
-      "accomplishments": [
-        "Supported early CubeSat architecture and mission definition",
-        "Collaborated across student teams on launch preparation",
-        "Developed documentation and readiness checklists"
-      ],
-      "technologies": [
-        "CubeSat systems engineering",
-        "Mission planning",
-        "Technical documentation"
-      ],
-      "images": [
-        {
-          "url": "projectphotos/Scylla.jpg",
-          "caption": "Early-stage CubeSat design and mission planning"
-        }
-      ]
-    },
-    {
-      "id": 8,
-      "title": "Founder, Fremont Student Makers",
-      "status": "FEATURED",
-      "organization": "Fremont Student Makers",
-      "timeframe": "2025-Present",
-      "description": "Founded Fremont Student Makers to build a student-led engineering community focused on aerospace, robotics, and hands-on innovation.",
-      "accomplishments": [
-        "Established club operations, leadership structure, and project tracks",
-        "Organized collaborative build sessions and mentorship opportunities",
-        "Connected students with real-world engineering initiatives"
-      ],
-      "technologies": [
-        "Program leadership",
-        "Team operations",
-        "STEM community building"
-      ],
-      "images": [
-        {
-          "url": "projectphotos/standingAstraea.JPG",
-          "caption": "Fremont Student Makers collaborative engineering culture"
-        }
-      ]
-    },
-    {
-      "id": 9,
+      "id": 5,
       "title": "Niryo Robot Barista Automation",
       "status": "NEW",
       "organization": "Robotics Project",

@@ -14,138 +14,89 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif;
-        }
-        
-        /* Menu slide-in and fade animation */
-        #menu {
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        #menu.hidden {
-            opacity: 0;
-            transform: translateX(100%);
-            pointer-events: none;
-        }
-        #menu:not(.hidden) {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        
-        /* Menu links fade-in with stagger */
-        #menu a {
-            opacity: 0;
-            animation: fadeInDown 0.5s ease forwards;
-        }
-        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.1s; }
-        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.2s; }
-        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.3s; }
-        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.4s; }
-        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.5s; }
-        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.6s; }
-        
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Photo carousel styles */
-        .carousel-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 0.5rem;
-        }
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease-in-out;
-        }
-        .carousel-item {
-            flex: 0 0 100%;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
-        .carousel-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-        }
-        .carousel-btn.prev {
-            left: 1rem;
-        }
-        .carousel-btn.next {
-            right: 1rem;
-        }
-        .carousel-dots {
-            position: absolute;
-            bottom: 1rem;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-        .dot {
-            width: 0.75rem;
-            height: 0.75rem;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            cursor: pointer;
-            transition: background 0.3s ease;
-        }
-        .dot.active {
-            background: white;
+        :root {
+            --bg: #050505;
+            --panel: rgba(18, 18, 20, 0.92);
+            --panel-2: rgba(28, 28, 32, 0.92);
+            --line: rgba(255, 255, 255, 0.12);
+            --text: #f5f5f5;
+            --muted: #b4b4b8;
+            --red: #ef4444;
+            --blue: #38bdf8;
         }
 
-        /* Back to top button */
-        #backToTop {
-            display: none;
+        html { scroll-behavior: smooth; }
+
+        body {
+            margin: 0;
+            font-family: 'Space Grotesk', sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
+                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+                radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
+                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+        }
+
+        h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
+
+        .shell { position: relative; }
+
+        .shell::before {
+            content: '';
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #06b6d4;
-            color: #0f172a;
-            border: none;
-            padding: 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 20;
-            transition: background 0.3s ease, opacity 0.3s ease;
+            inset: 0;
+            pointer-events: none;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 24px 24px;
+            mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.7), transparent 80%);
+            opacity: 0.35;
+            z-index: 0;
         }
-        #backToTop:hover {
-            background: #22d3ee;
-        }
-        #backToTop.show {
-            display: block;
-        }
+
+        .panel { background: var(--panel); border: 1px solid var(--line); box-shadow: 0 24px 80px rgba(0,0,0,0.35); backdrop-filter: blur(16px); overflow: hidden; }
+
+        .panel img { display:block; width:100%; height:auto; max-height:520px; object-fit:cover; }
+
+        .frame { border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.03); }
+
+        .label { font-size: 0.72rem; letter-spacing: 0.34em; text-transform: uppercase; color: #d4d4d8; }
+
+        .stat { border-top:1px solid var(--line); padding-top:0.85rem; }
+
+        .carousel-track { display:grid; grid-auto-flow: column; grid-auto-columns: minmax(18rem, 30rem); gap:1.25rem; overflow-x:auto; padding-bottom:0.75rem; scroll-snap-type:x mandatory; scroll-behavior:smooth; }
+        .carousel-track::-webkit-scrollbar { display:none; }
+        .carousel-card { scroll-snap-align:start; }
+
+        .carousel-control { position:absolute; top:50%; transform:translateY(-50%); z-index:2; width:2.75rem; height:2.75rem; border-radius:9999px; border:1px solid rgba(255,255,255,0.18); background:rgba(0,0,0,0.65); color:white; display:flex; align-items:center; justify-content:center; backdrop-filter: blur(14px); }
+        .carousel-control:hover { transform:translateY(-50%) scale(1.05); background: rgba(28,28,32,0.88); }
+
+        .tab { transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease; padding-bottom:0.35rem; }
+        .tab.active { border-bottom-color: var(--blue) !important; color: var(--blue) !important; background: rgba(255,255,255,0.02); }
+
+        :root { --nav-height: 4rem; }
+
+        #site-tabs { position: fixed; top:0; left:0; right:0; z-index:40; display:flex; justify-content:center; padding:0.5rem 1rem; background: linear-gradient(180deg, rgba(6,6,8,0.85), rgba(6,6,8,0.6)); backdrop-filter: blur(6px); }
+        #top-fade { position:fixed; top:var(--nav-height); left:0; right:0; height:3.5rem; pointer-events:none; z-index:30; background: linear-gradient(to bottom, rgba(5,5,5,0.96), rgba(5,5,5,0)); }
+
+        #menu { transition: opacity 0.25s ease, transform 0.25s ease; }
+        #menu.hidden { opacity:0; transform: translateY(-1rem); pointer-events:none; }
+        #menu:not(.hidden) { opacity:1; transform: translateY(0); }
+
+        #menu a { opacity:0; animation: slideIn 0.45s ease forwards; }
+        #menu:not(.hidden) a:nth-child(1) { animation-delay: 0.06s; }
+        #menu:not(.hidden) a:nth-child(2) { animation-delay: 0.12s; }
+        #menu:not(.hidden) a:nth-child(3) { animation-delay: 0.18s; }
+        #menu:not(.hidden) a:nth-child(4) { animation-delay: 0.24s; }
+        #menu:not(.hidden) a:nth-child(5) { animation-delay: 0.30s; }
+        #menu:not(.hidden) a:nth-child(6) { animation-delay: 0.36s; }
+        #menu:not(.hidden) a:nth-child(7) { animation-delay: 0.42s; }
+
+        @keyframes slideIn { from { opacity:0; transform: translateY(-16px);} to { opacity:1; transform: translateY(0);} }
     </style>
 </head>
 <body class="bg-slate-900 text-white">
@@ -160,16 +111,18 @@
     </div>
 
     <!-- Navigation Menu -->
-    <div id="menu" class="hidden fixed inset-0 bg-slate-900 bg-opacity-95 z-20 flex items-center justify-center">
-        <div class="text-center">
-            <a href="index.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Home</a>
-            <a href="article.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Articles</a>
-            <a href="photos.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Photos</a>
-            <a href="projects.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Projects</a>
-            <a href="resume.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">Resume</a>
-            <a href="about.html" class="block text-4xl font-bold text-white py-4 hover:text-slate-300">About</a>
+    <nav id="site-tabs" class="hidden w-full z-40">
+        <div class="panel mx-auto max-w-7xl rounded-b-md px-4 py-2 flex gap-2 items-center justify-start">
+            <a href="index.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Home</a>
+            <a href="projects.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Projects</a>
+            <a href="teams.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Teams</a>
+            <a href="photos.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Photos</a>
+            <a href="article.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Articles</a>
+            <a href="resume.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">Resume</a>
+            <a href="about.html" class="tab px-4 py-2 rounded-t-md border-b-2 border-transparent text-white hover:text-cyan-300">About</a>
         </div>
-    </div>
+    </nav>
+    <div id="top-fade"></div>
 
     <!-- Page Header -->
     <header class="pt-32 pb-16">
@@ -350,18 +303,31 @@
 
     <script>
         const menuBtn = document.getElementById('menu-btn');
-        const menu = document.getElementById('menu');
-        let isOpen = false;
-    
+        const siteTabs = document.getElementById('site-tabs');
+
+        const menuIcon = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
+        const closeIcon = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
+
         menuBtn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            menu.classList.toggle('hidden');
-            if (isOpen) {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>`;
-            } else {
-                menuBtn.innerHTML = `<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>`;
-            }
+            siteTabs.classList.toggle('hidden');
+            const isOpen = !siteTabs.classList.contains('hidden');
+            menuBtn.innerHTML = isOpen ? closeIcon : menuIcon;
         });
+
+        (function activateTabs(){
+            const tabs = document.querySelectorAll('#site-tabs .tab');
+            const currentFile = (window.location.pathname.split('/').pop() || 'index.html');
+            tabs.forEach(tab => {
+                const href = tab.getAttribute('href') || '';
+                if (href.endsWith(currentFile) || (currentFile === '' && href.endsWith('index.html'))) {
+                    tab.classList.add('active');
+                }
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                });
+            });
+        })();
 
         // Photo Carousel
         let currentSlide = 0;
