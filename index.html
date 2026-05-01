@@ -116,6 +116,18 @@
             scroll-snap-align: start;
         }
 
+        .quick-access-layout {
+            display: grid;
+            gap: 1.75rem;
+            align-items: start;
+        }
+
+        .quick-access-links {
+            display: grid;
+            gap: 0.75rem;
+            align-self: start;
+        }
+
         .carousel-control {
             position: absolute;
             top: 50%;
@@ -223,7 +235,7 @@
     <div class="mx-auto max-w-7xl px-4 pt-24 sm:px-6 lg:px-8 lg:pt-28">
             <div class="grid gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-end">
                     <h1 class="mt-4 text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Dylan Kwok</h1>
-                    <p class="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">A structured record of aerospace systems, software, leadership, and fieldwork. The interface is staged like a mission console so the story unfolds in a deliberate sequence instead of a casual scroll.</p>
+                    <p class="mt-5 max-w-2xl text-base leading-8 text-zinc-300 sm:text-lg">Portfolio of my projects, team roles, photography, and makerspace work. Use the sections below to browse projects, learn more about me, and open the full resume.</p>
 
                     <div class="mt-8 grid gap-4 sm:grid-cols-3">
                         <div class="stat">
@@ -233,8 +245,8 @@
                     </div>
 
                     <div class="mt-8 flex flex-wrap gap-3">
-                        <a href="#mission-log" class="inline-flex items-center rounded-full border border-red-500/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">Open Mission Log</a>
-                        <a href="#systems-archive" class="inline-flex items-center rounded-full border border-blue-400/40 bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200">View Systems Archive</a>
+                        <a href="#mission-log" class="inline-flex items-center rounded-full border border-red-500/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">Browse Sections</a>
+                        <a href="#systems-archive" class="inline-flex items-center rounded-full border border-blue-400/40 bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200">View Projects</a>
                         <a href="resume.html" class="inline-flex items-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-blue-300 hover:text-blue-200">Resume</a>
                     </div>
 
@@ -246,7 +258,7 @@
                     </div>
                 </div>
 
-                <div class="grid gap-4 sm:grid-cols-2">
+                <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:mt-10">
                     <a href="projects.html" class="panel rounded-[2rem] p-4 sm:p-5 lg:row-span-2 cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <div class="flex items-center justify-between">
                             <p class="mono text-[11px] uppercase tracking-[0.35em] text-zinc-400">Primary Signal</p>
@@ -279,10 +291,10 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-blue-300">Mission Log</p>
-                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">The story, in order</h2>
+                        <p class="label text-blue-300">Highlights</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Browse the site</h2>
                     </div>
-                    <p class="max-w-xl text-sm leading-7 text-zinc-400">The page is staged as a sequence: who I am, what I build, who I work with, and where the evidence lives.</p>
+                    <p class="max-w-xl text-sm leading-7 text-zinc-400">Start with a quick overview, then move into projects, leadership, and photos. Each section links to the full page for that topic.</p>
                 </div>
 
                 <div class="grid gap-4 lg:grid-cols-4">
@@ -290,28 +302,28 @@
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">01 / Signal</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Profile</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">A structured introduction that reads like a dossier, not a casual intro.</p>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A short overview of my background, interests, and goals.</p>
                         </article>
                     </a>
                     <a href="projects.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">02 / Build</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Projects</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">Personal engineering and software work presented as a clean archive.</p>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A collection of engineering, software, and maker projects.</p>
                         </article>
                     </a>
                     <a href="teams.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-cyan-400/60 hover:bg-slate-900/40">
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">03 / Crew</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Teams</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">Organizations and leadership roles separated into their own record set.</p>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">Leadership roles, team work, and organizations I’ve helped build.</p>
                         </article>
                     </a>
                     <a href="resume.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-green-400/60 hover:bg-slate-900/40">
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">04 / Proof</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Resume Link</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">Built to be professional enough for admissions, internships, and resume use.</p>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A quick link to the resume page for applications and review.</p>
                         </article>
                     </a>
                 </div>
@@ -322,10 +334,10 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-red-300">Systems Archive</p>
-                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected project files</h2>
+                        <p class="label text-red-300">Projects</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected work</h2>
                     </div>
-                    <a href="projects.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open archive</a>
+                    <a href="projects.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open projects</a>
                 </div>
 
                 <div class="carousel-shell">
@@ -337,8 +349,8 @@
                         <div class="p-6">
                             <p class="label text-red-300">Engineering File 01</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Modular Rocket System</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">A configurable launch platform designed for adaptability, testing, and controlled iteration.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">Read file →</a>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A modular rocket platform built for adaptation, iteration, and flight testing.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View project →</a>
                         </div>
                     </article>
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
@@ -346,8 +358,8 @@
                         <div class="p-6">
                             <p class="label text-blue-300">Software File 02</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Telemetry Lost</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">A narrative game with branching choices and systems-based play structure.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">Read file →</a>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">A branching narrative game shaped around choice, consequence, and repeat runs.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View project →</a>
                         </div>
                     </article>
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
@@ -355,8 +367,8 @@
                         <div class="p-6">
                             <p class="label text-red-300">Simulation File 03</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">AstroForge</h3>
-                            <p class="mt-3 text-sm leading-7 text-zinc-300">An AI-assisted rocket simulation game built around design-test-refine loops.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">Read file →</a>
+                            <p class="mt-3 text-sm leading-7 text-zinc-300">An AI-assisted rocket simulation game focused on design, test, and refinement loops.</p>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View project →</a>
                         </div>
                     </article>
                     </div>
@@ -368,10 +380,10 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-blue-300">Crew Records</p>
-                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Teams and leadership</h2>
+                        <p class="label text-blue-300">Teams</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Leadership and collaboration</h2>
                     </div>
-                    <a href="teams.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open records</a>
+                    <a href="teams.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open teams</a>
                 </div>
 
                 <div class="grid gap-6 lg:grid-cols-2">
@@ -383,8 +395,8 @@
                             <div class="p-6">
                                 <p class="label text-red-300">Crew Record 01</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">Untitled Rocketry</h3>
-                                <p class="mt-3 text-sm leading-7 text-zinc-300">Competitive rocketry leadership centered on design, fabrication, testing, and national-level performance.</p>
-                                <a href="teams.html#team-1" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View record →</a>
+                                <p class="mt-3 text-sm leading-7 text-zinc-300">Competitive rocketry leadership spanning design reviews, fabrication, testing, and competition prep.</p>
+                                <a href="teams.html#team-1" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View team page →</a>
                             </div>
                         </div>
                     </article>
@@ -396,8 +408,8 @@
                             <div class="p-6">
                                 <p class="label text-blue-300">Crew Record 02</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">CubeSat Development with IST</h3>
-                                <p class="mt-3 text-sm leading-7 text-zinc-300">Student satellite systems work focused on mission readiness, documentation, and launch preparation.</p>
-                                <a href="teams.html#team-3" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View record →</a>
+                                <p class="mt-3 text-sm leading-7 text-zinc-300">Student satellite systems work centered on readiness, documentation, and launch prep.</p>
+                                <a href="teams.html#team-3" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View team page →</a>
                             </div>
                         </div>
                     </article>
@@ -409,8 +421,8 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-red-300">Field Archive</p>
-                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Field-side imagery</h2>
+                        <p class="label text-red-300">Photos</p>
+                        <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected images</h2>
                     </div>
                     <a href="photos.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open gallery</a>
                 </div>
@@ -443,19 +455,19 @@
 
         <section class="border-t border-white/10 px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pb-20">
             <div class="mx-auto max-w-7xl">
-                <div class="panel rounded-[2rem] px-6 py-8 sm:px-8 lg:px-10">
-                    <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+                <div class="panel rounded-[2rem] px-6 py-8 sm:px-8 lg:px-10 lg:py-6">
+                    <div class="quick-access-layout lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]">
                         <div>
-                            <p class="label text-blue-300">Access</p>
-                            <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Built for resume use, but structured like a mission log.</h2>
-                            <p class="mt-4 max-w-2xl text-base leading-8 text-zinc-300">The viewer moves through a deliberate sequence: profile, projects, teams, imagery, then contact. It should feel like reading a field database entry from a remote surface.</p>
+                            <p class="label text-blue-300">Quick Links</p>
+                            <h2 class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Open the main pages</h2>
+                            <p class="mt-4 max-w-xl text-sm leading-7 text-zinc-300">Jump straight to the resume, profile, or project pages from here.</p>
                         </div>
-                        <div class="grid gap-3 sm:grid-cols-2">
-                            <a href="resume.html" class="frame rounded-[1.5rem] px-5 py-5 transition hover:border-blue-300">
+                        <div class="quick-access-links sm:grid-cols-2 lg:justify-self-end">
+                            <a href="resume.html" class="frame rounded-[1.5rem] px-5 py-4 transition hover:border-blue-300">
                                 <p class="label text-red-300">Resume</p>
                                 <p class="mt-3 text-lg font-semibold text-white">View credentials</p>
                             </a>
-                            <a href="about.html" class="frame rounded-[1.5rem] px-5 py-5 transition hover:border-red-300">
+                            <a href="about.html" class="frame rounded-[1.5rem] px-5 py-4 transition hover:border-red-300">
                                 <p class="label text-blue-300">Profile</p>
                                 <p class="mt-3 text-lg font-semibold text-white">Read background</p>
                             </a>

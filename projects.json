@@ -137,6 +137,30 @@
           "caption": "Robotics automation prototype and workflow testing"
         }
       ]
+    },
+    {
+      "id": 6,
+      "title": "ProtoQueue",
+      "status": "NEW",
+      "organization": "School Makerspace Project",
+      "timeframe": "2026",
+      "description": "Built ProtoQueue, a digital print management system for my school's makerspace to organize and track 3D print jobs. I used years of hands-on 3D printing experience to optimize the workflow for ease of use, helping over 100 students manage their projects more smoothly.",
+      "accomplishments": [
+        "Streamlined 3D print intake and tracking for the makerspace",
+        "Improved usability based on years of 3D printing experience",
+        "Supported print workflow management for over 100 students"
+      ],
+      "technologies": [
+        "Digital workflow design",
+        "Makerspace operations",
+        "3D printing management systems"
+      ],
+      "images": [
+        {
+          "url": "projectphotos/rockettable.JPG",
+          "caption": "ProtoQueue makerspace workflow planning"
+        }
+      ]
     }
   ]
 }

@@ -1,6 +1,6 @@
 (function () {
     const navItems = [
-        { href: 'index.html', label: 'Mission Dossier' },
+        { href: 'index.html', label: 'Home' },
         { href: 'projects.html', label: 'Projects' },
         { href: 'teams.html', label: 'Teams' },
         { href: 'photos.html', label: 'Photos' },
