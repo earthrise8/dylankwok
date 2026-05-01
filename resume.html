@@ -12,7 +12,18 @@
     <title>Dylan Kwok - Resume</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, .mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
         /* Menu slide-in and fade animation */
         #menu {
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -79,29 +90,6 @@
 
         .tab { transition: color .12s ease, border-color .12s ease; padding-bottom: .35rem; }
         .tab.active { border-bottom-color: #06b6d4 !important; color: #06b6d4 !important; }
-
-        /* Back to top button */
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #06b6d4;
-            color: #0f172a;
-            border: none;
-            padding: 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 20;
-            transition: background 0.3s ease, opacity 0.3s ease;
-        }
-        #backToTop:hover {
-            background: #22d3ee;
-        }
-        #backToTop.show {
-            display: block;
-        }
     </style>
     <link rel="stylesheet" href="theme.css">
 </head>
@@ -114,6 +102,7 @@
         <div class="container mx-auto px-4 text-center">
             <h1 class="text-5xl font-bold">Resume</h1>
             <p class="text-xl text-slate-400 mt-4">Experience, Education & Skills</p>
+            <a href="resume.pdf" download class="inline-flex items-center rounded-full border border-cyan-400/40 bg-cyan-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-cyan-400 mt-6">⬇ Download Resume</a>
         </div>
     </header>
 
@@ -251,36 +240,34 @@
                     </div>
                 </div>
 
+                <!-- Certifications -->
+                <div class="bg-slate-800 p-8 rounded-lg mb-8">
+                    <h2 class="text-3xl font-bold mb-6 border-b border-slate-700 pb-4">Certifications & Credentials</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">YouScience Certified: 21st Century Skills</h3>
+                            <p class="text-slate-400">YouScience • 2024</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">YouScience Certified: Entrepreneurship</h3>
+                            <p class="text-slate-400">YouScience • 2024</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2">Level 1 High-Power Rocketry Certification</h3>
+                            <p class="text-slate-400">National Association of Rocketry • 2024</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Back to top">↑</button>
 
     <div id="site-chrome-bottom"></div>
 
     <script src="site-chrome.js"></script>
 
     <script>
-        // Back to top button functionality
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 
 </body>
 </html>

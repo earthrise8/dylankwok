@@ -12,7 +12,18 @@
     <title>Dylan Kwok - About</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, .mono {
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
         /* Menu slide-in and fade animation */
         #menu {
             transition: opacity 0.3s ease, transform 0.3s ease;
@@ -141,29 +152,6 @@
         .dot.active {
             background: white;
         }
-
-        /* Back to top button */
-        #backToTop {
-            display: none;
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #06b6d4;
-            color: #0f172a;
-            border: none;
-            padding: 1rem;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 20;
-            transition: background 0.3s ease, opacity 0.3s ease;
-        }
-        #backToTop:hover {
-            background: #22d3ee;
-        }
-        #backToTop.show {
-            display: block;
-        }
     </style>
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -202,7 +190,64 @@
                 <div class="bg-slate-800 p-8 rounded-lg mb-8">
                     <h2 class="text-3xl font-bold mb-6">Places I've Visited</h2>
                     <p class="text-lg text-slate-300 mb-4">A small interactive map of a few places I like to visit. Click markers for details. I'll add more locations over time.</p>
-                    <div id="map" class="rounded-lg" style="height:360px;"></div>
+                    <div id="map" class="rounded-lg mb-8" style="height:360px;"></div>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-3">North America</h3>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• San Francisco</li>
+                                <li>• Yosemite</li>
+                                <li>• Joshua Tree</li>
+                                <li>• Grand Canyon</li>
+                                <li>• Sedona</li>
+                                <li>• New York</li>
+                                <li>• Boston</li>
+                                <li>• Orlando</li>
+                                <li>• Cancun, Mexico</li>
+                                <li>• Cabo San Lucas, Mexico</li>
+                                <li>• Jamaica</li>
+                                <li>• Victoria, Canada</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-3">Europe</h3>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• Seville, Spain</li>
+                                <li>• Barcelona, Spain</li>
+                                <li>• Paris, France</li>
+                                <li>• London, UK</li>
+                                <li>• Rome, Italy</li>
+                                <li>• Florence, Italy</li>
+                                <li>• Cinque Terre, Italy</li>
+                                <li>• Naples, Italy</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-3">Asia</h3>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• Hangzhou, China</li>
+                                <li>• Beijing, China</li>
+                                <li>• Shanghai, China</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-cyan-400 mb-3">Pacific</h3>
+                            <ul class="space-y-1 text-slate-300">
+                                <li>• Kauai, Hawaii</li>
+                                <li>• Honolulu, Hawaii</li>
+                                <li>• Maui, Hawaii</li>
+                                <li>• Hawaii Island, Hawaii</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8">
+                        <h3 class="text-xl font-bold text-cyan-400 mb-3">Middle East</h3>
+                        <ul class="space-y-1 text-slate-300">
+                            <li>• Dubai, UAE</li>
+                        </ul>
+                    </div>
                 </div>
 
                 <!-- Introduction -->
@@ -326,8 +371,6 @@
         </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Back to top">↑</button>
     <div id="site-chrome-bottom"></div>
 
     <script src="site-chrome.js"></script>
@@ -344,7 +387,32 @@
             const places = [
                 {name: 'San Francisco', coords: [37.7749, -122.4194]},
                 {name: 'Yosemite', coords: [37.8651, -119.5383]},
-                {name: 'Joshua Tree', coords: [33.8734, -115.9010]}
+                {name: 'Joshua Tree', coords: [33.8734, -115.9010]},
+                {name: 'Seville, Spain', coords: [37.3891, -5.9845]},
+                {name: 'Barcelona, Spain', coords: [41.3851, 2.1734]},
+                {name: 'Rome, Italy', coords: [41.9028, 12.4964]},
+                {name: 'Florence, Italy', coords: [43.7696, 11.2558]},
+                {name: 'Cinque Terre, Italy', coords: [43.1391, 12.5738]},
+                {name: 'Naples, Italy', coords: [40.8518, 14.2681]},
+                {name: 'Paris, France', coords: [48.8566, 2.3522]},
+                {name: 'London, UK', coords: [51.5074, -0.1278]},
+                {name: 'Cancun, Mexico', coords: [21.1619, -86.8515]},
+                {name: 'Cabo San Lucas, Mexico', coords: [22.8898, -109.9065]},
+                {name: 'Sedona, USA', coords: [34.4270, -111.7310]},
+                {name: 'Orlando, USA', coords: [28.5421, -81.3723]},
+                {name: 'Jamaica', coords: [18.1096, -77.2975]},
+                {name: 'Victoria, Canada', coords: [48.4281, -123.3656]},
+                {name: 'Hangzhou, China', coords: [30.2741, 120.1551]},
+                {name: 'Beijing, China', coords: [39.9042, 116.4074]},
+                {name: 'Shanghai, China', coords: [31.2304, 121.4737]},
+                {name: 'Dubai, UAE', coords: [25.2048, 55.2708]},
+                {name: 'New York, USA', coords: [40.7128, -74.0060]},
+                {name: 'Boston, USA', coords: [42.3601, -71.0589]},
+                {name: 'Grand Canyon, USA', coords: [36.1069, -112.1128]},
+                {name: 'Kauai, Hawaii', coords: [22.0964, -159.5361]},
+                {name: 'Honolulu, Hawaii', coords: [21.3099, -157.8581]},
+                {name: 'Maui, Hawaii', coords: [20.7984, -156.3319]},
+                {name: 'Hawaii Island, Hawaii', coords: [19.7299, -155.5921]}
             ];
 
             places.forEach(p => {
@@ -389,24 +457,6 @@
 
         // Auto-advance carousel every 5 seconds
         setInterval(() => changeSlide(1), 5000);
-
-        // Back to top button functionality
-        const backToTopBtn = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('show');
-            } else {
-                backToTopBtn.classList.remove('show');
-            }
-        });
-        
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
     </script>
 
 </body>
