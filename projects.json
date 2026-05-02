@@ -29,7 +29,7 @@
           "caption": "CAD render"
         },
         {
-          "url": "projectphotos/H2GPStates.jpg",
+          "url": "projectphotos/astraeacad.jpg",
           "caption": "Engineering competition team photo"
         }
       ]
@@ -157,8 +157,16 @@
       ],
       "images": [
         {
-          "url": "projectphotos/rockettable.JPG",
-          "caption": "ProtoQueue makerspace workflow planning"
+          "url": "projectphotos/ProtoQueueDashboard.png",
+          "caption": "Main Dashboard for ProtoQueue print job management and tracking"
+        },
+        {
+          "url": "projectphotos/ProtoQueueQueue.png",
+          "caption": "Queue visualization and print job details in ProtoQueue"
+        },
+        {
+          "url": "projectphotos/ProtoQueueSubmit.png",
+          "caption": "User form for submitting new print jobs to ProtoQueue with details and preferences"
         }
       ]
     }
