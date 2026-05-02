@@ -105,41 +105,21 @@
       ],
       "images": [
         {
-          "url": "projectphotos/AstroForge.png",
+          "url": "projectphotos/VENAHealthConsulte.jpg",
           "caption": "VENA app concept and prototype work"
         },
         {
-          "url": "projectphotos/MakerClubTeam.jpg",
+          "url": "projectphotos/VENAHealthDashboard.jpg",
+          "caption": "Team collaboration and planning session"
+        },
+        {
+          "url": "projectphotos/VENAHealthSymptoms.jpg",
           "caption": "Team collaboration and planning session"
         }
       ]
     },
     {
       "id": 5,
-      "title": "Niryo Robot Barista Automation",
-      "status": "NEW",
-      "organization": "Robotics Project",
-      "timeframe": "2026",
-      "description": "Built a coffee-making workflow with a Niryo robotic arm, integrating repeatable motion sequences and task automation for a practical robotics demo.",
-      "accomplishments": [
-        "Programmed robotic arm motion paths for drink preparation steps",
-        "Improved repeatability through iterative calibration",
-        "Demonstrated reliable end-to-end coffee task automation"
-      ],
-      "technologies": [
-        "Niryo robotic arm",
-        "Motion planning",
-        "Robotics workflow automation"
-      ],
-      "images": [
-        {
-          "url": "projectphotos/astraeacad.jpg",
-          "caption": "Robotics automation prototype and workflow testing"
-        }
-      ]
-    },
-    {
-      "id": 6,
       "title": "ProtoQueue",
       "status": "NEW",
       "organization": "School Makerspace Project",
