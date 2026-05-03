@@ -10,7 +10,7 @@
     <meta property="og:description" content="Photo Gallery - A collection of photography from travels and personal moments">
     <meta property="og:type" content="website">
     <title>Dylan Kwok - Photos</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="Dfavicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,10 +101,38 @@
 
     <div id="site-chrome-top"></div>
 
+    <header class="border-b border-white/10 px-4 pt-28 pb-12 sm:px-6 lg:pt-32">
+        <div class="mx-auto max-w-7xl">
+            <p class="label text-red-300">Gallery / Archive</p>
+            <div class="mt-5 grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+                <div>
+                    <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Photo Gallery</h1>
+                    <p class="mt-5 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">A visual archive of travel, landscapes, and personal moments. Use the controls below to sort by time or group by region.</p>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs uppercase tracking-[0.25em] text-zinc-300">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Newest</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Regions</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Travel</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <!-- Photo Gallery Section -->
     <section class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12">Photo Gallery</h2>
+            <div class="mb-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-between">
+                <p class="text-sm text-zinc-400">Sort photos by time or region.</p>
+                <label class="flex items-center gap-3 text-sm text-zinc-300">
+                    <span class="mono uppercase tracking-[0.28em] text-xs text-red-300">Sort</span>
+                    <select id="sort-select" class="rounded-full border border-white/10 bg-black/30 px-4 py-2 text-sm text-white outline-none transition focus:border-red-400/60">
+                        <option value="newest">Newest first</option>
+                        <option value="oldest">Oldest first</option>
+                        <option value="region-az">Region A-Z</option>
+                        <option value="region-za">Region Z-A</option>
+                    </select>
+                </label>
+            </div>
             <div id="gallery" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 <!-- Photos loaded from photos.json -->
             </div>
@@ -125,44 +153,92 @@
 
     <script>
         const gallery = document.getElementById('gallery');
+        const sortSelect = document.getElementById('sort-select');
         const modal = document.getElementById('modal');
         const modalImg = document.getElementById('modal-img');
         const modalDescription = document.getElementById('modal-description');
+        let photos = [];
+
+        function normalizeRegion(photo) {
+            return (photo.category || photo.location || 'Unknown').toString().trim().toLowerCase();
+        }
+
+        function regionLabel(photo) {
+            return photo.category || photo.location || 'Unknown';
+        }
+
+        function sortPhotos(items, sortMode) {
+            const sorted = [...items];
+
+            switch (sortMode) {
+                case 'oldest':
+                    return sorted.sort((left, right) => new Date(left.date) - new Date(right.date));
+                case 'region-az':
+                    return sorted.sort((left, right) => {
+                        const regionCompare = normalizeRegion(left).localeCompare(normalizeRegion(right));
+                        return regionCompare !== 0 ? regionCompare : new Date(right.date) - new Date(left.date);
+                    });
+                case 'region-za':
+                    return sorted.sort((left, right) => {
+                        const regionCompare = normalizeRegion(right).localeCompare(normalizeRegion(left));
+                        return regionCompare !== 0 ? regionCompare : new Date(right.date) - new Date(left.date);
+                    });
+                case 'newest':
+                default:
+                    return sorted.sort((left, right) => new Date(right.date) - new Date(left.date));
+            }
+        }
+
+        function renderGallery() {
+            const sortMode = sortSelect.value;
+            const sortedPhotos = sortPhotos(photos, sortMode);
+
+            gallery.innerHTML = '';
+
+            sortedPhotos.forEach(photo => {
+                const photoElement = document.createElement('div');
+                photoElement.className = 'gallery-item w-full rounded-lg cursor-pointer overflow-hidden flex flex-col border border-white/10 bg-black/20 transition hover:border-red-400/60 hover:opacity-95';
+                
+                const imgWrapper = document.createElement('div');
+                imgWrapper.className = 'flex-1 bg-contain bg-center bg-no-repeat';
+                imgWrapper.style.backgroundImage = `url('${photo.imageUrl}')`;
+                imgWrapper.style.minHeight = '250px';
+                
+                const infoDiv = document.createElement('div');
+                infoDiv.className = 'bg-[#2a0f10] border-t border-red-400/20 p-3 text-sm';
+                infoDiv.innerHTML = `
+                    <div class="flex items-start justify-between gap-3">
+                        <p class="font-semibold">${photo.title}</p>
+                        <span class="rounded-full border border-red-400/30 bg-black/30 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.24em] text-red-200">${regionLabel(photo)}</span>
+                    </div>
+                    <p class="text-red-200 text-xs mt-1">${photo.date}</p>
+                    ${photo.location ? `<p class="text-red-200 text-xs">${photo.location}</p>` : ''}
+                `;
+                
+                photoElement.appendChild(imgWrapper);
+                photoElement.appendChild(infoDiv);
+                
+                photoElement.dataset.description = photo.description;
+                photoElement.dataset.imageUrl = photo.imageUrl;
+                photoElement.dataset.date = photo.date;
+                photoElement.dataset.location = photo.location || '';
+                photoElement.dataset.title = photo.title;
+                gallery.appendChild(photoElement);
+            });
+
+            attachGalleryListeners();
+        }
 
         // Load photos from JSON
         fetch('photos.json')
             .then(response => response.json())
             .then(data => {
-                data.photos.forEach(photo => {
-                    const photoElement = document.createElement('div');
-                    photoElement.className = 'gallery-item w-full rounded-lg cursor-pointer hover:opacity-90 transition overflow-hidden flex flex-col';
-                    
-                    const imgWrapper = document.createElement('div');
-                    imgWrapper.className = 'flex-1 bg-contain bg-center bg-no-repeat';
-                    imgWrapper.style.backgroundImage = `url('${photo.imageUrl}')`;
-                    imgWrapper.style.minHeight = '250px';
-                    
-                    const infoDiv = document.createElement('div');
-                    infoDiv.className = 'bg-slate-700 p-3 text-sm';
-                    infoDiv.innerHTML = `
-                        <p class="font-semibold">${photo.title}</p>
-                        <p class="text-slate-300 text-xs mt-1">${photo.date}</p>
-                        ${photo.location ? `<p class="text-slate-300 text-xs">${photo.location}</p>` : ''}
-                    `;
-                    
-                    photoElement.appendChild(imgWrapper);
-                    photoElement.appendChild(infoDiv);
-                    
-                    photoElement.dataset.description = photo.description;
-                    photoElement.dataset.imageUrl = photo.imageUrl;
-                    photoElement.dataset.date = photo.date;
-                    photoElement.dataset.location = photo.location || '';
-                    photoElement.dataset.title = photo.title;
-                    gallery.appendChild(photoElement);
-                });
-                attachGalleryListeners();
+                photos = data.photos || [];
+                renderGallery();
             })
             .catch(error => console.error('Error loading photos:', error));
+
+        sortSelect.addEventListener('change', renderGallery);
 
         function attachGalleryListeners() {
             const galleryItems = document.querySelectorAll('.gallery-item');

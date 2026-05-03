@@ -6,11 +6,11 @@
     <meta name="description" content="Dylan Kwok - mission dossier style portfolio for aerospace systems, project work, and team leadership.">
     <meta name="keywords" content="Dylan Kwok, aerospace, projects, teams, engineering">
     <meta name="author" content="Dylan Kwok">
-    <meta property="og:title" content="Dylan Kwok | Surface Dossier">
+    <meta property="og:title" content="Dylan Kwok | Digital Repository">
     <meta property="og:description" content="A mission-style portfolio for aerospace systems, project work, and team leadership.">
     <meta property="og:type" content="website">
-    <title>Dylan Kwok | Surface Dossier</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230f172a'/><circle cx='50' cy='50' r='30' fill='none' stroke='%23ef4444' stroke-width='6'/><circle cx='50' cy='50' r='12' fill='%2338bdf8'/></svg>">
+    <title>Dylan Kwok | Digital Repository</title>
+    <link rel="icon" type="image/svg+xml" href="Dfavicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,10 +34,10 @@
             font-family: 'Space Grotesk', sans-serif;
             color: var(--text);
             background:
-                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.12), transparent 22%),
-                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.14), transparent 20%),
+                radial-gradient(circle at 15% 20%, rgba(239, 68, 68, 0.22), transparent 22%),
+                radial-gradient(circle at 85% 18%, rgba(56, 189, 248, 0.08), transparent 20%),
                 radial-gradient(circle at 50% 90%, rgba(255, 255, 255, 0.07), transparent 24%),
-                linear-gradient(180deg, #09090b 0%, #050505 55%, #111111 100%);
+                linear-gradient(180deg, #140707 0%, #050505 55%, #180909 100%);
         }
 
         h1, h2, h3, h4, h5, h6, .mono { font-family: 'IBM Plex Mono', monospace; }
@@ -128,37 +128,6 @@
             align-self: start;
         }
 
-        .carousel-control {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 2;
-            width: 2.75rem;
-            height: 2.75rem;
-            border-radius: 9999px;
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            background: rgba(0, 0, 0, 0.65);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            backdrop-filter: blur(14px);
-            transition: transform 0.2s ease, background 0.2s ease;
-        }
-
-        .carousel-control:hover {
-            transform: translateY(-50%) scale(1.05);
-            background: rgba(28, 28, 32, 0.88);
-        }
-
-        .carousel-control.prev {
-            left: -0.25rem;
-        }
-
-        .carousel-control.next {
-            right: -0.25rem;
-        }
-
         /* Tabs */
         .tab {
             transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
@@ -166,8 +135,8 @@
         }
 
         .tab.active {
-            border-bottom-color: var(--blue) !important;
-            color: var(--blue) !important;
+            border-bottom-color: var(--red) !important;
+            color: var(--red) !important;
             background: rgba(255,255,255,0.02);
         }
 
@@ -246,8 +215,8 @@
 
                     <div class="mt-8 flex flex-wrap gap-3">
                         <a href="#mission-log" class="inline-flex items-center rounded-full border border-red-500/40 bg-red-500 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-red-400">Browse Sections</a>
-                        <a href="#systems-archive" class="inline-flex items-center rounded-full border border-blue-400/40 bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200">View Projects</a>
-                        <a href="resume.html" class="inline-flex items-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-blue-300 hover:text-blue-200">Resume</a>
+                        <a href="#systems-archive" class="inline-flex items-center rounded-full border border-red-400/40 bg-white px-5 py-2.5 text-sm font-semibold text-black transition hover:bg-zinc-200">View Projects</a>
+                        <a href="resume.html" class="inline-flex items-center rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-white transition hover:border-red-300 hover:text-red-200">Resume</a>
                     </div>
 
                     <div class="mt-8 flex flex-wrap gap-2 text-xs uppercase tracking-[0.28em] text-zinc-400">
@@ -259,7 +228,7 @@
                 </div>
 
                 <!-- Short About Me (homepage) -->
-                <div class="mt-8 bg-slate-900/60 panel rounded-[1.5rem] p-6">
+                <div class="mt-8 bg-[#2a0f10]/80 panel rounded-[1.5rem] p-6">
                     <h2 class="text-2xl font-semibold text-white">About Me</h2>
                     <p class="mt-3 text-sm leading-7 text-zinc-300">I’m Dylan — an aspiring aerospace engineer and maker focused on modular rocket systems, student leadership, and hands-on prototyping. I enjoy building teams, teaching robotics, and bringing ideas from concept to flight.</p>
                 </div>
@@ -273,14 +242,14 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-blue-300">Highlights</p>
+                        <p class="label text-red-300">Highlights</p>
                         <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Browse the site</h2>
                     </div>
                     <p class="max-w-xl text-sm leading-7 text-zinc-400">Start with a quick overview, then move into projects, leadership, and photos. Each section links to the full page for that topic.</p>
                 </div>
 
                 <div class="grid gap-4 lg:grid-cols-4">
-                    <a href="about.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-blue-400/60 hover:bg-slate-900/40">
+                    <a href="about.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">01 / Signal</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Profile</h3>
@@ -294,7 +263,7 @@
                             <p class="mt-3 text-sm leading-7 text-zinc-300">A collection of engineering, software, and maker projects.</p>
                         </article>
                     </a>
-                    <a href="teams.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-cyan-400/60 hover:bg-slate-900/40">
+                    <a href="teams.html" class="panel rounded-[1.75rem] p-5 cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <article>
                             <p class="mono text-[11px] uppercase tracking-[0.32em] text-zinc-400">03 / Crew</p>
                             <h3 class="mt-4 text-xl font-semibold text-white">Teams</h3>
@@ -319,7 +288,7 @@
                         <p class="label text-red-300">Projects</p>
                         <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected work</h2>
                     </div>
-                    <a href="projects.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open projects</a>
+                    <a href="projects.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open projects</a>
                 </div>
 
                 <div class="carousel-shell">
@@ -333,14 +302,14 @@
                             <p class="label text-red-300">Engineering File 01</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Modular Rocket System</h3>
                             <p class="mt-3 text-sm leading-7 text-zinc-300">A modular rocket platform built for adaptation, iteration, and flight testing.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View project →</a>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View project →</a>
                         </div>
                     </article>
 
                     <article class="panel carousel-card rounded-[2rem] overflow-hidden">
                         <img src="projectphotos/telemetrylost.png" alt="Telemetry Lost" class="h-56 w-full object-cover main-thumb">
                         <div class="p-6">
-                            <p class="label text-blue-300">Software File 02</p>
+                            <p class="label text-red-300">Software File 02</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">Telemetry Lost</h3>
                             <p class="mt-3 text-sm leading-7 text-zinc-300">A branching narrative game shaped around choice, consequence, and repeat runs.</p>
                             <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View project →</a>
@@ -353,7 +322,7 @@
                             <p class="label text-red-300">Simulation File 03</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">AstroForge</h3>
                             <p class="mt-3 text-sm leading-7 text-zinc-300">An AI-assisted rocket simulation game focused on design, test, and refinement loops.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View project →</a>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View project →</a>
                         </div>
                     </article>
 
@@ -363,7 +332,7 @@
                             <p class="label text-red-300">Simulation File 04</p>
                             <h3 class="mt-3 text-2xl font-semibold text-white">ProtoQueue</h3>
                             <p class="mt-3 text-sm leading-7 text-zinc-300">A modular system for managing makerspaces at schools.</p>
-                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View project →</a>
+                            <a href="projects.html" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View project →</a>
                         </div>
                     </article>
                     </div>
@@ -375,7 +344,7 @@
             <div class="mx-auto max-w-7xl">
                 <div class="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
                     <div>
-                        <p class="label text-blue-300">Teams</p>
+                        <p class="label text-red-300">Teams</p>
                         <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Leadership and collaboration</h2>
                     </div>
                     <a href="teams.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open teams</a>
@@ -391,7 +360,7 @@
                                 <p class="label text-red-300">Crew Record 01</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">Untitled Rocketry</h3>
                                 <p class="mt-3 text-sm leading-7 text-zinc-300">Competitive rocketry leadership spanning design reviews, fabrication, testing, and competition prep.</p>
-                                <a href="teams.html#team-1" class="mt-6 inline-flex text-sm font-semibold text-blue-300 transition hover:text-blue-200">View team page →</a>
+                                <a href="teams.html#team-1" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View team page →</a>
                             </div>
                         </div>
                     </article>
@@ -401,7 +370,7 @@
                                 <img src="https://makersat.fremontstudentmakers.org/images/hardware2.png" alt="CubeSat development" class="h-full w-full object-cover main-thumb">
                             </div>
                             <div class="p-6">
-                                <p class="label text-blue-300">Crew Record 02</p>
+                                <p class="label text-red-300">Crew Record 02</p>
                                 <h3 class="mt-3 text-2xl font-semibold text-white">CubeSat Development with IST</h3>
                                 <p class="mt-3 text-sm leading-7 text-zinc-300">Student satellite systems work centered on readiness, documentation, and launch prep.</p>
                                 <a href="teams.html#team-3" class="mt-6 inline-flex text-sm font-semibold text-red-300 transition hover:text-red-200">View team page →</a>
@@ -419,18 +388,18 @@
                         <p class="label text-red-300">Photos</p>
                         <h2 class="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">Selected images</h2>
                     </div>
-                    <a href="photos.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-blue-300">Open gallery</a>
+                    <a href="photos.html" class="mono text-sm uppercase tracking-[0.28em] text-zinc-400 transition hover:text-red-300">Open gallery</a>
                 </div>
 
                 <div class="grid gap-6 md:grid-cols-3">
-                    <a href="photos.html" class="figure panel rounded-[2rem] overflow-hidden cursor-pointer transition hover:border-blue-400/60 hover:bg-slate-900/40">
+                    <a href="photos.html" class="figure panel rounded-[2rem] overflow-hidden cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <img src="gallery/San Francisco/IMG_0010.JPG" alt="Industrial Pyramid" class="h-72 w-full object-cover main-thumb">
                         <figcaption class="border-t border-white/10 p-4">
                             <p class="text-sm font-semibold text-white">Industrial Pyramid</p>
                             <p class="mono mt-1 text-[11px] uppercase tracking-[0.3em] text-zinc-400">San Francisco</p>
                         </figcaption>
                     </a>
-                    <a href="photos.html" class="figure panel rounded-[2rem] overflow-hidden cursor-pointer transition hover:border-cyan-400/60 hover:bg-slate-900/40">
+                    <a href="photos.html" class="figure panel rounded-[2rem] overflow-hidden cursor-pointer transition hover:border-red-400/60 hover:bg-slate-900/40">
                         <img src="gallery/Yosemite/IMG_2978.jpg" alt="Yosemite" class="h-72 w-full object-cover main-thumb">
                         <figcaption class="border-t border-white/10 p-4">
                             <p class="text-sm font-semibold text-white">Yosemite Valley</p>
@@ -453,17 +422,17 @@
                 <div class="panel rounded-[2rem] px-6 py-8 sm:px-8 lg:px-10 lg:py-6">
                     <div class="quick-access-layout lg:grid-cols-[minmax(0,1.15fr)_minmax(18rem,0.85fr)]">
                         <div>
-                            <p class="label text-blue-300">Quick Links</p>
+                            <p class="label text-red-300">Quick Links</p>
                             <h2 class="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl">Open the main pages</h2>
                             <p class="mt-4 max-w-xl text-sm leading-7 text-zinc-300">Jump straight to the resume, profile, or project pages from here.</p>
                         </div>
                         <div class="quick-access-links sm:grid-cols-2 lg:justify-self-end">
-                            <a href="resume.html" class="frame rounded-[1.5rem] px-5 py-4 transition hover:border-blue-300">
+                            <a href="resume.html" class="frame rounded-[1.5rem] px-5 py-4 transition hover:border-red-300">
                                 <p class="label text-red-300">Resume</p>
                                 <p class="mt-3 text-lg font-semibold text-white">View credentials</p>
                             </a>
                             <a href="about.html" class="frame rounded-[1.5rem] px-5 py-4 transition hover:border-red-300">
-                                <p class="label text-blue-300">Profile</p>
+                                <p class="label text-red-300">Profile</p>
                                 <p class="mt-3 text-lg font-semibold text-white">Read background</p>
                             </a>
                         </div>

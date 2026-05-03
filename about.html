@@ -10,7 +10,7 @@
     <meta property="og:description" content="Learn more about Dylan Kwok's background and interests">
     <meta property="og:type" content="website">
     <title>Dylan Kwok - About</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23334155'/><text x='50' y='75' font-size='80' font-weight='bold' fill='%23ffffff' text-anchor='middle' dominant-baseline='middle'>D</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="Dfavicon.svg">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,7 +101,7 @@
         }
         .carousel-item {
             flex: 0 0 100%;
-            min-height: 400px;
+            min-height: 480px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -110,21 +110,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            z-index: 10;
-        }
-        .carousel-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
         }
         .carousel-btn.prev {
             left: 1rem;
@@ -160,11 +145,20 @@
 
     <div id="site-chrome-top"></div>
 
-    <!-- Page Header -->
-    <header class="pt-32 pb-16">
-        <div class="container mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold">About Me</h1>
-            <p class="text-xl text-slate-400 mt-4">Creator, Engineer, and STEM Educator</p>
+    <header class="border-b border-white/10 px-4 pt-28 pb-12 sm:px-6 lg:pt-32">
+        <div class="mx-auto max-w-7xl">
+            <p class="label text-red-300">Personal / Profile</p>
+            <div class="mt-5 grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+                <div>
+                    <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">About Me</h1>
+                    <p class="mt-5 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">Creator, engineer, and STEM educator focused on modular rocket systems, mentorship, and hands-on prototyping. This page collects the places, ideas, and experiences that shape my work.</p>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs uppercase tracking-[0.25em] text-zinc-300">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Build</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Explore</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Mentor</div>
+                </div>
+            </div>
         </div>
     </header>
 

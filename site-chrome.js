@@ -43,7 +43,7 @@
             </button>
         </div>
         <nav id="site-tabs" class="panel rounded-2xl px-3 py-2 text-sm bg-zinc-900/20 border border-white/5 backdrop-blur-md">
-            ${navItems.map(item => `<a href="${item.href}" class="tab px-4 py-2 rounded-md text-white hover:text-blue-300">${item.label}</a>`).join('')}
+            ${navItems.map(item => `<a href="${item.href}" class="tab px-4 py-2 rounded-md text-white hover:text-red-300">${item.label}</a>`).join('')}
         </nav>
         <div id="top-fade"></div>
     `;
@@ -51,11 +51,11 @@
     const footerMarkup = `
         <footer class="relative z-[1] border-t border-white/10 px-4 py-10 sm:px-6 lg:px-8">
             <div class="mx-auto flex max-w-7xl flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                <p class="mono text-sm uppercase tracking-[0.3em] text-zinc-400">Dylan Kwok / Surface Dossier</p>
+                <p class="mono text-sm uppercase tracking-[0.3em] text-zinc-400">Dylan Kwok / Digital Repository</p>
                 <div class="flex flex-wrap gap-4 text-sm text-zinc-300">
                     <a href="mailto:dylankwok28@gmail.com" class="transition hover:text-red-300">Email</a>
-                    <a href="https://github.com/earthrise8" target="_blank" rel="noreferrer" class="transition hover:text-blue-300">GitHub</a>
-                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" rel="noreferrer" class="transition hover:text-blue-300">LinkedIn</a>
+                    <a href="https://github.com/earthrise8" target="_blank" rel="noreferrer" class="transition hover:text-red-300">GitHub</a>
+                    <a href="https://www.linkedin.com/in/dylan-kwok-934316283/" target="_blank" rel="noreferrer" class="transition hover:text-red-300">LinkedIn</a>
                     <a href="tel:+13415002788" class="transition hover:text-red-300">Phone</a>
                 </div>
             </div>
