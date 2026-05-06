@@ -15,6 +15,7 @@ html {
 
 body.space-theme {
     margin: 0;
+    padding-top: 4rem;
     font-family: 'Space Grotesk', sans-serif;
     color: var(--text);
     background:
@@ -183,6 +184,11 @@ body.space-theme #top-fade {
 body.space-theme .tab {
     transition: color 0.15s ease, background 0.15s ease, border-color 0.15s ease;
     padding-bottom: 0.35rem;
+    color: #f5f5f5 !important;
+}
+
+body.space-theme .tab:hover {
+    color: var(--red) !important;
 }
 
 body.space-theme .tab.active {

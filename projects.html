@@ -17,6 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         body {
+            padding-top: 4rem;
             font-family: 'Space Grotesk', sans-serif;
             background:
                 radial-gradient(circle at top left, rgba(239, 68, 68, 0.10), transparent 22%),
@@ -165,6 +166,73 @@
             letter-spacing: 0.34em;
             text-transform: uppercase;
         }
+
+        /* Image modal/popup */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .image-modal-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-modal img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 0.5rem;
+        }
+
+        .image-modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 2.5rem;
+            height: 2.5rem;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .image-modal-close:hover {
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .carousel-slide {
+            cursor: pointer;
+        }
+
+        .carousel-slide:hover {
+            opacity: 0.9;
+        }
     </style>
     <link rel="stylesheet" href="theme.css">
 </head>
@@ -172,12 +240,29 @@
 
     <div id="site-chrome-top"></div>
 
+    <!-- Image Modal Popup -->
+    <div id="image-modal" class="image-modal">
+        <div class="image-modal-content">
+            <button id="modal-close" class="image-modal-close" type="button">✕</button>
+            <img id="modal-image" src="" alt="Full size image">
+        </div>
+    </div>
+
     <!-- Page Header -->
-    <header class="border-b border-white/10 px-4 pt-28 pb-12 text-center">
-        <div class="container mx-auto">
+    <header class="border-b border-white/10 px-4 pt-28 pb-12 sm:px-6 lg:pt-32">
+        <div class="mx-auto max-w-7xl">
             <p class="label text-red-300">Personal Systems Archive</p>
-            <h1 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-5xl">Project Systems</h1>
-            <p class="mx-auto mt-4 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">Personal engineering and software projects, separated from team roles so the portfolio stays easy to scan and easy to trust.</p>
+            <div class="mt-5 grid gap-8 lg:grid-cols-[1fr_0.9fr] lg:items-end">
+                <div>
+                    <h1 class="text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">Projects</h1>
+                    <p class="mt-5 max-w-3xl text-lg leading-8 text-zinc-300 sm:text-xl">Personal engineering and software projects, separated from team roles so the portfolio stays easy to scan and easy to trust.</p>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-center text-xs uppercase tracking-[0.25em] text-zinc-300">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Engineering</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Software</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 px-3 py-4">Maker</div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -194,6 +279,27 @@
 
     <script src="site-chrome.js"></script>
     <script>
+        // Image modal functionality
+        const imageModal = document.getElementById('image-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalClose = document.getElementById('modal-close');
+
+        modalClose.addEventListener('click', () => {
+            imageModal.classList.remove('active');
+        });
+
+        imageModal.addEventListener('click', (e) => {
+            if (e.target === imageModal) {
+                imageModal.classList.remove('active');
+            }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                imageModal.classList.remove('active');
+            }
+        });
+
         function initCarousel(container) {
             const slide = container.querySelector('.carousel-slide');
             const caption = container.querySelector('.carousel-caption');
@@ -215,6 +321,15 @@
                 caption.textContent = current.caption || projectTitle;
                 dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
             }
+
+            // Add click handler for opening modal
+            slide.addEventListener('click', () => {
+                const current = images[currentIndex] || {};
+                if (current.url) {
+                    modalImage.src = current.url;
+                    imageModal.classList.add('active');
+                }
+            });
 
             prevBtn.addEventListener('click', () => {
                 currentIndex = (currentIndex - 1 + images.length) % images.length;
