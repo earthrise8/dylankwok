@@ -120,7 +120,8 @@
             <div class="max-w-3xl mx-auto space-y-8">
                 
                 <!-- Articles Post 1 -->
-                <article class="bg-slate-800 rounded-lg article-post overflow-hidden">
+                <article id="rocketry-certification" class="relative bg-slate-800 rounded-lg article-post overflow-hidden">
+                    <button type="button" class="copy-article-link absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:border-red-400 hover:text-red-300" data-article-id="rocketry-certification" aria-label="Copy link to Getting Your First Rocketry Certification">Copy Link</button>
                     <!-- Article Image -->
                     <img src="projectphotos/Blaze.jpeg" alt="Rocketry Certification" class="w-full h-64 object-cover">
                     
@@ -221,6 +222,43 @@
                     </div>
                 </article>
 
+                <!-- Attendance Checker Tool -->
+                <article id="attendance-gaps-checker" class="relative bg-slate-800 rounded-lg article-post overflow-hidden">
+                    <button type="button" class="copy-article-link absolute right-4 top-4 z-10 rounded-full border border-white/10 bg-black/50 px-4 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-white backdrop-blur-md transition hover:border-red-400 hover:text-red-300" data-article-id="attendance-gaps-checker" aria-label="Copy link to Meeting Attendance Gaps Checker">Copy Link</button>
+                    <div class="p-8">
+                        <div class="mb-5">
+                            <span class="text-cyan-400 text-sm font-semibold">Tool / Utility</span>
+                            <h2 class="text-3xl font-bold mt-2 mb-4">Meeting Attendance Gaps Checker</h2>
+                            <p class="text-slate-400 mb-4">By Dylan Kwok</p>
+                        </div>
+                        <p class="text-lg leading-relaxed mb-6 article-preview">This was built because comparing a roster to a sign-in list by hand is tedious, easy to mess up, and annoying when all you need is a clean answer about who is missing.</p>
+
+                        <div class="grid gap-6 lg:grid-cols-2">
+                            <div>
+                                <label for="expected-names" class="block text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300 mb-3">People who were supposed to attend</label>
+                                <textarea id="expected-names" rows="10" class="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-base text-white placeholder:text-zinc-500 focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/25" placeholder="Paste one name per line, or separate with commas\n\nExample:\nAvery Chen\nJordan Lee\nTaylor Morgan"></textarea>
+                            </div>
+
+                            <div>
+                                <label for="attended-names" class="block text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300 mb-3">People who actually showed up</label>
+                                <textarea id="attended-names" rows="10" class="w-full rounded-2xl border border-white/10 bg-black/40 px-4 py-3 text-base text-white placeholder:text-zinc-500 focus:border-red-400 focus:outline-none focus:ring-2 focus:ring-red-400/25" placeholder="Paste the attendance list here"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="mt-6 flex flex-wrap items-center gap-4">
+                            <button id="check-attendance" class="rounded-full bg-red-500 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-red-400">Find missing names</button>
+                            <p class="text-sm text-zinc-400">Comparison is case-insensitive and ignores extra spaces.</p>
+                        </div>
+
+                        <div class="mt-6 rounded-2xl border border-white/10 bg-black/30 p-5">
+                            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-zinc-300">Result</p>
+                            <div id="attendance-result" class="mt-4 text-base leading-7 text-zinc-200">
+                                Paste both lists and click the button to see which expected names are missing.
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
                
             </div>
         </div>
@@ -267,6 +305,95 @@
                 } else {
                     table.classList.add('hidden');
                     button.querySelector('span').textContent = '▶';
+                }
+            });
+        });
+
+        const copyArticleLinkButtons = document.querySelectorAll('.copy-article-link');
+        copyArticleLinkButtons.forEach(button => {
+            button.addEventListener('click', async () => {
+                const articleId = button.getAttribute('data-article-id');
+                const articleUrl = `${window.location.href.split('#')[0]}#${articleId}`;
+                const originalText = button.textContent;
+
+                try {
+                    await navigator.clipboard.writeText(articleUrl);
+                    button.textContent = 'Copied';
+                } catch (error) {
+                    const fallbackInput = document.createElement('textarea');
+                    fallbackInput.value = articleUrl;
+                    fallbackInput.setAttribute('readonly', 'true');
+                    fallbackInput.style.position = 'absolute';
+                    fallbackInput.style.left = '-9999px';
+                    document.body.appendChild(fallbackInput);
+                    fallbackInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(fallbackInput);
+                    button.textContent = 'Copied';
+                }
+
+                window.setTimeout(() => {
+                    button.textContent = originalText;
+                }, 1400);
+            });
+        });
+
+        const expectedNamesInput = document.getElementById('expected-names');
+        const attendedNamesInput = document.getElementById('attended-names');
+        const checkAttendanceButton = document.getElementById('check-attendance');
+        const attendanceResult = document.getElementById('attendance-result');
+
+        function parseNames(rawText) {
+            return rawText
+                .split(/\n|,|;/)
+                .map(entry => entry.replace(/^\s*[•\-*\d.)]+\s*/, '').trim())
+                .filter(Boolean);
+        }
+
+        function normalizeName(name) {
+            return name.replace(/\s+/g, ' ').trim().toLowerCase();
+        }
+
+        function renderMissingNames() {
+            const expectedNames = parseNames(expectedNamesInput.value);
+            const attendedNames = parseNames(attendedNamesInput.value);
+            const attendedSet = new Set(attendedNames.map(normalizeName));
+            const missingNames = [];
+            const seen = new Set();
+
+            expectedNames.forEach(name => {
+                const normalized = normalizeName(name);
+                if (!seen.has(normalized)) {
+                    seen.add(normalized);
+                    if (!attendedSet.has(normalized)) {
+                        missingNames.push(name.replace(/\s+/g, ' ').trim());
+                    }
+                }
+            });
+
+            if (expectedNames.length === 0 || attendedNames.length === 0) {
+                attendanceResult.innerHTML = 'Enter both lists first.';
+                return;
+            }
+
+            if (missingNames.length === 0) {
+                attendanceResult.innerHTML = '<span class="text-red-300 font-semibold">All expected names appear on the attendance list.</span>';
+                return;
+            }
+
+            attendanceResult.innerHTML = `
+                <p class="mb-3 text-red-300 font-semibold">${missingNames.length} name${missingNames.length === 1 ? '' : 's'} missing:</p>
+                <ul class="list-disc space-y-1 pl-6 text-zinc-100">
+                    ${missingNames.map(name => `<li>${name}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        checkAttendanceButton.addEventListener('click', renderMissingNames);
+        [expectedNamesInput, attendedNamesInput].forEach(input => {
+            input.addEventListener('input', () => {
+                if (attendanceResult.textContent !== 'Paste both lists and click the button to see which expected names are missing.') {
+                    renderMissingNames();
                 }
             });
         });
